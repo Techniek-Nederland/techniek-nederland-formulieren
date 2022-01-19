@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forms &mdash; Practical guide to FGO 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinxcontrib-httpexample.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinxcontrib-httpexample.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorials" href="tutorials/index.html" />
+    <link rel="prev" title="Architecture &amp; Models" href="architecture.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Practical guide to FGO
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture &amp; Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#forms-protocol-checklist">Forms (protocol/checklist)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#regulations-brl-ntr-nta-nen-iso">Regulations (BRL, NTR, NTA, NEN, ISO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#filled-out-forms-meldingen">Filled out forms (meldingen)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#systems-and-installation-installaties">Systems and Installation (installaties)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#nl-sfb-classification">NL/SFB classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#etim-classification">ETIM classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#product-data-stored-in-2ba">Product data (stored in 2BA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#objects-objecten-panden-werkadressen">Objects (objecten / panden / werkadressen)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Forms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#form-structure">Form structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#form-technology">Form technology</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/describe_installation.html">Describe an installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/get_products.html">Get product information using 2BA API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/get_products.html#search-for-a-product">Search for a product</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/get_products.html#filter-fields">Filter fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/get_forms.html">Get forms for an installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/get_forms.html#get-a-list-of-relevant-forms">Get a list of relevant forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/get_forms.html#get-the-form-itself">Get the form itself</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Practical guide to FGO</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Forms</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/forms.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="forms">
+<h1>Forms<a class="headerlink" href="#forms" title="Permalink to this headline"></a></h1>
+<p>The goal of FGO forms is to define the forms in such a way, that other (developing) companies can use it to
+automatically generate the actual forms. This should allow them to convert it into a new app, a PDF-document or
+a new format that can be read by some other system. Essential to this approach, is that the way of storing the
+forms should be fully descriptive and structured, in order to have it processed by other systems.</p>
+<section id="form-structure">
+<h2>Form structure<a class="headerlink" href="#form-structure" title="Permalink to this headline"></a></h2>
+<p>Each form consists of the two sections. The meta-part and the specific form fields. The meta-part is always the same
+and consists of the following elements:</p>
+<ul class="simple">
+<li><p>What Company filled out the form</p></li>
+<li><p>Who filled out the form</p></li>
+<li><p>Who commissioned filling out the form / owner of installation</p></li>
+<li><p>What Installation + What Object (installation implies object)</p></li>
+<li><p>What date</p></li>
+</ul>
+<p>The specific forms fields are of course different for every form, though a standard is in the making to formalize
+the sections and questions as much as possible.</p>
+<p>When requesting a form, the meta field are <strong>not</strong> provided, you can add them yourself.</p>
+</section>
+<section id="form-technology">
+<h2>Form technology<a class="headerlink" href="#form-technology" title="Permalink to this headline"></a></h2>
+<p>The applications makes use of <a class="reference external" href="https://json-schema.org">Schema JSON</a> for
+all definitions of data and also forms. The forms components a defined using
+a thin version of the <a class="reference external" href="https://github.com/formio/formio.js/wiki/Components-JSON-Schema">FormIO</a>.
+You can choose to implement your own interpreter, mapper or use one of the
+open-source solutions provided by <a class="reference external" href="https://github.com/formio/formio">FormIO Github</a>.
+Please note that only the form components are used.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="architecture.html" class="btn btn-neutral float-left" title="Architecture &amp; Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorials/index.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Wouter Klein Heerenbrink &lt;wouter@fluxility.com&gt;.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
