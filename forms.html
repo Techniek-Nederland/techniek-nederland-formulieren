@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Forms &mdash; Practical guide to FGO 1.0.0 documentation</title>
+  <title>Forms &mdash; Practical guide to Techniek Nederland Forms 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/sphinxcontrib-httpexample.css" type="text/css" />
@@ -30,7 +30,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Practical guide to FGO
+            <a href="index.html" class="icon icon-home"> Practical guide to Techniek Nederland Forms
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -42,14 +42,26 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture &amp; Models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#forms-protocol-checklist">Forms (protocol/checklist)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#regulations-brl-ntr-nta-nen-iso">Regulations (BRL, NTR, NTA, NEN, ISO)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#filled-out-forms-meldingen">Filled out forms (meldingen)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#systems-and-installation-installaties">Systems and Installation (installaties)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#nl-sfb-classification">NL/SFB classification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#etim-classification">ETIM classification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#product-data-stored-in-2ba">Product data (stored in 2BA)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#objects-objecten-panden-werkadressen">Objects (objecten / panden / werkadressen)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#entity-definitions">Entity definitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#form-formulier-protocol-checklist">Form (formulier / protocol /checklist)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#report-inspectierapport-rapportage">Report (inspectierapport / rapportage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#regulations-brl-ntr-nta-nen-iso">Regulations (BRL, NTR, NTA, NEN, ISO)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#installation-company-installatiebedrijf">Installation company (Installatiebedrijf)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#object-building-gebouw-bouwwerk-pand-werkadres">Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#client-opdrachtgever">Client (Opdrachtgever)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#installation-system-installatie-systeem">Installation (System, Installatie, Systeem)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#installation-parts-installatie-onderdeel-sub-systeem">Installation Parts (Installatie-onderdeel, Sub-systeem)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#product-data-stored-in-2ba">Product data (stored in 2BA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#current-state">Current State</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#classification-systems">Classification systems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#nl-sfb">NL/SFB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#id1">ETIM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#naming-standards-and-conventions">Naming standards and conventions</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Forms</a><ul>
@@ -79,7 +91,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Practical guide to FGO</a>
+          <a href="index.html">Practical guide to Techniek Nederland Forms</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -140,7 +152,7 @@ Please note that only the form components are used.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Wouter Klein Heerenbrink &lt;wouter@fluxility.com&gt;.</p>
+    <p>&#169; Copyright 2021 - 2022, Wouter Klein Heerenbrink &lt;wouter@fluxility.com&gt;.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

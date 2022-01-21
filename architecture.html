@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Architecture &amp; Models &mdash; Practical guide to FGO 1.0.0 documentation</title>
+  <title>Architecture &amp; Models &mdash; Practical guide to Techniek Nederland Forms 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/sphinxcontrib-httpexample.css" type="text/css" />
@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Forms" href="forms.html" />
-    <link rel="prev" title="Practical guide to FGO Forms" href="index.html" /> 
+    <link rel="prev" title="Practical guide to Techniek Nederland Forms" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -30,7 +30,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Practical guide to FGO
+            <a href="index.html" class="icon icon-home"> Practical guide to Techniek Nederland Forms
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -42,14 +42,26 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Architecture &amp; Models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#forms-protocol-checklist">Forms (protocol/checklist)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#regulations-brl-ntr-nta-nen-iso">Regulations (BRL, NTR, NTA, NEN, ISO)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#filled-out-forms-meldingen">Filled out forms (meldingen)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#systems-and-installation-installaties">Systems and Installation (installaties)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#nl-sfb-classification">NL/SFB classification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#etim-classification">ETIM classification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#product-data-stored-in-2ba">Product data (stored in 2BA)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#objects-objecten-panden-werkadressen">Objects (objecten / panden / werkadressen)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#entity-definitions">Entity definitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#form-formulier-protocol-checklist">Form (formulier / protocol /checklist)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#report-inspectierapport-rapportage">Report (inspectierapport / rapportage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#regulations-brl-ntr-nta-nen-iso">Regulations (BRL, NTR, NTA, NEN, ISO)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-company-installatiebedrijf">Installation company (Installatiebedrijf)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#object-building-gebouw-bouwwerk-pand-werkadres">Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#client-opdrachtgever">Client (Opdrachtgever)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-system-installatie-systeem">Installation (System, Installatie, Systeem)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-parts-installatie-onderdeel-sub-systeem">Installation Parts (Installatie-onderdeel, Sub-systeem)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#product-data-stored-in-2ba">Product data (stored in 2BA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#current-state">Current State</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#classification-systems">Classification systems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#nl-sfb">NL/SFB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">ETIM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#naming-standards-and-conventions">Naming standards and conventions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="forms.html">Forms</a><ul>
@@ -79,7 +91,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Practical guide to FGO</a>
+          <a href="index.html">Practical guide to Techniek Nederland Forms</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -99,59 +111,150 @@
              
   <section id="architecture-models">
 <h1>Architecture &amp; Models<a class="headerlink" href="#architecture-models" title="Permalink to this headline"></a></h1>
-<p>The chart (Dutch) below provides an overview of the systems that together cover
-the installation branch. The FGO Forms project will introduce a new system to centrally store forms
-(the structure, not the filled form data) in such a (non-agnostic) way that other developing companies can re-use
-it in their software without re-implementing them by hand (yellow in the chart).</p>
-<img alt="System architecture" src="_images/FGO-Overzicht.png" />
-<section id="forms-protocol-checklist">
-<h2>Forms (protocol/checklist)<a class="headerlink" href="#forms-protocol-checklist" title="Permalink to this headline"></a></h2>
-<p>The main entity will be the ‘Form’ (Protocol, checklist etc). In essential a simple set of questions regarding a
-system installed in an object (eg. building). These forms are defined by experts or expert groups represented by
-for instance Techniek Nederland or ISSO.</p>
+<p>This section explains the eco-system for which this Forms API is designed, followed by a definition of
+all entities available. Terms will be specified in both English and Dutch.</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#architecture" id="id2">Architecture</a></p></li>
+<li><p><a class="reference internal" href="#entity-definitions" id="id3">Entity definitions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#form-formulier-protocol-checklist" id="id4">Form (formulier / protocol /checklist)</a></p></li>
+<li><p><a class="reference internal" href="#report-inspectierapport-rapportage" id="id5">Report (inspectierapport / rapportage)</a></p></li>
+<li><p><a class="reference internal" href="#regulations-brl-ntr-nta-nen-iso" id="id6">Regulations (BRL, NTR, NTA, NEN, ISO)</a></p></li>
+<li><p><a class="reference internal" href="#installation-company-installatiebedrijf" id="id7">Installation company (Installatiebedrijf)</a></p></li>
+<li><p><a class="reference internal" href="#object-building-gebouw-bouwwerk-pand-werkadres" id="id8">Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)</a></p></li>
+<li><p><a class="reference internal" href="#client-opdrachtgever" id="id9">Client (Opdrachtgever)</a></p></li>
+<li><p><a class="reference internal" href="#installation-system-installatie-systeem" id="id10">Installation (System, Installatie, Systeem)</a></p></li>
+<li><p><a class="reference internal" href="#installation-parts-installatie-onderdeel-sub-systeem" id="id11">Installation Parts (Installatie-onderdeel, Sub-systeem)</a></p></li>
+<li><p><a class="reference internal" href="#product-data-stored-in-2ba" id="id12">Product data (stored in 2BA)</a></p></li>
+<li><p><a class="reference internal" href="#current-state" id="id13">Current State</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#classification-systems" id="id14">Classification systems</a></p>
+<ul>
+<li><p><a class="reference internal" href="#nl-sfb" id="id15">NL/SFB</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id16">ETIM</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#naming-standards-and-conventions" id="id17">Naming standards and conventions</a></p></li>
+</ul>
+</div>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline"></a></h2>
+<p>Forms are a means for an Installer to describe a situation and produce a Report that is in turn being required by
+some sort of Regulations. Regulations can be anything from actual law to in private defined certifications. Belows
+image explains what pieces of information are available in the field and how flow from the actual Form to the
+Report to the Regulations. Each entity (piece) is explained below.</p>
+<img alt="System architecture" src="_images/fluxility-techniek-nederland-forms-architecture.png" />
+</section>
+<section id="entity-definitions">
+<h2>Entity definitions<a class="headerlink" href="#entity-definitions" title="Permalink to this headline"></a></h2>
+<section id="form-formulier-protocol-checklist">
+<h3>Form (formulier / protocol /checklist)<a class="headerlink" href="#form-formulier-protocol-checklist" title="Permalink to this headline"></a></h3>
+<p>The main entity will be the <cite>Form</cite> (Protocol, checklist etc). A set of questions regarding the current state of
+a system installed in an object (eg. building). These forms are defined by experts or expert groups and are provided
+by for instance <a class="reference external" href="https://www.technieknederland.nl">Techniek Nederland</a> or <a class="reference external" href="https://isso.nl">ISSO</a>. Forms should
+be designed in such a way that it will never ask question that do not lead to data ending up in the report.</p>
+</section>
+<section id="report-inspectierapport-rapportage">
+<h3>Report (inspectierapport / rapportage)<a class="headerlink" href="#report-inspectierapport-rapportage" title="Permalink to this headline"></a></h3>
+<p>The <cite>Report</cite> is a (finalized) document holding information that was provided using the filled out <cite>Form</cite> in combination
+with conclusion drawn upon the provided data. The Reports content must comply to rules as stated by the regulations.</p>
 </section>
 <section id="regulations-brl-ntr-nta-nen-iso">
-<h2>Regulations (BRL, NTR, NTA, NEN, ISO)<a class="headerlink" href="#regulations-brl-ntr-nta-nen-iso" title="Permalink to this headline"></a></h2>
+<h3>Regulations (BRL, NTR, NTA, NEN, ISO)<a class="headerlink" href="#regulations-brl-ntr-nta-nen-iso" title="Permalink to this headline"></a></h3>
 <p>Most of these forms are created with regulations in mind, or even created
-to fully comply with these regulations.</p>
+to fully comply with these regulations. Regulations can be governed by certifying instance, government etc.</p>
 </section>
-<section id="filled-out-forms-meldingen">
-<h2>Filled out forms (meldingen)<a class="headerlink" href="#filled-out-forms-meldingen" title="Permalink to this headline"></a></h2>
-<p>The filled out forms are quite critical most of the times. Installation companies are in many cases forced by
-law to fill out these form and prove to authorities that they did. Currently there isn’t one central storage, but
-plans have been made to introduce something like that in the (near) future.</p>
+<section id="installation-company-installatiebedrijf">
+<h3>Installation company (Installatiebedrijf)<a class="headerlink" href="#installation-company-installatiebedrijf" title="Permalink to this headline"></a></h3>
+<p>A company responsible for the installation of an (technical) product inside an Object (building). In order to do
+most inspection, companies need to be certified.</p>
 </section>
-<section id="systems-and-installation-installaties">
-<h2>Systems and Installation (installaties)<a class="headerlink" href="#systems-and-installation-installaties" title="Permalink to this headline"></a></h2>
-<p>A form is filled out for or in relation to a installation of combination of installations (system). The might be
-a gas connection entering a building, a central heating system or a deck of solar panels. Please note that
-a system might consist of multiple products together (central heating might be multiple boilers cascaded, solar
-panels are seldom just one panel etc). Part of the form should be repeated for every element in the form.</p>
+<section id="object-building-gebouw-bouwwerk-pand-werkadres">
+<h3>Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)<a class="headerlink" href="#object-building-gebouw-bouwwerk-pand-werkadres" title="Permalink to this headline"></a></h3>
+<p>Most of the times an Object will be a building, but it could also be for instance a meadow (solar panels).
+Objects in the Netherlands are registered by the Kadaster and kept in a database called BAG.
+Each Object (and subobject) is document with a unique BAG ID. See
+<a class="reference external" href="https://www.kadaster.nl/zakelijk/producten/adressen-en-gebouwen/bag-api-individuele-bevragingen">https://www.kadaster.nl/zakelijk/producten/adressen-en-gebouwen/bag-api-individuele-bevragingen</a>.</p>
 </section>
-<section id="nl-sfb-classification">
-<h2>NL/SFB classification<a class="headerlink" href="#nl-sfb-classification" title="Permalink to this headline"></a></h2>
+<section id="client-opdrachtgever">
+<h3>Client (Opdrachtgever)<a class="headerlink" href="#client-opdrachtgever" title="Permalink to this headline"></a></h3>
+<p>The Client is the person or company who commissioned the inspection. Most often this will be the owner or responsible
+person toward the given installation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the near future this definition needs to be improved, because their
+are many roles of responsibility towards an installations. For instance the owner of the building, the owner
+of the installation, the user of the installation etc.</p>
+</div>
+</section>
+<section id="installation-system-installatie-systeem">
+<h3>Installation (System, Installatie, Systeem)<a class="headerlink" href="#installation-system-installatie-systeem" title="Permalink to this headline"></a></h3>
+<p>An Installation is a Product that is installed and serving it’s purpose in or on an Object.</p>
+</section>
+<section id="installation-parts-installatie-onderdeel-sub-systeem">
+<h3>Installation Parts (Installatie-onderdeel, Sub-systeem)<a class="headerlink" href="#installation-parts-installatie-onderdeel-sub-systeem" title="Permalink to this headline"></a></h3>
+<p>Installations for a hierarchy (tree), where each Installation might consist of sub-installations. For instance</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Central Heating System consist</dt><dd><ul>
+<li><dl class="simple">
+<dt>Heat generator</dt><dd><ul>
+<li><p>burner</p></li>
+<li><p>expansion vessel</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Radiator</p></li>
+<li><p>Gas transport towards generator</p></li>
+<li><p>Water transport to radiators</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>An inspection might be about just the Heat Generator and it’s parts (burner and expansion vessel). Another might
+be about the full heating system, or just on the Gas transport.</p>
+</section>
+<section id="product-data-stored-in-2ba">
+<h3>Product data (stored in 2BA)<a class="headerlink" href="#product-data-stored-in-2ba" title="Permalink to this headline"></a></h3>
+<p>Actual information on products (non-installed) can be found in the <a class="reference external" href="https://2ba.nl/">2BA Product database</a>.
+It holds a rich set of products with all their features described (in <a class="reference external" href="https://www.etim-international.com/">ETIM</a>),
+making it easy to uniformly enter information on the installation
+that is being inspected. The product information is provided to 2BA by the manufactures themselves
+and therefore quite accurate. This data can be used to prefill forms when describing the installed product.</p>
+</section>
+<section id="current-state">
+<h3>Current State<a class="headerlink" href="#current-state" title="Permalink to this headline"></a></h3>
+<p>The whole reason for filling out the form will be the Current State of the Installation. This covers anything from
+‘having a new Installation installed’ to ‘a leakage’ to ‘actual power consumption compared to factory standards’ and
+of course the amount CO and CO2 being produced by the installation.</p>
+</section>
+</section>
+<section id="classification-systems">
+<h2>Classification systems<a class="headerlink" href="#classification-systems" title="Permalink to this headline"></a></h2>
+<section id="nl-sfb">
+<h3>NL/SFB<a class="headerlink" href="#nl-sfb" title="Permalink to this headline"></a></h3>
 <p>There is a Dutch classification standard for describing types of installations and product. It’s a determination to
 with each level becoming more specific. Level one is ‘heating’, ‘cooling’ etc, level two can be ‘central’, ‘local’ etc,
 and the deepest can be type of fuel used. See <a class="reference external" href="https://ketenstandaard.nl/standaard/nl-sfb/">https://ketenstandaard.nl/standaard/nl-sfb/</a>.</p>
 </section>
-<section id="etim-classification">
-<h2>ETIM classification<a class="headerlink" href="#etim-classification" title="Permalink to this headline"></a></h2>
+<section id="id1">
+<h3>ETIM<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
 <p>A second standared for product classification is ETIM. Where NL/SFB is focussed mainly on creating groups of products,
 ETIM also aims at defining all properties of products in a standardised way. See <a class="reference external" href="https://www.etim-international.com/">https://www.etim-international.com/</a>.</p>
 </section>
-<section id="product-data-stored-in-2ba">
-<h2>Product data (stored in 2BA)<a class="headerlink" href="#product-data-stored-in-2ba" title="Permalink to this headline"></a></h2>
-<p>Actual information on products (non-installed) can be found in the 2BA database. It holds a rich set of products
-with all their features (in ETIM) described, making it easy to uniformly enter information on the installation
-that is being inspected. The product information is provided to 2BA by the manufactures themselves
-and therefore quite accurate. This data can be used to prefill forms. See <a class="reference external" href="https://2ba.nl/nl/">https://2ba.nl/nl/</a>.</p>
 </section>
-<section id="objects-objecten-panden-werkadressen">
-<h2>Objects (objecten / panden / werkadressen)<a class="headerlink" href="#objects-objecten-panden-werkadressen" title="Permalink to this headline"></a></h2>
-<p>An installation is by definition a product that has been installed in an Object. Most of the times an Object will
-be a building, but it could also be for instance a meadow (solar panels). Objects in the Netherlands are registered
-by the Kadaster and kept in a database called BAG. Each Object (and subobject) is document with a unique BAG ID. See
-<a class="reference external" href="https://www.kadaster.nl/zakelijk/producten/adressen-en-gebouwen/bag-api-individuele-bevragingen">https://www.kadaster.nl/zakelijk/producten/adressen-en-gebouwen/bag-api-individuele-bevragingen</a>.</p>
+<section id="naming-standards-and-conventions">
+<h2>Naming standards and conventions<a class="headerlink" href="#naming-standards-and-conventions" title="Permalink to this headline"></a></h2>
+<p>A first attempt has been made to produce a list of standard terms to use throughout the forms. There are many
+ways to name something (eg. ‘Naam’, ‘Voornaam + Achternaam’, ‘Volledige naam’). The draft version of this
+document can be downloaded
+<a class="reference external" href="_static/files/techniek-nederland-forms-naming-convention.xlsx">Form Fields Naming Convensions (XLSX)</a>. This
+document is currently maintained by <a class="reference external" href="mailto:p&#46;zwakhals&#37;&#52;&#48;TechniekNederland&#46;nl">Peter Zwakhals <span>&#64;</span> Techniek Nederland</a>.</p>
 </section>
 </section>
 
@@ -159,14 +262,14 @@ by the Kadaster and kept in a database called BAG. Each Object (and subobject) i
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Practical guide to FGO Forms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Practical guide to Techniek Nederland Forms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="forms.html" class="btn btn-neutral float-right" title="Forms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Wouter Klein Heerenbrink &lt;wouter@fluxility.com&gt;.</p>
+    <p>&#169; Copyright 2021 - 2022, Wouter Klein Heerenbrink &lt;wouter@fluxility.com&gt;.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
