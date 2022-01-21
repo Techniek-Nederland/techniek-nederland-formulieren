@@ -6,17 +6,23 @@ automatically generate the actual forms. This should allow them to convert it in
 a new format that can be read by some other system. Essential to this approach, is that the way of storing the
 forms should be fully descriptive and structured, in order to have it processed by other systems.
 
+.. contents:: Table of Contents
+   :depth: 2
+   :local:
+   :backlinks: none
+
+
 Form structure
 --------------------------------------
 
-Each form consists of the two sections. The meta-part and the specific form fields. The meta-part is always the same
-and consists of the following elements:
+Each form consists of the two sections. The **meta-part** and the **specific form fields**.
+The **meta-part** is always the same and consists of the following elements:
 
-* What Company filled out the form
-* Who filled out the form
-* Who commissioned filling out the form / owner of installation
-* What Installation + What Object (installation implies object)
-* What date
+* Which: :ref:`Installation Company <Entity Installing Company>` filled out the form
+* Who filled out the form: :ref:`Installer <Entity Installing person>`
+* Who commissioned filling out the form: :ref:`Client <Entity Client>`
+* What :ref:`Installation <Entity Installation>` and what :ref:`Object <Entity Object>` (installation implies object)
+* What date was this form filled out
 
 
 The specific forms fields are of course different for every form, though a standard is in the making to formalize
@@ -29,8 +35,112 @@ Form technology
 --------------------------------------
 
 The applications makes use of `Schema JSON <https://json-schema.org>`_ for
-all definitions of data and also forms. The forms components a defined using
-a thin version of the `FormIO <https://github.com/formio/formio.js/wiki/Components-JSON-Schema>`_.
-You can choose to implement your own interpreter, mapper or use one of the
-open-source solutions provided by `FormIO Github <https://github.com/formio/formio>`_.
-Please note that only the form components are used.
+all definitions of data and also forms. This allows for each company to transform
+the document into a format that is usable by there application.
+
+When defining the components, the naming conventions as used
+by `FormIO <https://github.com/formio/formio.js/wiki/Components-JSON-Schema>`_. will be used. This means that
+the form will be interpretable by the Open Source solution `FormIO <https://github.com/formio/formio>`_. If you
+use a different system like for instance `React JSON Schema Form <https://github.com/rjsf-team/react-jsonschema-form>_`
+you can convert the JSON-file by replacing the `components` property with the `properties`.
+
+Code Examples
+--------------------------------------
+
+A yes/no question using a Radio widget
+############################################
+
+.. image:: _static/images/form-field-yes-no.png
+   :alt: Example of yes/no widget
+   :width: 400
+
+.. code-block:: json
+
+    {
+      "key": "A-01",
+      "label": "A-01 Functioneren ketel",
+      "description": "Informatie van gebruiker",
+      "tooltip": "Vraag bij de gebruiker na of de ketel onjuist functioneert en evt. opvolgende acties of controles uitvoeren.",
+      "type": "radio",
+      "values": [
+        {
+          "label": "Ja",
+          "value": "ja"
+        },
+        {
+          "label": "Nee",
+          "value": "nee"
+        },
+        {
+          "label": "Nvt",
+          "value": "n.v.t."
+        }
+      ]
+    }
+
+Texatrea
+############################################
+
+.. code-block:: json
+
+    {
+      "input": true,
+      "type": "textarea",
+      "key": "situation",
+      "label": "Beschrijf de situatie"
+    }
+
+Textfield
+############################################
+
+.. code-block:: json
+
+    {
+      "input": true,
+      "type": "textfield",
+      "key": "naam",
+      "label": "Naam van opdrachtgever"
+    }
+
+Photo
+############################################
+
+.. code-block:: json
+
+    {
+      "label": "Foto",
+      "key": "photoId",
+      "type": "photo",
+      "input": true
+    },
+
+
+Repeating entries (Photo & Textfield)
+############################################
+
+.. code-block:: json
+
+    {
+      "key": "photos",
+      "label": "Voeg foto's van de situatie toe",
+      "itemLabel": "Foto",
+      "reorder": false,
+      "addAnotherPosition": "bottom",
+      "defaultOpen": false,
+      "type": "datagrid",
+      "components": [
+        {
+          "label": "Foto",
+          "key": "photoId",
+          "type": "photo",
+          "input": true
+        },
+        {
+          "label": "Toelichting",
+          "tableView": true,
+          "key": "description",
+          "type": "textarea",
+          "input": true
+        }
+      ]
+    }

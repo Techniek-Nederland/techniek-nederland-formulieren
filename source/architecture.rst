@@ -22,6 +22,7 @@ Report to the Regulations. Each entity (piece) is explained below.
 Entity definitions
 -------------------
 
+.. _Entity Form:
 Form (formulier / protocol /checklist)
 ######################################
 The main entity will be the `Form` (Protocol, checklist etc). A set of questions regarding the current state of
@@ -29,20 +30,31 @@ a system installed in an object (eg. building). These forms are defined by exper
 by for instance `Techniek Nederland <https://www.technieknederland.nl>`_ or `ISSO <https://isso.nl>`_. Forms should
 be designed in such a way that it will never ask question that do not lead to data ending up in the report.
 
+.. _Entity Report:
 Report (inspectierapport / rapportage)
 ######################################
 The `Report` is a (finalized) document holding information that was provided using the filled out `Form` in combination
 with conclusion drawn upon the provided data. The Reports content must comply to rules as stated by the regulations.
 
+.. _Entity Regulations:
 Regulations (BRL, NTR, NTA, NEN, ISO)
 ######################################
 Most of these forms are created with regulations in mind, or even created
 to fully comply with these regulations. Regulations can be governed by certifying instance, government etc.
 
-Installation company (Installatiebedrijf)
+.. _Entity Installing Company:
+Installation company (Installatiebedrijf, Installateur)
 ##########################################
 A company responsible for the installation of an (technical) product inside an Object (building). In order to do
 most inspection, companies need to be certified.
+
+.. _Entity Installing Person:
+Installer (Monteur, Inspecteur, Installateur)
+##########################################
+The real person doing the work of installing a product or inspecting a product. An Installer must
+always work for a Installation Company. On most occasions both Installer and Installation Company
+need to be certified to fulfill the task at hand. Keep in mind that the Installer (person)
+can be the only person working at the Installation Company.
 
 Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)
 #####################################################
@@ -61,10 +73,12 @@ person toward the given installation.
     are many roles of responsibility towards an installations. For instance the owner of the building, the owner
     of the installation, the user of the installation etc.
 
+.. _Entity Installation:
 Installation (System, Installatie, Systeem)
 ###########################################
 An Installation is a Product that is installed and serving it's purpose in or on an Object.
 
+.. _Entity Parts:
 Installation Parts (Installatie-onderdeel, Sub-systeem)
 #######################################################
 Installations for a hierarchy (tree), where each Installation might consist of sub-installations. For instance
