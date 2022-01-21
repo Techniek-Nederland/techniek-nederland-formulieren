@@ -47,7 +47,8 @@
 <li class="toctree-l3"><a class="reference internal" href="architecture.html#form-formulier-protocol-checklist">Form (formulier / protocol /checklist)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="architecture.html#report-inspectierapport-rapportage">Report (inspectierapport / rapportage)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="architecture.html#regulations-brl-ntr-nta-nen-iso">Regulations (BRL, NTR, NTA, NEN, ISO)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="architecture.html#installation-company-installatiebedrijf">Installation company (Installatiebedrijf)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#installation-company-installatiebedrijf-installateur">Installation company (Installatiebedrijf, Installateur)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#installer-monteur-inspecteur-installateur">Installer (Monteur, Inspecteur, Installateur)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="architecture.html#object-building-gebouw-bouwwerk-pand-werkadres">Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="architecture.html#client-opdrachtgever">Client (Opdrachtgever)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="architecture.html#installation-system-installatie-systeem">Installation (System, Installatie, Systeem)</a></li>
@@ -67,6 +68,15 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Forms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#form-structure">Form structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#form-technology">Form technology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-examples">Code Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-yes-no-question-using-a-radio-widget">A yes/no question using a Radio widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">A yes/no question using a Radio widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#texatrea">Texatrea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#textfield">Textfield</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#photo">Photo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#repeating-entries-photo-textfield">Repeating entries (Photo &amp; Textfield)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
@@ -115,16 +125,33 @@
 automatically generate the actual forms. This should allow them to convert it into a new app, a PDF-document or
 a new format that can be read by some other system. Essential to this approach, is that the way of storing the
 forms should be fully descriptive and structured, in order to have it processed by other systems.</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#form-structure" id="id3">Form structure</a></p></li>
+<li><p><a class="reference internal" href="#form-technology" id="id4">Form technology</a></p></li>
+<li><p><a class="reference internal" href="#code-examples" id="id5">Code Examples</a></p>
+<ul>
+<li><p><a class="reference internal" href="#a-yes-no-question-using-a-radio-widget" id="id6">A yes/no question using a Radio widget</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id7">A yes/no question using a Radio widget</a></p></li>
+<li><p><a class="reference internal" href="#texatrea" id="id8">Texatrea</a></p></li>
+<li><p><a class="reference internal" href="#textfield" id="id9">Textfield</a></p></li>
+<li><p><a class="reference internal" href="#photo" id="id10">Photo</a></p></li>
+<li><p><a class="reference internal" href="#repeating-entries-photo-textfield" id="id11">Repeating entries (Photo &amp; Textfield)</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
 <section id="form-structure">
 <h2>Form structure<a class="headerlink" href="#form-structure" title="Permalink to this headline"></a></h2>
-<p>Each form consists of the two sections. The meta-part and the specific form fields. The meta-part is always the same
-and consists of the following elements:</p>
+<p>Each form consists of the two sections. The <strong>meta-part</strong> and the <strong>specific form fields</strong>.
+The <strong>meta-part</strong> is always the same and consists of the following elements:</p>
 <ul class="simple">
-<li><p>What Company filled out the form</p></li>
-<li><p>Who filled out the form</p></li>
-<li><p>Who commissioned filling out the form / owner of installation</p></li>
-<li><p>What Installation + What Object (installation implies object)</p></li>
-<li><p>What date</p></li>
+<li><p>Which: <a class="reference internal" href="architecture.html#entity-installing-company"><span class="std std-ref">Installation Company</span></a> filled out the form</p></li>
+<li><p>Who filled out the form: <a class="reference internal" href="architecture.html#entity-installing-person"><span class="std std-ref">Installer</span></a></p></li>
+<li><p>Who commissioned filling out the form: <span class="xref std std-ref">Client</span></p></li>
+<li><p>What <a class="reference internal" href="architecture.html#entity-installation"><span class="std std-ref">Installation</span></a> and what <span class="xref std std-ref">Object</span> (installation implies object)</p></li>
+<li><p>What date was this form filled out</p></li>
 </ul>
 <p>The specific forms fields are of course different for every form, though a standard is in the making to formalize
 the sections and questions as much as possible.</p>
@@ -133,11 +160,132 @@ the sections and questions as much as possible.</p>
 <section id="form-technology">
 <h2>Form technology<a class="headerlink" href="#form-technology" title="Permalink to this headline"></a></h2>
 <p>The applications makes use of <a class="reference external" href="https://json-schema.org">Schema JSON</a> for
-all definitions of data and also forms. The forms components a defined using
-a thin version of the <a class="reference external" href="https://github.com/formio/formio.js/wiki/Components-JSON-Schema">FormIO</a>.
-You can choose to implement your own interpreter, mapper or use one of the
-open-source solutions provided by <a class="reference external" href="https://github.com/formio/formio">FormIO Github</a>.
-Please note that only the form components are used.</p>
+all definitions of data and also forms. This allows for each company to transform
+the document into a format that is usable by there application.</p>
+<p>When defining the components, the naming conventions as used
+by <a class="reference external" href="https://github.com/formio/formio.js/wiki/Components-JSON-Schema">FormIO</a>. will be used. This means that
+the form will be interpretable by the Open Source solution <a class="reference external" href="https://github.com/formio/formio">FormIO</a>. If you
+use a different system like for instance <cite>React JSON Schema Form &lt;https://github.com/rjsf-team/react-jsonschema-form&gt;_</cite>
+you can convert the JSON-file by replacing the <cite>components</cite> property with the <cite>properties</cite>.</p>
+</section>
+<section id="code-examples">
+<h2>Code Examples<a class="headerlink" href="#code-examples" title="Permalink to this headline"></a></h2>
+<section id="a-yes-no-question-using-a-radio-widget">
+<h3>A yes/no question using a Radio widget<a class="headerlink" href="#a-yes-no-question-using-a-radio-widget" title="Permalink to this headline"></a></h3>
+<a class="reference internal image-reference" href="_static/images/form-field-yes-no.png"><img alt="Example of yes/no widget" src="_static/images/form-field-yes-no.png" style="width: 400px;" /></a>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A-01&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A-01 Functioneren ketel&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Informatie van gebruiker&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;tooltip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vraag bij de gebruiker na of de ketel onjuist functioneert en evt. opvolgende acties of controles uitvoeren.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;radio&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ja&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ja&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nee&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nee&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nvt&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;n.v.t.&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>A yes/no question using a Radio widget<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<a class="reference internal image-reference" href="_static/images/form-field-yes-no.png"><img alt="Example of yes/no widget" src="_static/images/form-field-yes-no.png" style="width: 400px;" /></a>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A-01&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A-01 Functioneren ketel&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Informatie van gebruiker&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;tooltip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vraag bij de gebruiker na of de ketel onjuist functioneert en evt. opvolgende acties of controles uitvoeren.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;radio&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ja&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ja&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nee&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nee&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nvt&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;n.v.t.&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="texatrea">
+<h3>Texatrea<a class="headerlink" href="#texatrea" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;textarea&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;situation&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Beschrijf de situatie&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="textfield">
+<h3>Textfield<a class="headerlink" href="#textfield" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;textfield&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;naam&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Naam van opdrachtgever&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="photo">
+<h3>Photo<a class="headerlink" href="#photo" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Foto&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;photoId&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;photo&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="p">},</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="repeating-entries-photo-textfield">
+<h3>Repeating entries (Photo &amp; Textfield)<a class="headerlink" href="#repeating-entries-photo-textfield" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;photos&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Voeg foto&#39;s van de situatie toe&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;itemLabel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Foto&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;reorder&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;addAnotherPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;defaultOpen&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;datagrid&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;components&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Foto&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;photoId&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;photo&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Toelichting&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;tableView&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;description&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;textarea&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 

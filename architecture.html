@@ -47,7 +47,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#form-formulier-protocol-checklist">Form (formulier / protocol /checklist)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#report-inspectierapport-rapportage">Report (inspectierapport / rapportage)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#regulations-brl-ntr-nta-nen-iso">Regulations (BRL, NTR, NTA, NEN, ISO)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#installation-company-installatiebedrijf">Installation company (Installatiebedrijf)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-company-installatiebedrijf-installateur">Installation company (Installatiebedrijf, Installateur)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installer-monteur-inspecteur-installateur">Installer (Monteur, Inspecteur, Installateur)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#object-building-gebouw-bouwwerk-pand-werkadres">Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#client-opdrachtgever">Client (Opdrachtgever)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#installation-system-installatie-systeem">Installation (System, Installatie, Systeem)</a></li>
@@ -67,6 +68,15 @@
 <li class="toctree-l1"><a class="reference internal" href="forms.html">Forms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="forms.html#form-structure">Form structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forms.html#form-technology">Form technology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#code-examples">Code Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="forms.html#a-yes-no-question-using-a-radio-widget">A yes/no question using a Radio widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forms.html#id2">A yes/no question using a Radio widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forms.html#texatrea">Texatrea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forms.html#textfield">Textfield</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forms.html#photo">Photo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forms.html#repeating-entries-photo-textfield">Repeating entries (Photo &amp; Textfield)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
@@ -122,22 +132,23 @@ all entities available. Terms will be specified in both English and Dutch.</p>
 <li><p><a class="reference internal" href="#form-formulier-protocol-checklist" id="id4">Form (formulier / protocol /checklist)</a></p></li>
 <li><p><a class="reference internal" href="#report-inspectierapport-rapportage" id="id5">Report (inspectierapport / rapportage)</a></p></li>
 <li><p><a class="reference internal" href="#regulations-brl-ntr-nta-nen-iso" id="id6">Regulations (BRL, NTR, NTA, NEN, ISO)</a></p></li>
-<li><p><a class="reference internal" href="#installation-company-installatiebedrijf" id="id7">Installation company (Installatiebedrijf)</a></p></li>
-<li><p><a class="reference internal" href="#object-building-gebouw-bouwwerk-pand-werkadres" id="id8">Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)</a></p></li>
-<li><p><a class="reference internal" href="#client-opdrachtgever" id="id9">Client (Opdrachtgever)</a></p></li>
-<li><p><a class="reference internal" href="#installation-system-installatie-systeem" id="id10">Installation (System, Installatie, Systeem)</a></p></li>
-<li><p><a class="reference internal" href="#installation-parts-installatie-onderdeel-sub-systeem" id="id11">Installation Parts (Installatie-onderdeel, Sub-systeem)</a></p></li>
-<li><p><a class="reference internal" href="#product-data-stored-in-2ba" id="id12">Product data (stored in 2BA)</a></p></li>
-<li><p><a class="reference internal" href="#current-state" id="id13">Current State</a></p></li>
+<li><p><a class="reference internal" href="#installation-company-installatiebedrijf-installateur" id="id7">Installation company (Installatiebedrijf, Installateur)</a></p></li>
+<li><p><a class="reference internal" href="#installer-monteur-inspecteur-installateur" id="id8">Installer (Monteur, Inspecteur, Installateur)</a></p></li>
+<li><p><a class="reference internal" href="#object-building-gebouw-bouwwerk-pand-werkadres" id="id9">Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)</a></p></li>
+<li><p><a class="reference internal" href="#client-opdrachtgever" id="id10">Client (Opdrachtgever)</a></p></li>
+<li><p><a class="reference internal" href="#installation-system-installatie-systeem" id="id11">Installation (System, Installatie, Systeem)</a></p></li>
+<li><p><a class="reference internal" href="#installation-parts-installatie-onderdeel-sub-systeem" id="id12">Installation Parts (Installatie-onderdeel, Sub-systeem)</a></p></li>
+<li><p><a class="reference internal" href="#product-data-stored-in-2ba" id="id13">Product data (stored in 2BA)</a></p></li>
+<li><p><a class="reference internal" href="#current-state" id="id14">Current State</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#classification-systems" id="id14">Classification systems</a></p>
+<li><p><a class="reference internal" href="#classification-systems" id="id15">Classification systems</a></p>
 <ul>
-<li><p><a class="reference internal" href="#nl-sfb" id="id15">NL/SFB</a></p></li>
-<li><p><a class="reference internal" href="#id1" id="id16">ETIM</a></p></li>
+<li><p><a class="reference internal" href="#nl-sfb" id="id16">NL/SFB</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id17">ETIM</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#naming-standards-and-conventions" id="id17">Naming standards and conventions</a></p></li>
+<li><p><a class="reference internal" href="#naming-standards-and-conventions" id="id18">Naming standards and conventions</a></p></li>
 </ul>
 </div>
 <section id="architecture">
@@ -167,10 +178,17 @@ with conclusion drawn upon the provided data. The Reports content must comply to
 <p>Most of these forms are created with regulations in mind, or even created
 to fully comply with these regulations. Regulations can be governed by certifying instance, government etc.</p>
 </section>
-<section id="installation-company-installatiebedrijf">
-<h3>Installation company (Installatiebedrijf)<a class="headerlink" href="#installation-company-installatiebedrijf" title="Permalink to this headline"></a></h3>
+<section id="installation-company-installatiebedrijf-installateur">
+<h3>Installation company (Installatiebedrijf, Installateur)<a class="headerlink" href="#installation-company-installatiebedrijf-installateur" title="Permalink to this headline"></a></h3>
 <p>A company responsible for the installation of an (technical) product inside an Object (building). In order to do
 most inspection, companies need to be certified.</p>
+</section>
+<section id="installer-monteur-inspecteur-installateur">
+<h3>Installer (Monteur, Inspecteur, Installateur)<a class="headerlink" href="#installer-monteur-inspecteur-installateur" title="Permalink to this headline"></a></h3>
+<p>The real person doing the work of installing a product or inspecting a product. An Installer must
+always work for a Installation Company. On most occasions both Installer and Installation Company
+need to be certified to fulfill the task at hand. Keep in mind that the Installer (person)
+can be the only person working at the Installation Company.</p>
 </section>
 <section id="object-building-gebouw-bouwwerk-pand-werkadres">
 <h3>Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)<a class="headerlink" href="#object-building-gebouw-bouwwerk-pand-werkadres" title="Permalink to this headline"></a></h3>
