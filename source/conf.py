@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Practical guide to FGO'
-copyright = '2021, Wouter Klein Heerenbrink <wouter@fluxility.com>'
+project = 'Practical guide to Techniek Nederland Forms'
+copyright = '2021 - 2022, Wouter Klein Heerenbrink <wouter@fluxility.com>'
 author = 'Wouter Klein Heerenbrink <wouter@fluxility.com>'
 baseurl = 'https://techniek-nederland.github.io/techniek-nederland-formulieren/'
 
@@ -74,7 +74,7 @@ html_theme_options = {
     'sticky_navigation': True,
     'navigation_depth': 4,
     'includehidden': True,
-    'titles_only': False
+    'titles_only': False,
 }
 
 httpexample_scheme = 'https'
