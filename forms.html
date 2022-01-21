@@ -70,7 +70,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#form-technology">Form technology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#code-examples">Code Examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#a-yes-no-question-using-a-radio-widget">A yes/no question using a Radio widget</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">A yes/no question using a Radio widget</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#texatrea">Texatrea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#textfield">Textfield</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#photo">Photo</a></li>
@@ -128,16 +127,15 @@ forms should be fully descriptive and structured, in order to have it processed 
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#form-structure" id="id3">Form structure</a></p></li>
-<li><p><a class="reference internal" href="#form-technology" id="id4">Form technology</a></p></li>
-<li><p><a class="reference internal" href="#code-examples" id="id5">Code Examples</a></p>
+<li><p><a class="reference internal" href="#form-structure" id="id2">Form structure</a></p></li>
+<li><p><a class="reference internal" href="#form-technology" id="id3">Form technology</a></p></li>
+<li><p><a class="reference internal" href="#code-examples" id="id4">Code Examples</a></p>
 <ul>
-<li><p><a class="reference internal" href="#a-yes-no-question-using-a-radio-widget" id="id6">A yes/no question using a Radio widget</a></p></li>
-<li><p><a class="reference internal" href="#id2" id="id7">A yes/no question using a Radio widget</a></p></li>
-<li><p><a class="reference internal" href="#texatrea" id="id8">Texatrea</a></p></li>
-<li><p><a class="reference internal" href="#textfield" id="id9">Textfield</a></p></li>
-<li><p><a class="reference internal" href="#photo" id="id10">Photo</a></p></li>
-<li><p><a class="reference internal" href="#repeating-entries-photo-textfield" id="id11">Repeating entries (Photo &amp; Textfield)</a></p></li>
+<li><p><a class="reference internal" href="#a-yes-no-question-using-a-radio-widget" id="id5">A yes/no question using a Radio widget</a></p></li>
+<li><p><a class="reference internal" href="#texatrea" id="id6">Texatrea</a></p></li>
+<li><p><a class="reference internal" href="#textfield" id="id7">Textfield</a></p></li>
+<li><p><a class="reference internal" href="#photo" id="id8">Photo</a></p></li>
+<li><p><a class="reference internal" href="#repeating-entries-photo-textfield" id="id9">Repeating entries (Photo &amp; Textfield)</a></p></li>
 </ul>
 </li>
 </ul>
@@ -172,34 +170,7 @@ you can convert the JSON-file by replacing the <cite>components</cite> property 
 <h2>Code Examples<a class="headerlink" href="#code-examples" title="Permalink to this headline"></a></h2>
 <section id="a-yes-no-question-using-a-radio-widget">
 <h3>A yes/no question using a Radio widget<a class="headerlink" href="#a-yes-no-question-using-a-radio-widget" title="Permalink to this headline"></a></h3>
-<a class="reference internal image-reference" href="_static/images/form-field-yes-no.png"><img alt="Example of yes/no widget" src="_static/images/form-field-yes-no.png" style="width: 400px;" /></a>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A-01&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A-01 Functioneren ketel&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Informatie van gebruiker&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;tooltip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vraag bij de gebruiker na of de ketel onjuist functioneert en evt. opvolgende acties of controles uitvoeren.&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;radio&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ja&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ja&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nee&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nee&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nvt&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;n.v.t.&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-</section>
-<section id="id2">
-<h3>A yes/no question using a Radio widget<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
-<a class="reference internal image-reference" href="_static/images/form-field-yes-no.png"><img alt="Example of yes/no widget" src="_static/images/form-field-yes-no.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/form-field-yes-no.png"><img alt="Example of yes/no widget" src="_images/form-field-yes-no.png" style="width: 400px;" /></a>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A-01&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A-01 Functioneren ketel&quot;</span><span class="p">,</span><span class="w"></span>

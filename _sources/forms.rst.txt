@@ -49,37 +49,6 @@ Code Examples
 
 A yes/no question using a Radio widget
 ############################################
-.. image:: _static/images/form-field-yes-no.png
-   :alt: Example of yes/no widget
-   :width: 400
-
-.. code-block:: json
-
-    {
-      "key": "A-01",
-      "label": "A-01 Functioneren ketel",
-      "description": "Informatie van gebruiker",
-      "tooltip": "Vraag bij de gebruiker na of de ketel onjuist functioneert en evt. opvolgende acties of controles uitvoeren.",
-      "type": "radio",
-      "values": [
-        {
-          "label": "Ja",
-          "value": "ja"
-        },
-        {
-          "label": "Nee",
-          "value": "nee"
-        },
-        {
-          "label": "Nvt",
-          "value": "n.v.t."
-        }
-      ]
-    }
-
-
-A yes/no question using a Radio widget
-############################################
 
 .. image:: _static/images/form-field-yes-no.png
    :alt: Example of yes/no widget
