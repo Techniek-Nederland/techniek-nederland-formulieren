@@ -297,7 +297,18 @@ ETIM also aims at defining all properties of products in a standardised way. See
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-TSKJ7PB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'GTM-TSKJ7PB', {
+          'anonymize_ip': true,
+      });
+    </script> 
 
 </body>
 </html>

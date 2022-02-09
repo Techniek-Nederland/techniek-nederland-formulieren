@@ -233,7 +233,18 @@ is about the Form structures and technology. The third is the actual tuturial wi
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-TSKJ7PB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'GTM-TSKJ7PB', {
+          'anonymize_ip': true,
+      });
+    </script> 
 
 </body>
 </html>
