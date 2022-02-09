@@ -62,7 +62,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#id1">ETIM</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#naming-standards-and-conventions">Naming standards and conventions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="forms.html">Forms</a><ul>
@@ -70,7 +69,7 @@
 <li class="toctree-l2"><a class="reference internal" href="forms.html#form-technology">Form technology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forms.html#code-examples">Code Examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="forms.html#a-yes-no-question-using-a-radio-widget">A yes/no question using a Radio widget</a></li>
-<li class="toctree-l3"><a class="reference internal" href="forms.html#texatrea">Texatrea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forms.html#textarea">Textarea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="forms.html#textfield">Textfield</a></li>
 <li class="toctree-l3"><a class="reference internal" href="forms.html#photo">Photo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="forms.html#repeating-entries-photo-textfield">Repeating entries (Photo &amp; Textfield)</a></li>
@@ -78,6 +77,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="naming-conventions.html">Naming standards and conventions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/describe_installation.html">Describe an installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/get_products.html">Get product information using 2BA API</a><ul>
@@ -120,8 +120,8 @@
              
   <section id="architecture-models">
 <h1>Architecture &amp; Models<a class="headerlink" href="#architecture-models" title="Permalink to this headline"></a></h1>
-<p>This section explains the eco-system for which this Forms API is designed, followed by a definition of
-all entities available. Terms will be specified in both English and Dutch.</p>
+<p>This section provides a basic structure and an insight in the Entities (including definitions) involved for which
+this Forms API is designed. Terms will be specified in both English and Dutch.</p>
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -147,73 +147,74 @@ all entities available. Terms will be specified in both English and Dutch.</p>
 <li><p><a class="reference internal" href="#id1" id="id17">ETIM</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#naming-standards-and-conventions" id="id18">Naming standards and conventions</a></p></li>
 </ul>
 </div>
 <section id="architecture">
 <h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline"></a></h2>
 <p>Forms are a means for an Installer to describe a situation and produce a Report that is in turn being required by
-some sort of Regulations. Regulations can be anything from actual law to in private defined certifications. Belows
-image explains what pieces of information are available in the field and how flow from the actual Form to the
-Report to the Regulations. Each entity (piece) is explained below.</p>
+some sort of Regulation. Regulations can be anything from actual law to in private defined certifications.
+The image below explains the flow and relevant/available information in setting up the (digital) Form and the
+reporting to relevant institutions. Each entity (piece) is explained below.</p>
 <img alt="System architecture" src="_images/fluxility-techniek-nederland-forms-architecture.png" />
 </section>
 <section id="entity-definitions">
 <h2>Entity definitions<a class="headerlink" href="#entity-definitions" title="Permalink to this headline"></a></h2>
 <section id="form-formulier-protocol-checklist">
-<h3>Form (formulier / protocol /checklist)<a class="headerlink" href="#form-formulier-protocol-checklist" title="Permalink to this headline"></a></h3>
-<p>The main entity will be the <cite>Form</cite> (Protocol, checklist etc). A set of questions regarding the current state of
-a system installed in an object (eg. building). These forms are defined by experts or expert groups and are provided
-by for instance <a class="reference external" href="https://www.technieknederland.nl">Techniek Nederland</a> or <a class="reference external" href="https://isso.nl">ISSO</a>. Forms should
-be designed in such a way that it will never ask question that do not lead to data ending up in the report.</p>
+<span id="entity-form"></span><h3>Form (formulier / protocol /checklist)<a class="headerlink" href="#form-formulier-protocol-checklist" title="Permalink to this headline"></a></h3>
+<p>The main entity will be the <cite>Form</cite> (eg. protocol, checklist etc) with checklist items for installing, maintaining or
+inspecting an Installation in an Object (ie. building). These forms are defined and maintained by experts or expert groups
+and are provided
+by for instance <a class="reference external" href="https://www.technieknederland.nl">Techniek Nederland</a> or <a class="reference external" href="https://isso.nl">ISSO</a>. From a
+reporting perspective, forms should be designed in such a way that it will never ask questions that do not lead
+to data ending up in the report.</p>
 </section>
 <section id="report-inspectierapport-rapportage">
-<h3>Report (inspectierapport / rapportage)<a class="headerlink" href="#report-inspectierapport-rapportage" title="Permalink to this headline"></a></h3>
-<p>The <cite>Report</cite> is a (finalized) document holding information that was provided using the filled out <cite>Form</cite> in combination
-with conclusion drawn upon the provided data. The Reports content must comply to rules as stated by the regulations.</p>
+<span id="entity-report"></span><h3>Report (inspectierapport / rapportage)<a class="headerlink" href="#report-inspectierapport-rapportage" title="Permalink to this headline"></a></h3>
+<p>The <cite>Report</cite> is a (finalized) document including information on the checklist items provided by the filled out <cite>Form</cite>
+and a conclusion drawn upon this information. The Reports content must comply to rules as stated by the regulations.</p>
 </section>
 <section id="regulations-brl-ntr-nta-nen-iso">
-<h3>Regulations (BRL, NTR, NTA, NEN, ISO)<a class="headerlink" href="#regulations-brl-ntr-nta-nen-iso" title="Permalink to this headline"></a></h3>
+<span id="entity-regulations"></span><h3>Regulations (BRL, NTR, NTA, NEN, ISO)<a class="headerlink" href="#regulations-brl-ntr-nta-nen-iso" title="Permalink to this headline"></a></h3>
 <p>Most of these forms are created with regulations in mind, or even created
 to fully comply with these regulations. Regulations can be governed by certifying instance, government etc.</p>
 </section>
 <section id="installation-company-installatiebedrijf-installateur">
-<h3>Installation company (Installatiebedrijf, Installateur)<a class="headerlink" href="#installation-company-installatiebedrijf-installateur" title="Permalink to this headline"></a></h3>
-<p>A company responsible for the installation of an (technical) product inside an Object (building). In order to do
-most inspection, companies need to be certified.</p>
+<span id="entity-installing-company"></span><h3>Installation company (Installatiebedrijf, Installateur)<a class="headerlink" href="#installation-company-installatiebedrijf-installateur" title="Permalink to this headline"></a></h3>
+<p>A company involved in (the execution of) installing, maintaining or inspecting the technical product(s) inside an
+Object (building). In order to carry specific tasks, installing companies and their personnel needs to be certified.</p>
 </section>
 <section id="installer-monteur-inspecteur-installateur">
-<h3>Installer (Monteur, Inspecteur, Installateur)<a class="headerlink" href="#installer-monteur-inspecteur-installateur" title="Permalink to this headline"></a></h3>
-<p>The real person doing the work of installing a product or inspecting a product. An Installer must
-always work for a Installation Company. On most occasions both Installer and Installation Company
+<span id="entity-installing-person"></span><h3>Installer (Monteur, Inspecteur, Installateur)<a class="headerlink" href="#installer-monteur-inspecteur-installateur" title="Permalink to this headline"></a></h3>
+<p>The actual person performing the work of installing, maintaining or inspecting a product. An Installer must
+always work for an Installation Company. On most occasions both Installer and Installation Company
 need to be certified to fulfill the task at hand. Keep in mind that the Installer (person)
 can be the only person working at the Installation Company.</p>
 </section>
 <section id="object-building-gebouw-bouwwerk-pand-werkadres">
-<h3>Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)<a class="headerlink" href="#object-building-gebouw-bouwwerk-pand-werkadres" title="Permalink to this headline"></a></h3>
+<span id="entity-object"></span><h3>Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)<a class="headerlink" href="#object-building-gebouw-bouwwerk-pand-werkadres" title="Permalink to this headline"></a></h3>
 <p>Most of the times an Object will be a building, but it could also be for instance a meadow (solar panels).
 Objects in the Netherlands are registered by the Kadaster and kept in a database called BAG.
-Each Object (and subobject) is document with a unique BAG ID. See
+Each Object (and sub-object) is documented with a unique BAG ID. See
 <a class="reference external" href="https://www.kadaster.nl/zakelijk/producten/adressen-en-gebouwen/bag-api-individuele-bevragingen">https://www.kadaster.nl/zakelijk/producten/adressen-en-gebouwen/bag-api-individuele-bevragingen</a>.</p>
 </section>
 <section id="client-opdrachtgever">
 <h3>Client (Opdrachtgever)<a class="headerlink" href="#client-opdrachtgever" title="Permalink to this headline"></a></h3>
-<p>The Client is the person or company who commissioned the inspection. Most often this will be the owner or responsible
-person toward the given installation.</p>
+<p>The Client is the person or company who commissioned the installation, maintenance of inspection. In most casees
+this will be the owner or responsible person of the installation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In the near future this definition needs to be improved, because their
+<p>In the near future this definition needs to be improved, because there
 are many roles of responsibility towards an installations. For instance the owner of the building, the owner
 of the installation, the user of the installation etc.</p>
 </div>
 </section>
 <section id="installation-system-installatie-systeem">
-<h3>Installation (System, Installatie, Systeem)<a class="headerlink" href="#installation-system-installatie-systeem" title="Permalink to this headline"></a></h3>
+<span id="entity-installation"></span><h3>Installation (System, Installatie, Systeem)<a class="headerlink" href="#installation-system-installatie-systeem" title="Permalink to this headline"></a></h3>
 <p>An Installation is a Product that is installed and serving it’s purpose in or on an Object.</p>
 </section>
 <section id="installation-parts-installatie-onderdeel-sub-systeem">
-<h3>Installation Parts (Installatie-onderdeel, Sub-systeem)<a class="headerlink" href="#installation-parts-installatie-onderdeel-sub-systeem" title="Permalink to this headline"></a></h3>
-<p>Installations for a hierarchy (tree), where each Installation might consist of sub-installations. For instance</p>
+<span id="entity-parts"></span><h3>Installation Parts (Installatie-onderdeel, Sub-systeem)<a class="headerlink" href="#installation-parts-installatie-onderdeel-sub-systeem" title="Permalink to this headline"></a></h3>
+<p>Installations form a hierarchy (tree), where each Installation might consist of sub-installations. For instance</p>
 <ul class="simple">
 <li><dl class="simple">
 <dt>Central Heating System consist</dt><dd><ul>
@@ -233,8 +234,8 @@ of the installation, the user of the installation etc.</p>
 </dl>
 </li>
 </ul>
-<p>An inspection might be about just the Heat Generator and it’s parts (burner and expansion vessel). Another might
-be about the full heating system, or just on the Gas transport.</p>
+<p>Maintenance or inspection activities can be performed for the complete installation or specifically aimed at just one
+sub-installation.</p>
 </section>
 <section id="product-data-stored-in-2ba">
 <h3>Product data (stored in 2BA)<a class="headerlink" href="#product-data-stored-in-2ba" title="Permalink to this headline"></a></h3>
@@ -261,17 +262,9 @@ and the deepest can be type of fuel used. See <a class="reference external" href
 </section>
 <section id="id1">
 <h3>ETIM<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
-<p>A second standared for product classification is ETIM. Where NL/SFB is focussed mainly on creating groups of products,
+<p>A second standard for product classification is ETIM. Where NL/SFB is focussed mainly on creating groups of products,
 ETIM also aims at defining all properties of products in a standardised way. See <a class="reference external" href="https://www.etim-international.com/">https://www.etim-international.com/</a>.</p>
 </section>
-</section>
-<section id="naming-standards-and-conventions">
-<h2>Naming standards and conventions<a class="headerlink" href="#naming-standards-and-conventions" title="Permalink to this headline"></a></h2>
-<p>A first attempt has been made to produce a list of standard terms to use throughout the forms. There are many
-ways to name something (eg. ‘Naam’, ‘Voornaam + Achternaam’, ‘Volledige naam’). The draft version of this
-document can be downloaded
-<a class="reference external" href="_static/files/techniek-nederland-forms-naming-convention.xlsx">Form Fields Naming Convensions (XLSX)</a>. This
-document is currently maintained by <a class="reference external" href="mailto:p&#46;zwakhals&#37;&#52;&#48;TechniekNederland&#46;nl">Peter Zwakhals <span>&#64;</span> Techniek Nederland</a>.</p>
 </section>
 </section>
 

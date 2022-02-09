@@ -7,8 +7,7 @@ documentation <https://www.2ba.nl/nl/documentatie/webservices>`_.
 
 .. NOTE::
 
-    Some of the calls are a 'POST' in 2BA, although your not posting anything. This is a glitch in the API and
-    will hopefully be corrected in the near future.
+    Some of the calls are a 'POST' in 2BA and will be transformed into GET calls (#BBAFGOSL-576)
 
 
 

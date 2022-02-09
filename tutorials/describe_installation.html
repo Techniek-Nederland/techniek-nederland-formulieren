@@ -62,7 +62,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../architecture.html#id1">ETIM</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../architecture.html#naming-standards-and-conventions">Naming standards and conventions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../forms.html">Forms</a><ul>
@@ -70,7 +69,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../forms.html#form-technology">Form technology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forms.html#code-examples">Code Examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../forms.html#a-yes-no-question-using-a-radio-widget">A yes/no question using a Radio widget</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../forms.html#texatrea">Texatrea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../forms.html#textarea">Textarea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../forms.html#textfield">Textfield</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../forms.html#photo">Photo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../forms.html#repeating-entries-photo-textfield">Repeating entries (Photo &amp; Textfield)</a></li>
@@ -78,6 +77,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../naming-conventions.html">Naming standards and conventions</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Describe an installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="get_products.html">Get product information using 2BA API</a><ul>
@@ -122,7 +122,7 @@
   <section id="describe-an-installation">
 <h1>Describe an installation<a class="headerlink" href="#describe-an-installation" title="Permalink to this headline"></a></h1>
 <p>There will be a lot of forms in the system and browsing them all can be quite cumbersome. For the form (meta) we’ll need
-describe the installation anyway, so if we start with defining the installation we can then filter the list of forms
+to describe the installation anyway, so if we start with defining the installation we can then filter the list of forms
 to the relevant ones to this project.</p>
 <p>Basic model for an Installation</p>
 <dl class="py class">
@@ -133,7 +133,7 @@ to the relevant ones to this project.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="BaseInstallation.building_id">
 <span class="sig-name descname"><span class="pre">building_id</span></span><a class="headerlink" href="#BaseInstallation.building_id" title="Permalink to this definition"></a></dt>
-<dd><p>A reference to the Object/Building in which this system is installed. It’s up to the you if you choose
+<dd><p>A reference to the Object/Building in which this system is installed. It’s up to you if you choose
 to use a BAG ID or something of your own. In the (near) future it might be relevant to save extra information
 in your database, regarding for instance the year of build for the Object in which the installation has been
 installed. For now, the building is not used for filtering yet.</p>

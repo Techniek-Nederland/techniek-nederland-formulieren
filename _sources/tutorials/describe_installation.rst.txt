@@ -2,7 +2,7 @@ Describe an installation
 ------------------------
 
 There will be a lot of forms in the system and browsing them all can be quite cumbersome. For the form (meta) we'll need
-describe the installation anyway, so if we start with defining the installation we can then filter the list of forms
+to describe the installation anyway, so if we start with defining the installation we can then filter the list of forms
 to the relevant ones to this project.
 
 Basic model for an Installation
@@ -14,7 +14,7 @@ Basic model for an Installation
 
     .. attribute:: building_id
 
-        A reference to the Object/Building in which this system is installed. It's up to the you if you choose
+        A reference to the Object/Building in which this system is installed. It's up to you if you choose
         to use a BAG ID or something of your own. In the (near) future it might be relevant to save extra information
         in your database, regarding for instance the year of build for the Object in which the installation has been
         installed. For now, the building is not used for filtering yet.

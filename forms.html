@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorials" href="tutorials/index.html" />
+    <link rel="next" title="Naming standards and conventions" href="naming-conventions.html" />
     <link rel="prev" title="Architecture &amp; Models" href="architecture.html" /> 
 </head>
 
@@ -62,7 +62,6 @@
 <li class="toctree-l3"><a class="reference internal" href="architecture.html#id1">ETIM</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#naming-standards-and-conventions">Naming standards and conventions</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Forms</a><ul>
@@ -70,7 +69,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#form-technology">Form technology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#code-examples">Code Examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#a-yes-no-question-using-a-radio-widget">A yes/no question using a Radio widget</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#texatrea">Texatrea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#textarea">Textarea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#textfield">Textfield</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#photo">Photo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#repeating-entries-photo-textfield">Repeating entries (Photo &amp; Textfield)</a></li>
@@ -78,6 +77,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="naming-conventions.html">Naming standards and conventions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/describe_installation.html">Describe an installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/get_products.html">Get product information using 2BA API</a><ul>
@@ -120,9 +120,10 @@
              
   <section id="forms">
 <h1>Forms<a class="headerlink" href="#forms" title="Permalink to this headline"></a></h1>
-<p>The goal of FGO forms is to define the forms in such a way, that other (developing) companies can use it to
-automatically generate the actual forms. This should allow them to convert it into a new app, a PDF-document or
-a new format that can be read by some other system. Essential to this approach, is that the way of storing the
+<p>The goal of API Forms is to define the forms in such a way, that software (developing) companies can use it to
+automatically generate the actual forms. This should allow them to convert it into functionality for
+digital forms, a PDF-document or a new format that can be read by some other system. Essential to this approach,
+is that the way of storing the
 forms should be fully descriptive and structured, in order to have it processed by other systems.</p>
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
@@ -132,7 +133,7 @@ forms should be fully descriptive and structured, in order to have it processed 
 <li><p><a class="reference internal" href="#code-examples" id="id4">Code Examples</a></p>
 <ul>
 <li><p><a class="reference internal" href="#a-yes-no-question-using-a-radio-widget" id="id5">A yes/no question using a Radio widget</a></p></li>
-<li><p><a class="reference internal" href="#texatrea" id="id6">Texatrea</a></p></li>
+<li><p><a class="reference internal" href="#textarea" id="id6">Textarea</a></p></li>
 <li><p><a class="reference internal" href="#textfield" id="id7">Textfield</a></p></li>
 <li><p><a class="reference internal" href="#photo" id="id8">Photo</a></p></li>
 <li><p><a class="reference internal" href="#repeating-entries-photo-textfield" id="id9">Repeating entries (Photo &amp; Textfield)</a></p></li>
@@ -142,22 +143,26 @@ forms should be fully descriptive and structured, in order to have it processed 
 </div>
 <section id="form-structure">
 <h2>Form structure<a class="headerlink" href="#form-structure" title="Permalink to this headline"></a></h2>
+<img alt="Form structure" src="_images/fluxility-techniek-nederland-forms-structure.png" />
 <p>Each form consists of the two sections. The <strong>meta-part</strong> and the <strong>specific form fields</strong>.
 The <strong>meta-part</strong> is always the same and consists of the following elements:</p>
 <ul class="simple">
 <li><p>Which: <a class="reference internal" href="architecture.html#entity-installing-company"><span class="std std-ref">Installation Company</span></a> filled out the form</p></li>
 <li><p>Who filled out the form: <a class="reference internal" href="architecture.html#entity-installing-person"><span class="std std-ref">Installer</span></a></p></li>
 <li><p>Who commissioned filling out the form: <span class="xref std std-ref">Client</span></p></li>
-<li><p>What <a class="reference internal" href="architecture.html#entity-installation"><span class="std std-ref">Installation</span></a> and what <span class="xref std std-ref">Object</span> (installation implies object)</p></li>
+<li><p>What <a class="reference internal" href="architecture.html#entity-installation"><span class="std std-ref">Installation</span></a> and what <a class="reference internal" href="architecture.html#entity-object"><span class="std std-ref">Object</span></a> (installation implies object)</p></li>
 <li><p>What date was this form filled out</p></li>
 </ul>
-<p>The specific forms fields are of course different for every form, though a standard is in the making to formalize
-the sections and questions as much as possible.</p>
-<p>When requesting a form, the meta field are <strong>not</strong> provided, you can add them yourself.</p>
+<p>When requesting a form, the meta-part fields are <strong>not provided</strong> by the API Forms. The meta information is not
+form-specific and is the same for every form. Most software will have a way to enter this
+information already, for instance using a CRM for clients. Please note that this information
+is or might still be required for producing the report.
+Have look at the <a class="reference internal" href="naming-conventions.html#naming-standards-and-conventions"><span class="std std-ref">naming standards and conventions</span></a> section
+for information on the field names that you can use for these meta fields.</p>
 </section>
 <section id="form-technology">
 <h2>Form technology<a class="headerlink" href="#form-technology" title="Permalink to this headline"></a></h2>
-<p>The applications makes use of <a class="reference external" href="https://json-schema.org">Schema JSON</a> for
+<p>The Form API makes use of <a class="reference external" href="https://json-schema.org">Schema JSON</a> for
 all definitions of data and also forms. This allows for each company to transform
 the document into a format that is usable by there application.</p>
 <p>When defining the components, the naming conventions as used
@@ -195,8 +200,8 @@ you can convert the JSON-file by replacing the <cite>components</cite> property 
 </pre></div>
 </div>
 </section>
-<section id="texatrea">
-<h3>Texatrea<a class="headerlink" href="#texatrea" title="Permalink to this headline"></a></h3>
+<section id="textarea">
+<h3>Textarea<a class="headerlink" href="#textarea" title="Permalink to this headline"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;textarea&quot;</span><span class="p">,</span><span class="w"></span>
@@ -265,7 +270,7 @@ you can convert the JSON-file by replacing the <cite>components</cite> property 
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="architecture.html" class="btn btn-neutral float-left" title="Architecture &amp; Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="tutorials/index.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="naming-conventions.html" class="btn btn-neutral float-right" title="Naming standards and conventions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

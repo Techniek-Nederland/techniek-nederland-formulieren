@@ -61,7 +61,6 @@
 <li class="toctree-l3"><a class="reference internal" href="architecture.html#id1">ETIM</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#naming-standards-and-conventions">Naming standards and conventions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="forms.html">Forms</a><ul>
@@ -69,7 +68,7 @@
 <li class="toctree-l2"><a class="reference internal" href="forms.html#form-technology">Form technology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forms.html#code-examples">Code Examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="forms.html#a-yes-no-question-using-a-radio-widget">A yes/no question using a Radio widget</a></li>
-<li class="toctree-l3"><a class="reference internal" href="forms.html#texatrea">Texatrea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forms.html#textarea">Textarea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="forms.html#textfield">Textfield</a></li>
 <li class="toctree-l3"><a class="reference internal" href="forms.html#photo">Photo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="forms.html#repeating-entries-photo-textfield">Repeating entries (Photo &amp; Textfield)</a></li>
@@ -77,6 +76,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="naming-conventions.html">Naming standards and conventions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/describe_installation.html">Describe an installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/get_products.html">Get product information using 2BA API</a><ul>
@@ -121,7 +121,7 @@
 <h1>Practical guide to Techniek Nederland Forms<a class="headerlink" href="#practical-guide-to-techniek-nederland-forms" title="Permalink to this headline"></a></h1>
 <p>Dutch objects (like buildings), addresses, installations, products are administrated quite well in different
 systems. For instance in the <a class="reference external" href="https://www.kadaster.nl/zakelijk/registraties/basisregistraties/bag">Kadasters’ Basisregistratie Adressen en Gebouwen (BAG)</a>
-that registers buildings and addressen and <a class="reference external" href="https://2ba.nl/">2BA Technical Product Database</a> that registers pretty
+that registers buildings and addresses and the <a class="reference external" href="https://2ba.nl/">2BA Technical Product Database</a> that registers pretty
 much every product used in the Technology Industry in The Netherlands.</p>
 <p>One of the strengths of these systems is the low coupling, making it easy to evolve on their own while
 still exposing the data to other systems using well-defined API’s.</p>
@@ -134,10 +134,11 @@ Techniek Nederland, instead of recreating forms manually based on PDF-versions.<
 <li><p>Efficient and quick adoption of the latest (inspection) forms throughout the sector</p></li>
 <li><p>Pre-fill forms based on existing information (re-use)</p></li>
 <li><p>Setting up a register for products installed in buildings</p></li>
-<li><p>Setting up a register for sign in off on (mandatory) inspectins on installations</p></li>
+<li><p>Setting up a register for signing off on (mandatory) inspections on installations</p></li>
 </ul>
 <p>This guide is a tutorial for implementing these forms in a simple way. The scope is limited to requesting the
-forms and request some (pre-filled) information to enter on the forms. For more information on the total project,
+forms and request some (pre-filled) information to enter on the forms. For more information on the
+digitisation initiatives in the sector,
 please visit <a class="reference external" href="https://technieknederland.nl">https://technieknederland.nl</a>, <a class="reference external" href="https://digigo.nu">https://digigo.nu</a> and of course <a class="reference external" href="https://fgoplus.nl">https://fgoplus.nl</a>.</p>
 <p>The guide is split up into three sections. The first covers the architecture and models descriptions. The second
 is about the Form structures and technology. The third is the actual tuturial with examples how to fetch the forms.</p>
@@ -164,7 +165,6 @@ is about the Form structures and technology. The third is the actual tuturial wi
 <li class="toctree-l3"><a class="reference internal" href="architecture.html#id1">ETIM</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#naming-standards-and-conventions">Naming standards and conventions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="forms.html">Forms</a><ul>
@@ -172,7 +172,7 @@ is about the Form structures and technology. The third is the actual tuturial wi
 <li class="toctree-l2"><a class="reference internal" href="forms.html#form-technology">Form technology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forms.html#code-examples">Code Examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="forms.html#a-yes-no-question-using-a-radio-widget">A yes/no question using a Radio widget</a></li>
-<li class="toctree-l3"><a class="reference internal" href="forms.html#texatrea">Texatrea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forms.html#textarea">Textarea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="forms.html#textfield">Textfield</a></li>
 <li class="toctree-l3"><a class="reference internal" href="forms.html#photo">Photo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="forms.html#repeating-entries-photo-textfield">Repeating entries (Photo &amp; Textfield)</a></li>
@@ -180,6 +180,7 @@ is about the Form structures and technology. The third is the actual tuturial wi
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="naming-conventions.html">Naming standards and conventions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/describe_installation.html">Describe an installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/get_products.html">Get product information using 2BA API</a><ul>
@@ -199,8 +200,6 @@ is about the Form structures and technology. The third is the actual tuturial wi
 <section id="indices-and-tables">
 <h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
 </section>

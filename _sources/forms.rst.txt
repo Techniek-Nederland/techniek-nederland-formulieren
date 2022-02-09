@@ -1,9 +1,10 @@
 Forms
 =====
 
-The goal of FGO forms is to define the forms in such a way, that other (developing) companies can use it to
-automatically generate the actual forms. This should allow them to convert it into a new app, a PDF-document or
-a new format that can be read by some other system. Essential to this approach, is that the way of storing the
+The goal of API Forms is to define the forms in such a way, that software (developing) companies can use it to
+automatically generate the actual forms. This should allow them to convert it into functionality for
+digital forms, a PDF-document or a new format that can be read by some other system. Essential to this approach,
+is that the way of storing the
 forms should be fully descriptive and structured, in order to have it processed by other systems.
 
 .. contents:: Table of Contents
@@ -15,6 +16,10 @@ forms should be fully descriptive and structured, in order to have it processed 
 Form structure
 --------------------------------------
 
+.. image:: _static/images/fluxility-techniek-nederland-forms-structure.png
+   :alt: Form structure
+
+
 Each form consists of the two sections. The **meta-part** and the **specific form fields**.
 The **meta-part** is always the same and consists of the following elements:
 
@@ -24,17 +29,18 @@ The **meta-part** is always the same and consists of the following elements:
 * What :ref:`Installation <Entity Installation>` and what :ref:`Object <Entity Object>` (installation implies object)
 * What date was this form filled out
 
-
-The specific forms fields are of course different for every form, though a standard is in the making to formalize
-the sections and questions as much as possible.
-
-When requesting a form, the meta field are **not** provided, you can add them yourself.
+When requesting a form, the meta-part fields are **not provided** by the API Forms. The meta information is not
+form-specific and is the same for every form. Most software will have a way to enter this
+information already, for instance using a CRM for clients. Please note that this information
+is or might still be required for producing the report.
+Have look at the :ref:`naming standards and conventions <Naming standards and conventions>` section
+for information on the field names that you can use for these meta fields.
 
 
 Form technology
 --------------------------------------
 
-The applications makes use of `Schema JSON <https://json-schema.org>`_ for
+The Form API makes use of `Schema JSON <https://json-schema.org>`_ for
 all definitions of data and also forms. This allows for each company to transform
 the document into a format that is usable by there application.
 
@@ -78,7 +84,7 @@ A yes/no question using a Radio widget
       ]
     }
 
-Texatrea
+Textarea
 ############################################
 
 .. code-block:: json

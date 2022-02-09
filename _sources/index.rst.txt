@@ -9,7 +9,7 @@ Practical guide to Techniek Nederland Forms
 
 Dutch objects (like buildings), addresses, installations, products are administrated quite well in different
 systems. For instance in the `Kadasters' Basisregistratie Adressen en Gebouwen (BAG) <https://www.kadaster.nl/zakelijk/registraties/basisregistraties/bag>`_
-that registers buildings and addressen and `2BA Technical Product Database <https://2ba.nl/>`_ that registers pretty
+that registers buildings and addresses and the `2BA Technical Product Database <https://2ba.nl/>`_ that registers pretty
 much every product used in the Technology Industry in The Netherlands.
 
 One of the strengths of these systems is the low coupling, making it easy to evolve on their own while
@@ -25,10 +25,11 @@ Providing the forms in a uniform way is the first step in achieving these goals:
 * Efficient and quick adoption of the latest (inspection) forms throughout the sector
 * Pre-fill forms based on existing information (re-use)
 * Setting up a register for products installed in buildings
-* Setting up a register for sign in off on (mandatory) inspectins on installations
+* Setting up a register for signing off on (mandatory) inspections on installations
 
 This guide is a tutorial for implementing these forms in a simple way. The scope is limited to requesting the
-forms and request some (pre-filled) information to enter on the forms. For more information on the total project,
+forms and request some (pre-filled) information to enter on the forms. For more information on the
+digitisation initiatives in the sector,
 please visit https://technieknederland.nl, https://digigo.nu and of course https://fgoplus.nl.
 
 The guide is split up into three sections. The first covers the architecture and models descriptions. The second
@@ -37,6 +38,7 @@ is about the Form structures and technology. The third is the actual tuturial wi
 .. toctree::
    architecture
    forms
+   naming-conventions
    tutorials/index
 
 
@@ -44,6 +46,5 @@ is about the Form structures and technology. The third is the actual tuturial wi
 Indices and tables
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
+.. * :ref:`genindex`
 * :ref:`search`
