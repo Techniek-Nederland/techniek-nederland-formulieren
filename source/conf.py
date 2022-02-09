@@ -77,4 +77,8 @@ html_theme_options = {
     'titles_only': False,
 }
 
+html_context = {
+    'GOOGLE_TAG_MANAGER': 'GTM-TSKJ7PB',
+}
+
 httpexample_scheme = 'https'
