@@ -1,8 +1,8 @@
 Architecture & Models
 ======================
 
-This section explains the eco-system for which this Forms API is designed, followed by a definition of
-all entities available. Terms will be specified in both English and Dutch.
+This section provides a basic structure and an insight in the Entities (including definitions) involved for which
+this Forms API is designed. Terms will be specified in both English and Dutch.
 
 .. contents:: Table of Contents
    :depth: 2
@@ -12,9 +12,9 @@ all entities available. Terms will be specified in both English and Dutch.
 Architecture
 ------------
 Forms are a means for an Installer to describe a situation and produce a Report that is in turn being required by
-some sort of Regulations. Regulations can be anything from actual law to in private defined certifications. Belows
-image explains what pieces of information are available in the field and how flow from the actual Form to the
-Report to the Regulations. Each entity (piece) is explained below.
+some sort of Regulation. Regulations can be anything from actual law to in private defined certifications.
+The image below explains the flow and relevant/available information in setting up the (digital) Form and the
+reporting to relevant institutions. Each entity (piece) is explained below.
 
 .. image:: _static/images/fluxility-techniek-nederland-forms-architecture.png
    :alt: System architecture
@@ -23,65 +23,76 @@ Entity definitions
 -------------------
 
 .. _Entity Form:
+
 Form (formulier / protocol /checklist)
 ######################################
-The main entity will be the `Form` (Protocol, checklist etc). A set of questions regarding the current state of
-a system installed in an object (eg. building). These forms are defined by experts or expert groups and are provided
-by for instance `Techniek Nederland <https://www.technieknederland.nl>`_ or `ISSO <https://isso.nl>`_. Forms should
-be designed in such a way that it will never ask question that do not lead to data ending up in the report.
+The main entity will be the `Form` (eg. protocol, checklist etc) with checklist items for installing, maintaining or
+inspecting an Installation in an Object (ie. building). These forms are defined and maintained by experts or expert groups
+and are provided
+by for instance `Techniek Nederland <https://www.technieknederland.nl>`_ or `ISSO <https://isso.nl>`_. From a
+reporting perspective, forms should be designed in such a way that it will never ask questions that do not lead
+to data ending up in the report.
 
 .. _Entity Report:
+
 Report (inspectierapport / rapportage)
 ######################################
-The `Report` is a (finalized) document holding information that was provided using the filled out `Form` in combination
-with conclusion drawn upon the provided data. The Reports content must comply to rules as stated by the regulations.
+The `Report` is a (finalized) document including information on the checklist items provided by the filled out `Form`
+and a conclusion drawn upon this information. The Reports content must comply to rules as stated by the regulations.
 
 .. _Entity Regulations:
+
 Regulations (BRL, NTR, NTA, NEN, ISO)
 ######################################
 Most of these forms are created with regulations in mind, or even created
 to fully comply with these regulations. Regulations can be governed by certifying instance, government etc.
 
 .. _Entity Installing Company:
+
 Installation company (Installatiebedrijf, Installateur)
 ##########################################
-A company responsible for the installation of an (technical) product inside an Object (building). In order to do
-most inspection, companies need to be certified.
+A company involved in (the execution of) installing, maintaining or inspecting the technical product(s) inside an
+Object (building). In order to carry specific tasks, installing companies and their personnel needs to be certified.
 
 .. _Entity Installing Person:
+
 Installer (Monteur, Inspecteur, Installateur)
 ##########################################
-The real person doing the work of installing a product or inspecting a product. An Installer must
-always work for a Installation Company. On most occasions both Installer and Installation Company
+The actual person performing the work of installing, maintaining or inspecting a product. An Installer must
+always work for an Installation Company. On most occasions both Installer and Installation Company
 need to be certified to fulfill the task at hand. Keep in mind that the Installer (person)
 can be the only person working at the Installation Company.
+
+.. _Entity Object:
 
 Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)
 #####################################################
 Most of the times an Object will be a building, but it could also be for instance a meadow (solar panels).
 Objects in the Netherlands are registered by the Kadaster and kept in a database called BAG.
-Each Object (and subobject) is document with a unique BAG ID. See
+Each Object (and sub-object) is documented with a unique BAG ID. See
 https://www.kadaster.nl/zakelijk/producten/adressen-en-gebouwen/bag-api-individuele-bevragingen.
 
 Client (Opdrachtgever)
 #######################
-The Client is the person or company who commissioned the inspection. Most often this will be the owner or responsible
-person toward the given installation.
+The Client is the person or company who commissioned the installation, maintenance of inspection. In most casees
+this will be the owner or responsible person of the installation.
 
 .. note::
-    In the near future this definition needs to be improved, because their
+    In the near future this definition needs to be improved, because there
     are many roles of responsibility towards an installations. For instance the owner of the building, the owner
     of the installation, the user of the installation etc.
 
 .. _Entity Installation:
+
 Installation (System, Installatie, Systeem)
 ###########################################
 An Installation is a Product that is installed and serving it's purpose in or on an Object.
 
 .. _Entity Parts:
+
 Installation Parts (Installatie-onderdeel, Sub-systeem)
 #######################################################
-Installations for a hierarchy (tree), where each Installation might consist of sub-installations. For instance
+Installations form a hierarchy (tree), where each Installation might consist of sub-installations. For instance
 
 * Central Heating System consist
     * Heat generator
@@ -91,8 +102,8 @@ Installations for a hierarchy (tree), where each Installation might consist of s
     * Gas transport towards generator
     * Water transport to radiators
 
-An inspection might be about just the Heat Generator and it's parts (burner and expansion vessel). Another might
-be about the full heating system, or just on the Gas transport.
+Maintenance or inspection activities can be performed for the complete installation or specifically aimed at just one
+sub-installation.
 
 Product data (stored in 2BA)
 #######################################################
@@ -121,13 +132,6 @@ and the deepest can be type of fuel used. See https://ketenstandaard.nl/standaar
 ETIM
 ####
 
-A second standared for product classification is ETIM. Where NL/SFB is focussed mainly on creating groups of products,
+A second standard for product classification is ETIM. Where NL/SFB is focussed mainly on creating groups of products,
 ETIM also aims at defining all properties of products in a standardised way. See https://www.etim-international.com/.
 
-Naming standards and conventions
----------------------------------
-A first attempt has been made to produce a list of standard terms to use throughout the forms. There are many
-ways to name something (eg. 'Naam', 'Voornaam + Achternaam', 'Volledige naam'). The draft version of this
-document can be downloaded
-`Form Fields Naming Convensions (XLSX) <_static/files/techniek-nederland-forms-naming-convention.xlsx>`_. This
-document is currently maintained by `Peter Zwakhals @ Techniek Nederland <mailto:p.zwakhals@TechniekNederland.nl>`_.

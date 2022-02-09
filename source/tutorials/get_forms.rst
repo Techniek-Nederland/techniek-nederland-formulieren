@@ -1,7 +1,7 @@
 Get forms for an installation
 -------------------------------------
 
-Once you've determined the ETIM Product Class for you installation, you can query 2BA for relevant forms.
+Once you've determined the ETIM Product Class for you installation, you can query the Forms API for relevant forms.
 
 Get a list of relevant forms
 ++++++++++++++++++++++++++++
