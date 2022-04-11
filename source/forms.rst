@@ -25,7 +25,7 @@ The **meta-part** is always the same and consists of the following elements:
 
 * Which: :ref:`Installation Company <Entity Installing Company>` filled out the form
 * Who filled out the form: :ref:`Installer <Entity Installing person>`
-* Who commissioned filling out the form: :ref:`Client <Entity Client>`
+* Who commissioned the assignment: :ref:`Client <Entity Client>`
 * What :ref:`Installation <Entity Installation>` and what :ref:`Object <Entity Object>` (installation implies object)
 * What date was this form filled out
 
