@@ -6,7 +6,7 @@ Once you've determined the ETIM Product Class for you installation, you can quer
 Get a list of relevant forms
 ++++++++++++++++++++++++++++
 
-.. http:get:: https://apix.2ba.nl/api/V1/Fgo/Forms/All
+.. http:get:: https://apix.2ba.nl/api/v1/Fgo/Forms/All
 
    Returns a list of forms relevant for you installation
 
@@ -14,7 +14,7 @@ Get a list of relevant forms
 
    .. sourcecode:: http
 
-      GET /api/V1/Fgo/Forms/All?classCode=EC010232 HTTP/1.1
+      GET /api/v1/Fgo/Forms/All?classCode=EC010232 HTTP/1.1
       Host: apix.2ba.nl
       Accept: application/json
       Authorization: OAuth token to authenticate
@@ -30,8 +30,11 @@ Get a list of relevant forms
       [
         {
             "code": "FGO00002",
-            "version": 2,
-            "title": "Melding onveilige situatie gas"
+            "version": 3,
+            "title": "Melding onveilige situatie gas",
+            "formCode": "MBO_GAS",
+            "publisher": "Techniek Nederland",
+            "publisherLink": "https://www.technieknederland.nl"
         }
       ]
 
@@ -42,7 +45,7 @@ Get a list of relevant forms
 Get the form itself
 ++++++++++++++++++++++++++++
 
-.. http:get:: https://apix.2ba.nl/api/V1/Fgo/Form/[code]/[version]/
+.. http:get:: https://apix.2ba.nl/api/v1/Fgo/Form/[code]/[version]/
 
    Returns the requested form
 
@@ -50,7 +53,7 @@ Get the form itself
 
    .. sourcecode:: http
 
-      GET /api/V1/Fgo/Forms/Form/FGO00002/2/ HTTP/1.1
+      GET /api/v1/Fgo/Forms/Form/FGO00002/2/ HTTP/1.1
       Host: apix.2ba.nl
       Accept: application/json
       Authorization: OAuth token to authenticate
@@ -88,12 +91,6 @@ Get the form itself
                         ],
                         "key": "seriousness",
                         "label": "Wat is de ernst van de situatie?"
-                    },
-                    {
-                        "input": true,
-                        "type": "textarea",
-                        "key": "situation",
-                        "label": "Beschrijf de situatie"
                     },
                     {
                         "input": true,
@@ -184,8 +181,11 @@ Get the form itself
                 ]
             },
             "code": "FGO00002",
-            "version": 2,
-            "title": "Melding onveilige situatie gas"
+            "version": 3,
+            "title": "Melding onveilige situatie gas",
+            "formCode": "MBO_GAS",
+            "publisher": "Techniek Nederland",
+            "publisherLink": "https://www.technieknederland.nl"
         }
 
    :reqheader Authorization: OAtuh token to authenticate
