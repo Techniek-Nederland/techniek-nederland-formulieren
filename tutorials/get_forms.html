@@ -130,11 +130,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="get-a-list-of-relevant-forms">
 <h2>Get a list of relevant forms<a class="headerlink" href="#get-a-list-of-relevant-forms" title="Permalink to this headline"></a></h2>
 <dl class="http get">
-<dt class="sig sig-object http" id="get-https---apix.2ba.nl-api-V1-Fgo-Forms-All">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://apix.2ba.nl/api/V1/Fgo/Forms/All</span></span><a class="headerlink" href="#get-https---apix.2ba.nl-api-V1-Fgo-Forms-All" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object http" id="get-https---apix.2ba.nl-api-v1-Fgo-Forms-All">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://apix.2ba.nl/api/v1/Fgo/Forms/All</span></span><a class="headerlink" href="#get-https---apix.2ba.nl-api-v1-Fgo-Forms-All" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a list of forms relevant for you installation</p>
 <p><strong>Example request</strong>:</p>
-<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/V1/Fgo/Forms/All?classCode=EC010232</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Forms/All?classCode=EC010232</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">apix.2ba.nl</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Authorization</span><span class="o">:</span> <span class="l">OAuth token to authenticate</span>
@@ -144,13 +144,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/javascript</span>
 
-<span class="p">[</span>
-  <span class="p">{</span>
-      <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="s2">&quot;FGO00002&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
-      <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Melding onveilige situatie gas&quot;</span>
-  <span class="p">}</span>
-<span class="p">]</span>
+<span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;code&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;FGO00002&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;version&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Melding onveilige situatie gas&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;formCode&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MBO_GAS&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;publisher&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Techniek Nederland&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;publisherLink&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://www.technieknederland.nl&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
 </pre></div>
 </div>
 <dl class="field-list simple">
@@ -171,11 +174,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="get-the-form-itself">
 <h2>Get the form itself<a class="headerlink" href="#get-the-form-itself" title="Permalink to this headline"></a></h2>
 <dl class="http get">
-<dt class="sig sig-object http" id="get-https---apix.2ba.nl-api-V1-Fgo-Form-[code]-[version]-">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://apix.2ba.nl/api/V1/Fgo/Form/[code]/[version]/</span></span><a class="headerlink" href="#get-https---apix.2ba.nl-api-V1-Fgo-Form-[code]-[version]-" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object http" id="get-https---apix.2ba.nl-api-v1-Fgo-Form-[code]-[version]-">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://apix.2ba.nl/api/v1/Fgo/Form/[code]/[version]/</span></span><a class="headerlink" href="#get-https---apix.2ba.nl-api-v1-Fgo-Form-[code]-[version]-" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the requested form</p>
 <p><strong>Example request</strong>:</p>
-<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/V1/Fgo/Forms/Form/FGO00002/2/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Forms/Form/FGO00002/2/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">apix.2ba.nl</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Authorization</span><span class="o">:</span> <span class="l">OAuth token to authenticate</span>
@@ -185,130 +188,127 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/javascript</span>
 
-  <span class="p">{</span>
-      <span class="s2">&quot;form&quot;</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">&quot;display&quot;</span><span class="o">:</span> <span class="s2">&quot;form&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;components&quot;</span><span class="o">:</span> <span class="p">[</span>
-              <span class="p">{</span>
-                  <span class="s2">&quot;input&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                  <span class="s2">&quot;optionsLabelPosition&quot;</span><span class="o">:</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;inline&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-                  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;radio&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;values&quot;</span><span class="o">:</span> <span class="p">[</span>
-                      <span class="p">{</span>
-                          <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;direct&quot;</span><span class="p">,</span>
-                          <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Direct gevaar&quot;</span>
-                      <span class="p">},</span>
-                      <span class="p">{</span>
-                          <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;in_time&quot;</span><span class="p">,</span>
-                          <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Gevaar op termijn&quot;</span>
-                      <span class="p">},</span>
-                      <span class="p">{</span>
-                          <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;possible&quot;</span><span class="p">,</span>
-                          <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Mogelijk gevaar&quot;</span>
-                      <span class="p">}</span>
-                  <span class="p">],</span>
-                  <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;seriousness&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Wat is de ernst van de situatie?&quot;</span>
-              <span class="p">},</span>
-              <span class="p">{</span>
-                  <span class="s2">&quot;input&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;textarea&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;situation&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Beschrijf de situatie&quot;</span>
-              <span class="p">},</span>
-              <span class="p">{</span>
-                  <span class="s2">&quot;input&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;textarea&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;situation&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Beschrijf de situatie&quot;</span>
-              <span class="p">},</span>
-              <span class="p">{</span>
-                  <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Voeg foto&#39;s van de situatie toe&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;itemLabel&quot;</span><span class="o">:</span> <span class="s2">&quot;Foto&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;reorder&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-                  <span class="s2">&quot;addAnotherPosition&quot;</span><span class="o">:</span> <span class="s2">&quot;bottom&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;defaultOpen&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-                  <span class="s2">&quot;layoutFixed&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-                  <span class="s2">&quot;enableRowGroups&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-                  <span class="s2">&quot;initEmpty&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-                  <span class="s2">&quot;defaultValue&quot;</span><span class="o">:</span> <span class="p">[</span>
-                      <span class="p">{}</span>
-                  <span class="p">],</span>
-                  <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;photos&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;datagrid&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;input&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                  <span class="s2">&quot;components&quot;</span><span class="o">:</span> <span class="p">[</span>
-                      <span class="p">{</span>
-                          <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Foto&quot;</span><span class="p">,</span>
-                          <span class="s2">&quot;tableView&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                          <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;photoId&quot;</span><span class="p">,</span>
-                          <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;photo&quot;</span><span class="p">,</span>
-                          <span class="s2">&quot;input&quot;</span><span class="o">:</span> <span class="kc">true</span>
-                      <span class="p">},</span>
-                      <span class="p">{</span>
-                          <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Toelichting&quot;</span><span class="p">,</span>
-                          <span class="s2">&quot;tableView&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                          <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;description&quot;</span><span class="p">,</span>
-                          <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;textarea&quot;</span><span class="p">,</span>
-                          <span class="s2">&quot;input&quot;</span><span class="o">:</span> <span class="kc">true</span>
-                      <span class="p">}</span>
-                  <span class="p">]</span>
-              <span class="p">},</span>
-              <span class="p">{</span>
-                  <span class="s2">&quot;input&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;textarea&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;performed_emergency_operation&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Verrichtte noodhandeling&quot;</span>
-              <span class="p">},</span>
-              <span class="p">{</span>
-                  <span class="s2">&quot;input&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;textarea&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;possible_causer&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Mogelijke veroorzaker&quot;</span>
-              <span class="p">},</span>
-              <span class="p">{</span>
-                  <span class="s2">&quot;input&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                  <span class="s2">&quot;optionsLabelPosition&quot;</span><span class="o">:</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;inline&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;radio&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;values&quot;</span><span class="o">:</span> <span class="p">[</span>
-                      <span class="p">{</span>
-                          <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Ja&quot;</span><span class="p">,</span>
-                          <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;ja&quot;</span>
-                      <span class="p">},</span>
-                      <span class="p">{</span>
-                          <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Nee&quot;</span><span class="p">,</span>
-                          <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;nee&quot;</span>
-                      <span class="p">}</span>
-                  <span class="p">],</span>
-                  <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;reporter_keep_up_to_date&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Wilt u op de hoogte gehouden worden?&quot;</span>
-              <span class="p">},</span>
-              <span class="p">{</span>
-                  <span class="s2">&quot;input&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                  <span class="s2">&quot;optionsLabelPosition&quot;</span><span class="o">:</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;inline&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;radio&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;values&quot;</span><span class="o">:</span> <span class="p">[</span>
-                      <span class="p">{</span>
-                          <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Ja&quot;</span><span class="p">,</span>
-                          <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;ja&quot;</span>
-                      <span class="p">},</span>
-                      <span class="p">{</span>
-                          <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Nee&quot;</span><span class="p">,</span>
-                          <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;nee&quot;</span>
-                      <span class="p">}</span>
-                  <span class="p">],</span>
-                  <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;eigenaar-op-de-hoogte-houden&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;Eigenaar op de hoogte houden?&quot;</span>
-              <span class="p">}</span>
-          <span class="p">]</span>
-      <span class="p">},</span>
-      <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="s2">&quot;FGO00002&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
-      <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Melding onveilige situatie gas&quot;</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;form&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;display&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;form&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;components&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;input&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;optionsLabelPosition&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;right&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;inline&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;radio&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;values&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;direct&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Direct gevaar&quot;</span><span class="w"></span>
+<span class="w">                      </span><span class="p">},</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;in_time&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Gevaar op termijn&quot;</span><span class="w"></span>
+<span class="w">                      </span><span class="p">},</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;possible&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mogelijk gevaar&quot;</span><span class="w"></span>
+<span class="w">                      </span><span class="p">}</span><span class="w"></span>
+<span class="w">                  </span><span class="p">],</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;key&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;seriousness&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Wat is de ernst van de situatie?&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;input&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;textarea&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;key&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;situation&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Beschrijf de situatie&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Voeg foto&#39;s van de situatie toe&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;itemLabel&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Foto&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;reorder&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;addAnotherPosition&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;defaultOpen&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;layoutFixed&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;enableRowGroups&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;initEmpty&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;defaultValue&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{}</span><span class="w"></span>
+<span class="w">                  </span><span class="p">],</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;key&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;photos&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;datagrid&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;input&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;components&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Foto&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;tableView&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;key&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;photoId&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;photo&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;input&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">                      </span><span class="p">},</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Toelichting&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;tableView&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;key&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;description&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;textarea&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;input&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">                      </span><span class="p">}</span><span class="w"></span>
+<span class="w">                  </span><span class="p">]</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;input&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;textarea&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;key&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;performed_emergency_operation&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Verrichtte noodhandeling&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;input&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;textarea&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;key&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;possible_causer&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mogelijke veroorzaker&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;input&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;optionsLabelPosition&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;right&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;inline&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;radio&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;values&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ja&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ja&quot;</span><span class="w"></span>
+<span class="w">                      </span><span class="p">},</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Nee&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;nee&quot;</span><span class="w"></span>
+<span class="w">                      </span><span class="p">}</span><span class="w"></span>
+<span class="w">                  </span><span class="p">],</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;key&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;reporter_keep_up_to_date&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Wilt u op de hoogte gehouden worden?&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;input&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;optionsLabelPosition&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;right&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;inline&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;radio&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;values&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ja&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ja&quot;</span><span class="w"></span>
+<span class="w">                      </span><span class="p">},</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Nee&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;nee&quot;</span><span class="w"></span>
+<span class="w">                      </span><span class="p">}</span><span class="w"></span>
+<span class="w">                  </span><span class="p">],</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;key&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;eigenaar-op-de-hoogte-houden&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Eigenaar op de hoogte houden?&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">          </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;code&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;FGO00002&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;version&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Melding onveilige situatie gas&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;formCode&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MBO_GAS&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;publisher&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Techniek Nederland&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;publisherLink&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://www.technieknederland.nl&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <dl class="field-list simple">

@@ -130,110 +130,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>In order to easily get all information on a Product, you can query the 2BA database. This tutorial will only cover
 the calls to make. To get started with 2BA (create account, get subscription, get keys etc) we kindly refer to <a class="reference external" href="https://www.2ba.nl/nl/documentatie/webservices">2BA’s
 documentation</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Some of the calls are a ‘POST’ in 2BA and will be transformed into GET calls (#BBAFGOSL-576)</p>
-</div>
 <section id="search-for-a-product">
 <h2>Search for a product<a class="headerlink" href="#search-for-a-product" title="Permalink to this headline"></a></h2>
-<dl class="http post">
-<dt class="sig sig-object http" id="post-https---apix.2ba.nl-api-V1-Product-Search">
-<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">https://apix.2ba.nl/api/V1/Product/Search</span></span><a class="headerlink" href="#post-https---apix.2ba.nl-api-V1-Product-Search" title="Permalink to this definition"></a></dt>
+<dl class="http get">
+<dt class="sig sig-object http" id="get-https---apix.2ba.nl-api-v1-Fgo-Product-Search">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://apix.2ba.nl/api/v1/Fgo/Product/Search</span></span><a class="headerlink" href="#get-https---apix.2ba.nl-api-v1-Fgo-Product-Search" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a list of products that met your query.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Please note to <em>always</em> a default filter for <cite>Tags</cite>, for otherwise
-you’ll search through <strong>all</strong> products including kitchen sinks. See example for the list of default tags.</p>
-</div>
 <p><strong>Example request</strong>:</p>
-<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/V1/Product/Search</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Product/Search?From=0&amp;Size=1&amp;SearchString=nefit&amp;Filters[0].Code=Model&amp;Filters[0].Values[0].Code=ProLine</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">apix.2ba.nl</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Authorization</span><span class="o">:</span> <span class="l">OAuth token to authenticate</span>
-
-{
-  &quot;languagecode&quot;: 1,
-  &quot;from&quot;: 0,
-  &quot;size&quot;: 1,
-  &quot;searchstring: &quot;nefit&quot;,
-  &quot;filters&quot;: [
-      {
-          &quot;code&quot;: &quot;Tags&quot;,
-          &quot;values&quot;: [
-              {&quot;code&quot;: &quot;FGO-CV&quot;},
-              {&quot;code&quot;: &quot;FGO-PV&quot;},
-              {&quot;code&quot;: &quot;FGO-WP&quot;}
-          ],
-      }
-  ]
-}
 </pre></div>
 </div>
 <p><strong>Example response (excerpt)</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/javascript</span>
 
-<span class="p">{</span>
-   <span class="s2">&quot;items&quot;</span><span class="o">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-          <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mf">2769945</span><span class="p">,</span>
-          <span class="s2">&quot;shortDescription&quot;</span><span class="o">:</span> <span class="s2">&quot;Nefit ProLine NxT HRC 24/CW4&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;manufacturerGln&quot;</span><span class="o">:</span> <span class="s2">&quot;8712423018495&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;manufacturerName&quot;</span><span class="o">:</span> <span class="s2">&quot;Bosch Thermotechniek&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;productCode&quot;</span><span class="o">:</span> <span class="s2">&quot;7746901851&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;gtin&quot;</span><span class="o">:</span> <span class="s2">&quot;04054925005042&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;deeplink&quot;</span><span class="o">:</span> <span class="s2">&quot;https://www.nefit.nl/professioneel/producten_pro/categorie-overzicht-pro_719&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;brand&quot;</span><span class="o">:</span> <span class="s2">&quot;Nefit&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;model&quot;</span><span class="o">:</span> <span class="s2">&quot;ProLine&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;NxT HRC 24/CW4&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;etimClass&quot;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="s2">&quot;EC011396&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Gaswand combiketel&quot;</span>
-          <span class="p">},</span>
-          <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="s2">&quot;126&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Regulier beschikbaar&quot;</span>
-          <span class="p">},</span>
-          <span class="s2">&quot;weightQuantity&quot;</span><span class="o">:</span> <span class="mf">19.65</span><span class="p">,</span>
-          <span class="s2">&quot;weightMeasureUnit&quot;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="s2">&quot;KGM&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Kilogram&quot;</span>
-          <span class="p">},</span>
-          <span class="s2">&quot;features&quot;</span><span class="o">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-              <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="s2">&quot;EF020003&quot;</span><span class="p">,</span>
-              <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Materiaal warmtewisselaar&quot;</span><span class="p">,</span>
-              <span class="s2">&quot;alphaNumericValue&quot;</span><span class="o">:</span> <span class="p">{</span>
-                <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="s2">&quot;EV000166&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Roestvaststaal (RVS)&quot;</span>
-              <span class="p">},</span>
-              <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>
-              <span class="s2">&quot;isModelling&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-              <span class="s2">&quot;isRegular&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-              <span class="s2">&quot;orderNumberModelling&quot;</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-              <span class="s2">&quot;orderNumberRegular&quot;</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
-              <span class="s2">&quot;portCode&quot;</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-              <span class="s2">&quot;changeCodeRegular&quot;</span><span class="o">:</span> <span class="s2">&quot;Unchanged&quot;</span><span class="p">,</span>
-              <span class="s2">&quot;changeCodeModelling&quot;</span><span class="o">:</span> <span class="s2">&quot;Unchanged&quot;</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-              <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="s2">&quot;EF001257&quot;</span><span class="p">,</span>
-              <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Kwaliteitsklasse&quot;</span><span class="p">,</span>
-              <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>
-              <span class="s2">&quot;isModelling&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-              <span class="s2">&quot;isRegular&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-              <span class="s2">&quot;orderNumberModelling&quot;</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-              <span class="s2">&quot;orderNumberRegular&quot;</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
-              <span class="s2">&quot;portCode&quot;</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-              <span class="s2">&quot;changeCodeRegular&quot;</span><span class="o">:</span> <span class="s2">&quot;Unchanged&quot;</span><span class="p">,</span>
-              <span class="s2">&quot;changeCodeModelling&quot;</span><span class="o">:</span> <span class="s2">&quot;Unchanged&quot;</span>
-            <span class="p">}</span>
-          <span class="p">]</span>
-        <span class="p">}</span>
-   <span class="p">]</span>
-   <span class="s2">&quot;took&quot;</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
-   <span class="s2">&quot;total&quot;</span><span class="o">:</span> <span class="mf">257</span>
-<span class="p">}</span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="s2">&quot;items&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;publish&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2769945</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;shortDescription&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Nefit ProLine NxT HRC 24/CW4&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;manufacturerGln&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;8712423018495&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;manufacturerName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bosch Thermotechniek&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;productCode&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;7746901851&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;gtin&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;04054925005042&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;deeplink&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://www.nefit.nl/professioneel/producten_pro/categorie-overzicht-pro_719&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;brand&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Nefit&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;model&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ProLine&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;version&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;NxT HRC 24/CW4&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;category&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;CV-toestellen&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;etimClass&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;code&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;EC011396&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;description&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Gaswand Combiketel&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="p">},</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;status&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;code&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;126&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;description&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Actueel&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="p">},</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;weightQuantity&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">19.65</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;weightMeasureUnit&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;code&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;KGM&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;description&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Kilogram&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="p">},</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;changeDate&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2022-02-16T00:00:00+00:00&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;isDeleted&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;isDummy&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;hasImage&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;serviceMenuLoginDescription&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;nvt&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;serviceMenuLoginCode&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;nvt&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;recordCreateDate&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2014-09-01T11:20:45.067+00:00&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;took&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">16</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;total&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">6</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <dl class="field-list simple">
@@ -242,13 +195,12 @@ you’ll search through <strong>all</strong> products including kitchen sinks. S
 <li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – OAtuh token to authenticate</p></li>
 </ul>
 </dd>
-<dt class="field-even">Request JSON Object</dt>
+<dt class="field-even">Query Parameters</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>languagecode</strong> (<em>integer</em>) – The requested language code (1 for Dutch)</p></li>
-<li><p><strong>from</strong> (<em>integer</em>) – Offset to start from (0-based)</p></li>
-<li><p><strong>size</strong> (<em>integer</em>) – Number of results to return</p></li>
-<li><p><strong>searchstring</strong> (<em>string</em>) – Filter string</p></li>
-<li><p><strong>filters</strong> (<em>object</em>) – A set of filters. Please see <a class="reference external" href="https://apix.beta.2ba.nl/swagger/index.html">2BA Swagger</a> for a full list of filters. Always include the Tags!</p></li>
+<li><p><strong>From</strong> (<em>integer</em>) – Offset to start from (0-based)</p></li>
+<li><p><strong>Size</strong> (<em>integer</em>) – Number of results to return</p></li>
+<li><p><strong>SearchString</strong> (<em>string</em>) – Filter string</p></li>
+<li><p><strong>Filters</strong> (<em>object</em>) – A set of filters. Please see <a class="reference external" href="https://apix.beta.2ba.nl/swagger/index.html">2BA Swagger</a> for a full list of filters.</p></li>
 </ul>
 </dd>
 </dl>
@@ -257,52 +209,35 @@ you’ll search through <strong>all</strong> products including kitchen sinks. S
 </section>
 <section id="filter-fields">
 <h2>Filter fields<a class="headerlink" href="#filter-fields" title="Permalink to this headline"></a></h2>
-<dl class="http post">
-<dt class="sig sig-object http" id="post-Product-FiltersForField?field=some-field">
-<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">Product/FiltersForField?field={some-field}</span></span><a class="headerlink" href="#post-Product-FiltersForField?field=some-field" title="Permalink to this definition"></a></dt>
+<dl class="http get">
+<dt class="sig sig-object http" id="get-https---apix.2ba.nl-api-v1-Fgo-Product-FiltersForField">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://apix.2ba.nl/api/v1/Fgo/Product/FiltersForField</span></span><a class="headerlink" href="#get-https---apix.2ba.nl-api-v1-Fgo-Product-FiltersForField" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a list of models, series and versions that can be used to filter down the list of products.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Please note to <em>always</em> a default filter for <cite>Tags</cite>, for otherwise
-you’ll search through <strong>all</strong> products including kitchen sinks.</p>
-</div>
 <p><strong>Example request</strong>:</p>
-<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/Product/FiltersForField?field=Model</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/Fgo/Product/FiltersForField?field=Model</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">apix.2ba.nl</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Authorization</span><span class="o">:</span> <span class="l">OAuth token to authenticate</span>
-
-{
-  &quot;filters&quot;: [
-      {
-          &quot;code&quot;: &quot;Tags&quot;,
-          &quot;values&quot;: [
-              {&quot;code&quot;: &quot;FGO-CV&quot;},
-              {&quot;code&quot;: &quot;FGO-PV&quot;},
-              {&quot;code&quot;: &quot;FGO-WP&quot;}
-          ],
-      }
-  ]
-}
 </pre></div>
 </div>
 <p><strong>Example response (excerpt)</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/javascript</span>
 
-<span class="p">{</span>
-  <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="s2">&quot;Model&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;count&quot;</span><span class="o">:</span> <span class="mf">200</span><span class="p">,</span>
-  <span class="s2">&quot;portCode&quot;</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;Model&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;values&quot;</span><span class="o">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-          <span class="s2">&quot;active&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="s2">&quot;Warmteopwekkers&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;count&quot;</span><span class="o">:</span> <span class="mf">239</span>
-      <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;code&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Model&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;count&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;portCode&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Model&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;values&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;active&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;code&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Gasgestookte Stralingsverwarmring&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;count&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">40</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <dl class="field-list simple">
@@ -311,9 +246,10 @@ you’ll search through <strong>all</strong> products including kitchen sinks.</
 <li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – OAuth token to authenticate</p></li>
 </ul>
 </dd>
-<dt class="field-even">Request JSON Object</dt>
+<dt class="field-even">Query Parameters</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>filters</strong> (<em>object</em>) – <p>A set of filters. Please see <a class="reference external" href="https://apix.beta.2ba.nl/swagger/index.html">2BA Swagger</a> for a full list of filters. Always include the Tags!</p>
+<li><p><strong>Field</strong> (<em>string</em>) – The field you want to retrieve filters for. Choices are Category, Brand, Model and Version.</p></li>
+<li><p><strong>Filters</strong> (<em>object</em>) – <p>A set of filters. Please see <a class="reference external" href="https://apix.beta.2ba.nl/swagger/index.html">2BA Swagger</a> for a full list of filters.</p>
 </p></li>
 </ul>
 </dd>
