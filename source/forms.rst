@@ -99,13 +99,16 @@ Textarea
 Textfield
 ############################################
 
+For textfields there is an extra option 'hasNotRelevant' which displays a toggle. With this toggle, the user is able to mark this field as 'not relevant'.
+
 .. code-block:: json
 
     {
       "input": true,
       "type": "textfield",
       "key": "naam",
-      "label": "Naam van opdrachtgever"
+      "label": "Naam van opdrachtgever",
+      "hasNotRelevant": true
     }
 
 Photo
