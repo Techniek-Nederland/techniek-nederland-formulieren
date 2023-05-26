@@ -40,5 +40,6 @@ is about the Form structures and technology. The third is the actual tuturial wi
    forms
    naming-conventions
    access-management
+   available-services/index
    tutorials/index
 
