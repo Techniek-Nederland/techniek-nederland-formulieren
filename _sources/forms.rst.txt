@@ -46,7 +46,7 @@ the document into a format that is usable by there application.
 
 When defining the components, the naming conventions as used
 by `FormIO <https://github.com/formio/formio.js/wiki/Components-JSON-Schema>`_. will be used. This means that
-the form will be interpretable by the Open Source solution `FormIO <https://github.com/formio/formio>`_. If you
+the form will be interpretable by the Open Source solution `FormIO (GitHub) <https://github.com/formio/formio>`_. If you
 use a different system like for instance `React JSON Schema Form <https://github.com/rjsf-team/react-jsonschema-form>_`
 you can convert the JSON-file by replacing the `components` property with the `properties`.
 
