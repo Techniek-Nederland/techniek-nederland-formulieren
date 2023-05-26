@@ -15,7 +15,7 @@ Get a list of relevant forms
    .. sourcecode:: http
 
       GET /api/v1/Fgo/Forms/All?classCode=EC010232 HTTP/1.1
-      Host: apix.2ba.nl
+      Host: api.fgoplus.nl
       Accept: application/json
       Authorization: OAuth token to authenticate
 
@@ -45,7 +45,7 @@ Get a list of relevant forms
 Get the form itself
 ++++++++++++++++++++++++++++
 
-.. http:get:: https://apix.2ba.nl/api/v1/Fgo/Form/[code]/[version]/
+.. http:get:: https://api.fgoplus.nl/api/v1/Fgo/Form/[code]/[version]/
 
    Returns the requested form
 
@@ -54,7 +54,7 @@ Get the form itself
    .. sourcecode:: http
 
       GET /api/v1/Fgo/Forms/Form/FGO00002/2/ HTTP/1.1
-      Host: apix.2ba.nl
+      Host: api.fgoplus.nl
       Accept: application/json
       Authorization: OAuth token to authenticate
 

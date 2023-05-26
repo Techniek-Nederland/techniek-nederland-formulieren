@@ -8,7 +8,7 @@ information on the API, please have a look at the `Swagger <https://api.fgoplus.
 Search for a product
 ++++++++++++++++++++
 
-.. http:get:: https://apix.fgoplus.nl/api/v1/Fgo/Product/Search
+.. http:get:: https://api.fgoplus.nl/api/v1/Fgo/Product/Search
 
    Returns a list of products that met your query.
 
@@ -17,7 +17,7 @@ Search for a product
    .. sourcecode:: http
 
       GET /api/v1/Fgo/Product/Search?From=0&Size=1&SearchString=nefit&Filters[0].Code=Model&Filters[0].Values[0].Code=ProLine HTTP/1.1
-      Host: apix.2ba.nl
+      Host: api.fgoplus.nl
       Accept: application/json
       Authorization: OAuth token to authenticate
 
@@ -69,17 +69,17 @@ Search for a product
         "total": 6
       }
 
-   :reqheader Authorization: OAtuh token to authenticate
+   :reqheader Authorization: OAuth token to authenticate
    :query integer From: Offset to start from (0-based)
    :query integer Size: Number of results to return
    :query string SearchString: Filter string
-   :query object Filters: A set of filters. Please see `2BA Swagger <https://apix.beta.2ba.nl/swagger/index.html>`_ for a full list of filters.
+   :query object Filters: A set of filters. Please see `2BA Swagger <https://api.fgoplus.nl/swagger/index.html>`_ for a full list of filters.
 
 
 Filter fields
 ++++++++++++++++++++
 
-.. http:get:: https://apix.2ba.nl/api/v1/Fgo/Product/FiltersForField
+.. http:get:: https://api.fgoplus.nl/api/v1/Fgo/Product/FiltersForField
 
    Returns a list of models, series and versions that can be used to filter down the list of products.
 
@@ -88,7 +88,7 @@ Filter fields
    .. sourcecode:: http
 
       GET /Fgo/Product/FiltersForField?field=Model HTTP/1.1
-      Host: apix.2ba.nl
+      Host: api.fgoplus.nl
       Accept: application/json
       Authorization: OAuth token to authenticate
 
@@ -116,4 +116,4 @@ Filter fields
 
    :reqheader Authorization: OAuth token to authenticate
    :query string Field: The field you want to retrieve filters for. Choices are Category, Brand, Model and Version.
-   :query object Filters: A set of filters. Please see `2BA Swagger <https://apix.beta.2ba.nl/swagger/index.html>`_ for a full list of filters.
+   :query object Filters: A set of filters. Please see `2BA Swagger <https://api.fgoplus.nl/swagger/index.html>`_ for a full list of filters.

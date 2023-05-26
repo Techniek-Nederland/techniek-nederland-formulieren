@@ -195,12 +195,12 @@ information on the API, please have a look at the <a class="reference external" 
 <section id="search-for-a-product">
 <h2>Search for a product<a class="headerlink" href="#search-for-a-product" title="Permalink to this headline">¶</a></h2>
 <dl class="http get">
-<dt class="sig sig-object http" id="get-https---apix.fgoplus.nl-api-v1-Fgo-Product-Search">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://apix.fgoplus.nl/api/v1/Fgo/Product/Search</span></span><a class="headerlink" href="#get-https---apix.fgoplus.nl-api-v1-Fgo-Product-Search" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object http" id="get-https---api.fgoplus.nl-api-v1-Fgo-Product-Search">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://api.fgoplus.nl/api/v1/Fgo/Product/Search</span></span><a class="headerlink" href="#get-https---api.fgoplus.nl-api-v1-Fgo-Product-Search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of products that met your query.</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Product/Search?From=0&amp;Size=1&amp;SearchString=nefit&amp;Filters[0].Code=Model&amp;Filters[0].Values[0].Code=ProLine</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Host</span><span class="o">:</span> <span class="l">apix.2ba.nl</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">api.fgoplus.nl</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Authorization</span><span class="o">:</span> <span class="l">OAuth token to authenticate</span>
 </pre></div>
@@ -254,7 +254,7 @@ information on the API, please have a look at the <a class="reference external" 
 <dl class="field-list simple">
 <dt class="field-odd">Request Headers</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – OAtuh token to authenticate</p></li>
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – OAuth token to authenticate</p></li>
 </ul>
 </dd>
 <dt class="field-even">Query Parameters</dt>
@@ -262,7 +262,7 @@ information on the API, please have a look at the <a class="reference external" 
 <li><p><strong>From</strong> (<em>integer</em>) – Offset to start from (0-based)</p></li>
 <li><p><strong>Size</strong> (<em>integer</em>) – Number of results to return</p></li>
 <li><p><strong>SearchString</strong> (<em>string</em>) – Filter string</p></li>
-<li><p><strong>Filters</strong> (<em>object</em>) – A set of filters. Please see <a class="reference external" href="https://apix.beta.2ba.nl/swagger/index.html">2BA Swagger</a> for a full list of filters.</p></li>
+<li><p><strong>Filters</strong> (<em>object</em>) – A set of filters. Please see <a class="reference external" href="https://api.fgoplus.nl/swagger/index.html">2BA Swagger</a> for a full list of filters.</p></li>
 </ul>
 </dd>
 </dl>
@@ -272,12 +272,12 @@ information on the API, please have a look at the <a class="reference external" 
 <section id="filter-fields">
 <h2>Filter fields<a class="headerlink" href="#filter-fields" title="Permalink to this headline">¶</a></h2>
 <dl class="http get">
-<dt class="sig sig-object http" id="get-https---apix.2ba.nl-api-v1-Fgo-Product-FiltersForField">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://apix.2ba.nl/api/v1/Fgo/Product/FiltersForField</span></span><a class="headerlink" href="#get-https---apix.2ba.nl-api-v1-Fgo-Product-FiltersForField" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object http" id="get-https---api.fgoplus.nl-api-v1-Fgo-Product-FiltersForField">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://api.fgoplus.nl/api/v1/Fgo/Product/FiltersForField</span></span><a class="headerlink" href="#get-https---api.fgoplus.nl-api-v1-Fgo-Product-FiltersForField" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of models, series and versions that can be used to filter down the list of products.</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/Fgo/Product/FiltersForField?field=Model</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Host</span><span class="o">:</span> <span class="l">apix.2ba.nl</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">api.fgoplus.nl</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Authorization</span><span class="o">:</span> <span class="l">OAuth token to authenticate</span>
 </pre></div>
@@ -311,7 +311,7 @@ information on the API, please have a look at the <a class="reference external" 
 <dt class="field-even">Query Parameters</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>Field</strong> (<em>string</em>) – The field you want to retrieve filters for. Choices are Category, Brand, Model and Version.</p></li>
-<li><p><strong>Filters</strong> (<em>object</em>) – <p>A set of filters. Please see <a class="reference external" href="https://apix.beta.2ba.nl/swagger/index.html">2BA Swagger</a> for a full list of filters.</p>
+<li><p><strong>Filters</strong> (<em>object</em>) – <p>A set of filters. Please see <a class="reference external" href="https://api.fgoplus.nl/swagger/index.html">2BA Swagger</a> for a full list of filters.</p>
 </p></li>
 </ul>
 </dd>
