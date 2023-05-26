@@ -1,14 +1,14 @@
-Get product information using 2BA API
--------------------------------------
+Get product information using FGO Plus API
+-------------------------------------------
 
-In order to easily get all information on a Product, you can query the 2BA database. This tutorial will only cover
-the calls to make. To get started with 2BA (create account, get subscription, get keys etc) we kindly refer to `2BA's
-documentation <https://www.2ba.nl/nl/documentatie/webservices>`_.
+In order to easily get all information on a Product, you can query the FGO Plus database. For detailed
+information on the API, please have a look at the `Swagger <https://api.fgoplus.nl/swagger/index.html>`_ and the
+`2BA documentation <https://www.2ba.nl/nl/documentatie/webservices>`_.
 
 Search for a product
 ++++++++++++++++++++
 
-.. http:get:: https://apix.2ba.nl/api/v1/Fgo/Product/Search
+.. http:get:: https://apix.fgoplus.nl/api/v1/Fgo/Product/Search
 
    Returns a list of products that met your query.
 

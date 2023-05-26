@@ -6,7 +6,7 @@ Once you've determined the ETIM Product Class for you installation, you can quer
 Get a list of relevant forms
 ++++++++++++++++++++++++++++
 
-.. http:get:: https://apix.2ba.nl/api/v1/Fgo/Forms/All
+.. http:get:: https://api.fgoplus.nl/api/v1/Fgo/Forms/All
 
    Returns a list of forms relevant for you installation
 
