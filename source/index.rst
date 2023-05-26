@@ -46,5 +46,6 @@ is about the Form structures and technology. The third is the actual tuturial wi
 Indices and tables
 ==================
 
-.. * :ref:`genindex`
-* :ref:`search`
+..
+   * :ref:`genindex`
+   * :ref:`search`

@@ -3,6 +3,7 @@
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
+from datetime import datetime
 
 # -- Path setup --------------------------------------------------------------
 
@@ -57,7 +58,8 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = "sphinx_rtd_theme"
+html_theme_path = ["_themes", ]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -78,7 +80,13 @@ html_theme_options = {
 }
 
 html_context = {
+    "current_year": datetime.today().year,
     'GOOGLE_TAG_MANAGER': 'GTM-TSKJ7PB',
+    'theme_logo_only': True,
+    'theme_display_version': True,
 }
+
+html_logo = "_static/logo.svg"
+html_favicon = "_static/favicon.ico"
 
 httpexample_scheme = 'https'

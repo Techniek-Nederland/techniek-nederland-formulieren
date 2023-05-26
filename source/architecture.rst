@@ -50,14 +50,14 @@ to fully comply with these regulations. Regulations can be governed by certifyin
 .. _Entity Installing Company:
 
 Installation company (Installatiebedrijf, Installateur)
-##########################################
+########################################################
 A company involved in (the execution of) installing, maintaining or inspecting the technical product(s) inside an
 Object (building). In order to carry specific tasks, installing companies and their personnel needs to be certified.
 
 .. _Entity Installing Person:
 
 Installer (Monteur, Inspecteur, Installateur)
-##########################################
+#############################################
 The actual person performing the work of installing, maintaining or inspecting a product. An Installer must
 always work for an Installation Company. On most occasions both Installer and Installation Company
 need to be certified to fulfill the task at hand. Keep in mind that the Installer (person)
@@ -71,6 +71,8 @@ Most of the times an Object will be a building, but it could also be for instanc
 Objects in the Netherlands are registered by the Kadaster and kept in a database called BAG.
 Each Object (and sub-object) is documented with a unique BAG ID. See
 https://www.kadaster.nl/zakelijk/producten/adressen-en-gebouwen/bag-api-individuele-bevragingen.
+
+.. _Entity Client:
 
 Client (Opdrachtgever)
 #######################
