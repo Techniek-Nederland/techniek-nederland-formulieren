@@ -39,13 +39,6 @@ is about the Form structures and technology. The third is the actual tuturial wi
    architecture
    forms
    naming-conventions
+   access-management
    tutorials/index
 
-
-
-Indices and tables
-==================
-
-..
-   * :ref:`genindex`
-   * :ref:`search`

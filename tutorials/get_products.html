@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get product information using 2BA API &mdash; Practical guide to Techniek Nederland Forms 1.0.0 documentation</title>
+  <title>Get product information using FGO Plus API &mdash; Practical guide to Techniek Nederland Forms 1.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/sphinxcontrib-httpexample.css" type="text/css" />
@@ -139,9 +139,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../naming-conventions.html">Naming standards and conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../access-management.html">Access Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../access-management.html#requesting-an-api-key">Requesting an API Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access-management.html#authenticating-users">Authenticating Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access-management.html#requesting-data-from-the-api">Requesting Data from the API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access-management.html#authentication-parameters">Authentication parameters</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="describe_installation.html">Describe an installation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Get product information using 2BA API</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Get product information using FGO Plus API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#search-for-a-product">Search for a product</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#filter-fields">Filter fields</a></li>
 </ul>
@@ -170,7 +177,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Tutorials</a></li>
-      <li class="breadcrumb-item active">Get product information using 2BA API</li>
+      <li class="breadcrumb-item active">Get product information using FGO Plus API</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/tutorials/get_products.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -180,16 +187,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="get-product-information-using-2ba-api">
-<h1>Get product information using 2BA API<a class="headerlink" href="#get-product-information-using-2ba-api" title="Permalink to this headline">¶</a></h1>
-<p>In order to easily get all information on a Product, you can query the 2BA database. This tutorial will only cover
-the calls to make. To get started with 2BA (create account, get subscription, get keys etc) we kindly refer to <a class="reference external" href="https://www.2ba.nl/nl/documentatie/webservices">2BA’s
-documentation</a>.</p>
+  <section id="get-product-information-using-fgo-plus-api">
+<h1>Get product information using FGO Plus API<a class="headerlink" href="#get-product-information-using-fgo-plus-api" title="Permalink to this headline">¶</a></h1>
+<p>In order to easily get all information on a Product, you can query the FGO Plus database. For detailed
+information on the API, please have a look at the <a class="reference external" href="https://api.fgoplus.nl/swagger/index.html">Swagger</a> and the
+<a class="reference external" href="https://www.2ba.nl/nl/documentatie/webservices">2BA documentation</a>.</p>
 <section id="search-for-a-product">
 <h2>Search for a product<a class="headerlink" href="#search-for-a-product" title="Permalink to this headline">¶</a></h2>
 <dl class="http get">
-<dt class="sig sig-object http" id="get-https---apix.2ba.nl-api-v1-Fgo-Product-Search">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://apix.2ba.nl/api/v1/Fgo/Product/Search</span></span><a class="headerlink" href="#get-https---apix.2ba.nl-api-v1-Fgo-Product-Search" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object http" id="get-https---apix.fgoplus.nl-api-v1-Fgo-Product-Search">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://apix.fgoplus.nl/api/v1/Fgo/Product/Search</span></span><a class="headerlink" href="#get-https---apix.fgoplus.nl-api-v1-Fgo-Product-Search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of products that met your query.</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Product/Search?From=0&amp;Size=1&amp;SearchString=nefit&amp;Filters[0].Code=Model&amp;Filters[0].Values[0].Code=ProLine</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>

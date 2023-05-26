@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search &mdash; Practical guide to Techniek Nederland Forms 1.0.0 documentation</title>
+  <title>Access Management &mdash; Practical guide to Techniek Nederland Forms 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/sphinxcontrib-httpexample.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="canonical" href="https://techniek-nederland.github.io/techniek-nederland-formulieren/search.html" />
-    
+    <link rel="canonical" href="https://techniek-nederland.github.io/techniek-nederland-formulieren/access-management.html" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -20,10 +20,10 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinxcontrib-httpexample.js"></script>
     <script src="_static/js/theme.js"></script>
-    <script src="_static/searchtools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorials" href="tutorials/index.html" />
+    <link rel="prev" title="Naming standards and conventions" href="naming-conventions.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -50,7 +50,7 @@
               <img src="_static/logo.svg" class="logo" alt="Logo"/>
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -101,7 +101,7 @@
 
 
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture &amp; Models</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html#architecture">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html#entity-definitions">Entity definitions</a><ul>
@@ -139,11 +139,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="naming-conventions.html">Naming standards and conventions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="access-management.html">Access Management</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="access-management.html#requesting-an-api-key">Requesting an API Key</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access-management.html#authenticating-users">Authenticating Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access-management.html#requesting-data-from-the-api">Requesting Data from the API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access-management.html#authentication-parameters">Authentication parameters</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Access Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requesting-an-api-key">Requesting an API Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#authenticating-users">Authenticating Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requesting-data-from-the-api">Requesting Data from the API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#authentication-parameters">Authentication parameters</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a><ul>
@@ -176,8 +176,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Search</li>
+      <li class="breadcrumb-item active">Access Management</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="_sources/access-management.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -185,22 +186,92 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search functionality.
-    </p>
-  </div>
-  </noscript>
+  <section id="access-management">
+<h1>Access Management<a class="headerlink" href="#access-management" title="Permalink to this headline">¶</a></h1>
+<p>The Techniek Nederland Forms API can be accessed by your application by using the OAUth protocol. Gaining
+access involves requesting an API key, authenticating users, and obtaining a token. This section will guide you through
+the process of accessing the API using the OAuth protocol. At the bottom of this section your will find the
+<a class="reference internal" href="#authentication-parameters">Authentication parameters</a> for setting up the connection.</p>
+<section id="requesting-an-api-key">
+<h2>Requesting an API Key<a class="headerlink" href="#requesting-an-api-key" title="Permalink to this headline">¶</a></h2>
+<p>To begin, you’ll need to request an API key at Techniek Nederland. The API key acts as a unique identifier for your
+client application and allows you to make authenticated requests to the Identity Service API (IDP). Please send an email
+to <a class="reference external" href="mailto:info&#37;&#52;&#48;technieknederland&#46;nl">info<span>&#64;</span>technieknederland<span>&#46;</span>nl</a> to request access. Please state your name, organisation, goal and provide us with the
+<cite>redirect_url</cite> (or multiple) for you application.</p>
+</section>
+<section id="authenticating-users">
+<h2>Authenticating Users<a class="headerlink" href="#authenticating-users" title="Permalink to this headline">¶</a></h2>
+<p>Once you have an API key for the IDP, your application needs to authenticate it user before you can access the API resources
+on behalf of them. OAuth provides a secure way to authenticate users through an identity service provider (IDP).</p>
+<p>Below are the steps for authenticating a user. Some technical details have been left out for these are usually
+described in documentation of your own OAuth library. Please see the tutorial section for more detailed examples on
+authentication.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><strong>Redirect Users to `https://inlog.tnl.nl/o/authenticate/`</strong> When a user wants to access the API, your
+application should redirect them to the authentication page. This page typically requires the user to
+enter their credentials.</p></li>
+<li><p><strong>User Authorization</strong> After successful authentication, the IDP will present the user with a consent screen.
+This screen explains the permissions (actually scopes) your application is requesting, such as accessing
+specific forms or data on behalf of the user. The user must grant your application permission to access
+these resources. By default you will want to request the <em>profile</em> and <em>openid</em> scope, supplemented with
+the FGO and Form-specific scopes like <em>FGO</em>, <em>FGOWS</em>, <em>FORMS</em> and <em>FORMSWS</em>. Please see list of services
+for more detailed info on the scopes.</p></li>
+<li><p><strong>Obtaining Authorization Code</strong>: Once the user grants permission, the IDP will redirect the user back
+to your application, providing an <cite>authorization code</cite> as a parameter in the redirect URL.</p></li>
+<li><p><strong>Exchanging Authorization Code for Access Token</strong> Your application must securely exchange the
+<cite>authorization code</cite> with the IDP through <a class="reference external" href="https://inlog.tnl.nl/o/token/">https://inlog.tnl.nl/o/token/</a> to obtain an access token.
+This access token represents the user’s authorization to access the API on their behalf.</p></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="requesting-data-from-the-api">
+<h2>Requesting Data from the API<a class="headerlink" href="#requesting-data-from-the-api" title="Permalink to this headline">¶</a></h2>
+<p>With the user’s access token in hand, your application can make requests to the API on behalf of the user. Include
+the access token in the request headers to authenticate and authorize your application to access the API’s resources
+at <a class="reference external" href="https://api.fgoplus.nl">https://api.fgoplus.nl</a>.</p>
+<p>Remember, the access token has an expiration time. If the token expires, your application will need to use a
+refresh token or follow the authentication process again to obtain a new access token.</p>
+</section>
+<section id="authentication-parameters">
+<h2>Authentication parameters<a class="headerlink" href="#authentication-parameters" title="Permalink to this headline">¶</a></h2>
+<p>Connecting to identity service provider:</p>
+<dl class="field-list simple">
+<dt class="field-odd">authorization_endpoint</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://inlog.tnl.nu/o/authorize/">https://inlog.tnl.nu/o/authorize/</a></p>
+</dd>
+<dt class="field-even">token_endpoint</dt>
+<dd class="field-even"><p><a class="reference external" href="https://inlog.tnl.nu/o/token/">https://inlog.tnl.nu/o/token/</a></p>
+</dd>
+<dt class="field-odd">userinfo_endpoint</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://inlog.tnl.nu/o/userinfo/">https://inlog.tnl.nu/o/userinfo/</a></p>
+</dd>
+<dt class="field-even">openid-configuration</dt>
+<dd class="field-even"><p><a class="reference external" href="https://inlog.tnl.nu/o/.well-known/openid-configuration/">https://inlog.tnl.nu/o/.well-known/openid-configuration/</a></p>
+</dd>
+<dt class="field-odd">client_id</dt>
+<dd class="field-odd"><p>To be requested <a class="reference external" href="mailto:info&#37;&#52;&#48;technieknederland&#46;nl">info<span>&#64;</span>technieknederland<span>&#46;</span>nl</a></p>
+</dd>
+<dt class="field-even">client_secet</dt>
+<dd class="field-even"><p><em>Not applicable for client applications</em></p>
+</dd>
+<dt class="field-odd">grant_type</dt>
+<dd class="field-odd"><p>Authorization code (make sure to use PKCE)</p>
+</dd>
+<dt class="field-even">scopes</dt>
+<dd class="field-even"><p>openid, profile, FGO, FGOWS, FORMS, FORMSWS</p>
+</dd>
+</dl>
+</section>
+</section>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="naming-conventions.html" class="btn btn-neutral float-left" title="Naming standards and conventions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorials/index.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
@@ -224,12 +295,6 @@
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-  <script>
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script id="searchindexloader"></script>
-  
  
 <!-- Google Tag Manager -->
 <script>(function (w, d, s, l, i) {
@@ -246,7 +311,6 @@
     f.parentNode.insertBefore(j, f);
 })(window, document, 'script', 'dataLayer', 'GTM-TSKJ7PB');</script>
 <!-- End Google Tag Manager -->
-
 
 
 </body>
