@@ -15,8 +15,9 @@ Access and Account Requirements
 Access to the Techniek Nederland Forms services is limited to members of Techniek Nederland. To utilize any
 of the services mentioned above, you need to have an active account with Techniek Nederland.
 
-If you are a member, but do not have an account, please visit the Techniek Nederland website to create one.
-Once you have successfully created an account, you can proceed to access the services.
+If you are a member, but do not have an account, please visit the
+`Techniek Nederland webshop <https://www.technieknederland.nl/webshop>`_
+to create one. Once you have successfully created an account, you can proceed to access the services.
 
 Licensing Requirements
 --------------------------------
@@ -58,13 +59,7 @@ The following table shows what services and licenses are required:
         - Forms Webservice
         - FORMSWS
 
-    *   - Meldpunt gevaarlijke situatie
-        - Web application
-        - Meldpunt
-        - MELDPUNT
 
-
-Please note that license 'Meldpunt' and 'Forms' are included for free in the Techniek Nederland membership.
 
 *Dislaimer* This documentation is for reference only. The information provided may have been changed. No rights can
 be derived from this information in any way.
