@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authentication &mdash; Practical guide to Techniek Nederland Forms 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-httpexample.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://techniek-nederland.github.io/techniek-nederland-formulieren/tutorials/authentication/index.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-httpexample.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="User Authentication" href="user_authentication.html" />
+    <link rel="prev" title="Tutorials" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+ 
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TSKJ7PB"
+            height="0" width="0" style="display:none;visibility:hidden"
+    ></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+<div class="tn-sub-title">
+    <span>
+        <span>
+            Techniek Nederland
+        </span>
+        Forms
+    </span>
+
+    <svg
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 438"
+            preserveAspectRatio="xMidYMid meet"
+
+    >
+        <rect width="100%" height="100%" fill="#FFFFFF" />
+        <g transform="translate(0.000000,438.000000) scale(0.100000,-0.100000)" stroke="none">
+            <path
+                    d="M0 2190 l0 -2190 3600 0 3600 0 0 2190 0 2190 -3600 0 -3600 0 0 -2190z m1230 205
+            l5 -1700 23 -43 c35 -66 88 -119 150 -149 49 -24 69 -28 142 -28 70 0 94 4 135 25 70
+            34 139 108 164 175 21 55 21 63 21 1503 0 1203 3 1458 14 1513 56 262 307 439 570 401
+            204 -29 381 -188 425 -382 7 -30 11 -527 11 -1481 0 -916 4 -1455 10 -1489 21 -109 90
+            -198 188 -243 70 -32 199 -31 267 2 63 32 124 93 156 156 l24 50 5 1490 c6 1616 2
+            1510 62 1629 94 186 313 298 520 268 196 -28 349 -158 422 -357 8 -21 12 -475 16
+            -1520 6 -1704 -4 -1542 99 -1646 161 -161 420 -119 521 86 l25 50 5 1495 5 1495 22
+            59 c29 75 57 120 113 180 59 63 114 101 197 133 94 36 237 38 334 5 164 -56 283 -183
+            333 -351 14 -49 16 -217 16 -1633 l0 -1578 480 0 480 0 0 -95 0 -95 -570 0 -570 0 -2
+            1668 -3 1667 -29 62 c-33 72 -95 134 -164 166 -70 32 -199 31 -267 -2 -63 -32 -124
+            -93 -156 -156 l-24 -50 -5 -1490 c-4 -1209 -8 -1498 -19 -1530 -84 -252 -316 -403
+            -563 -367 -186 27 -334 144 -411 325 l-22 52 -5 1495 c-5 1421 -6 1497 -23 1542 -26
+            67 -97 141 -165 175 -49 24 -69 28 -142 28 -70 0 -94 -5 -135 -25 -64 -31 -124 -92
+            -156 -155 l-24 -50 -5 -1495 -5 -1495 -24 -60 c-52 -130 -144 -234 -256 -289 -275
+            -134 -590 -9 -707 282 l-23 57 -5 1490 c-6 1704 4 1542 -99 1646 -158 157 -403 123
+            -510 -71 l-36 -65 -5 -1495 -5 -1495 -22 -59 c-29 -75 -57 -120 -113 -180 -59 -63
+            -114 -101 -197 -133 -94 -36 -237 -38 -334 -5 -165 57 -290 190 -334 357 -13 52 -15
+            254 -15 1652 l0 1593 -515 0 -515 0 0 95 0 95 608 -2 607 -3 5 -1700z"
+                    fill="#372462"
+            />
+        </g>
+    </svg>
+
+</div>
+
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../architecture.html">Architecture &amp; Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../architecture.html#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../architecture.html#entity-definitions">Entity definitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#form-formulier-protocol-checklist">Form (formulier / protocol /checklist)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#report-inspectierapport-rapportage">Report (inspectierapport / rapportage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#regulations-brl-ntr-nta-nen-iso">Regulations (BRL, NTR, NTA, NEN, ISO)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#installation-company-installatiebedrijf-installateur">Installation company (Installatiebedrijf, Installateur)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#installer-monteur-inspecteur-installateur">Installer (Monteur, Inspecteur, Installateur)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#object-building-gebouw-bouwwerk-pand-werkadres">Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#client-opdrachtgever">Client (Opdrachtgever)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#installation-system-installatie-systeem">Installation (System, Installatie, Systeem)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#installation-parts-installatie-onderdeel-sub-systeem">Installation Parts (Installatie-onderdeel, Sub-systeem)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#product-data-stored-in-2ba">Product data (stored in 2BA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#current-state">Current State</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../architecture.html#classification-systems">Classification systems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#nl-sfb">NL/SFB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#id1">ETIM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../forms.html">Forms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../forms.html#form-structure">Form structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forms.html#form-technology">Form technology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forms.html#code-examples">Code Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#a-yes-no-question-using-a-radio-widget">A yes/no question using a Radio widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#textarea">Textarea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#textfield">Textfield</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#photo">Photo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#repeating-entries-photo-textfield">Repeating entries (Photo &amp; Textfield)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../naming-conventions.html">Naming standards and conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../access-management.html">Access Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../access-management.html#requesting-an-api-key">Requesting an API Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access-management.html#authenticating-users">Authenticating Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access-management.html#requesting-data-from-the-api">Requesting Data from the API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access-management.html#authentication-parameters">Authentication parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../available-services/index.html">Available services and products</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../available-services/index.html#access-and-account-requirements">Access and Account Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../available-services/index.html#licensing-requirements">Licensing Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_authentication.html">User Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_authentication.html#basic-concept-of-the-login-process">Basic Concept of the Login Process:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_authentication.html#step-1-register-your-application-with-techniek-nederland">Step 1: Register Your Application with Techniek Nederland</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_authentication.html#step-2-configure-your-application">Step 2: Configure Your Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_authentication.html#step-3-authorize-your-application-to-act-on-the-users-behalf">Step 3: Authorize your application to act on the users behalf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_authentication.html#step-4-obtaining-an-access-token">Step 4: Obtaining an access token</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_data_retrieval.html">User Data Retrieval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="service_invocation.html">Service invocation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../describe_installation.html">Describe an installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_products.html">Get product information using FGO Plus API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get_products.html#search-for-a-product">Search for a product</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_products.html#filter-fields">Filter fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../get_forms.html">Get forms for an installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get_forms.html#get-a-list-of-relevant-forms">Get a list of relevant forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_forms.html#get-the-form-itself">Get the form itself</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Practical guide to Techniek Nederland Forms</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">Authentication</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/tutorials/authentication/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="authentication">
+<h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h1>
+<p>To utilize the web services and applications provided by Techniek Nederland, users are required to have an account
+with Techniek Nederland. This requirement also applies when third-party software utilizes these web services.
+In such cases, the users must still log in with their Techniek Nederland account so that the services can be
+accessed on their behalf.</p>
+<p>Authentication is performed using the OAuth (and OIDC) protocol. Users can log in through the Identity Service
+Provider (IDP) of Techniek Nederland, which can be accessed at <a class="reference external" href="https://inlog.tnl.nu/">https://inlog.tnl.nu/</a>. Third-party software can
+refer to this IDP using the OAuth protocol.</p>
+<p>Third-party software needs a <cite>client_id</cite> and <cite>client_secret</cite> to use the Identity Service Provider. These credentials
+can be requested from Peter Zwakhals by sending an email to <a class="reference external" href="mailto:p&#46;zwakhals&#37;&#52;&#48;technieknederland&#46;nl">p<span>&#46;</span>zwakhals<span>&#64;</span>technieknederland<span>&#46;</span>nl</a>.</p>
+<p>The following tutorials provide detailed instructions for enabling third-party software to allow users to log in
+and access Techniek Nederland’s web services on their behalf. Additionally, the tutorials explain how to retrieve
+user data and invoke Techniek Nederland’s services on behalf of the user.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_authentication.html">User Authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_authentication.html#basic-concept-of-the-login-process">Basic Concept of the Login Process:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_authentication.html#step-1-register-your-application-with-techniek-nederland">Step 1: Register Your Application with Techniek Nederland</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_authentication.html#step-2-configure-your-application">Step 2: Configure Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_authentication.html#step-3-authorize-your-application-to-act-on-the-users-behalf">Step 3: Authorize your application to act on the users behalf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_authentication.html#step-4-obtaining-an-access-token">Step 4: Obtaining an access token</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_data_retrieval.html">User Data Retrieval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="service_invocation.html">Service invocation</a></li>
+</ul>
+</div>
+<p>For any further assistance or inquiries, please contact our support team at <a class="reference external" href="mailto:fgoplus&#37;&#52;&#48;2ba&#46;nl">fgoplus<span>&#64;</span>2ba<span>&#46;</span>nl</a>.</p>
+<p>Note: This documentation assumes a basic understanding of web development and authentication protocols such as OAuth.
+Should you require more info, please have a look at for instance <a class="reference external" href="https://auth0.com/docs/authenticate/protocols/oauth">https://auth0.com/docs/authenticate/protocols/oauth</a>
+for an in depth and thorough explanation.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="user_authentication.html" class="btn btn-neutral float-right" title="User Authentication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+            &#169; Copyright 2021 - 2022 <a href="https://www.technieknederland.nl/home">Techniek Nederland</a> &amp; <a href="https://fluxility.com">Fluxility</a>
+        </p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ 
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+        'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-TSKJ7PB');</script>
+<!-- End Google Tag Manager -->
+
+
+</body>
+</html>

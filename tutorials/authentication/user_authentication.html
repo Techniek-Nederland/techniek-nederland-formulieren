@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Authentication &mdash; Practical guide to Techniek Nederland Forms 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-httpexample.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://techniek-nederland.github.io/techniek-nederland-formulieren/tutorials/authentication/user_authentication.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-httpexample.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="User Data Retrieval" href="user_data_retrieval.html" />
+    <link rel="prev" title="Authentication" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+ 
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TSKJ7PB"
+            height="0" width="0" style="display:none;visibility:hidden"
+    ></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+<div class="tn-sub-title">
+    <span>
+        <span>
+            Techniek Nederland
+        </span>
+        Forms
+    </span>
+
+    <svg
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 438"
+            preserveAspectRatio="xMidYMid meet"
+
+    >
+        <rect width="100%" height="100%" fill="#FFFFFF" />
+        <g transform="translate(0.000000,438.000000) scale(0.100000,-0.100000)" stroke="none">
+            <path
+                    d="M0 2190 l0 -2190 3600 0 3600 0 0 2190 0 2190 -3600 0 -3600 0 0 -2190z m1230 205
+            l5 -1700 23 -43 c35 -66 88 -119 150 -149 49 -24 69 -28 142 -28 70 0 94 4 135 25 70
+            34 139 108 164 175 21 55 21 63 21 1503 0 1203 3 1458 14 1513 56 262 307 439 570 401
+            204 -29 381 -188 425 -382 7 -30 11 -527 11 -1481 0 -916 4 -1455 10 -1489 21 -109 90
+            -198 188 -243 70 -32 199 -31 267 2 63 32 124 93 156 156 l24 50 5 1490 c6 1616 2
+            1510 62 1629 94 186 313 298 520 268 196 -28 349 -158 422 -357 8 -21 12 -475 16
+            -1520 6 -1704 -4 -1542 99 -1646 161 -161 420 -119 521 86 l25 50 5 1495 5 1495 22
+            59 c29 75 57 120 113 180 59 63 114 101 197 133 94 36 237 38 334 5 164 -56 283 -183
+            333 -351 14 -49 16 -217 16 -1633 l0 -1578 480 0 480 0 0 -95 0 -95 -570 0 -570 0 -2
+            1668 -3 1667 -29 62 c-33 72 -95 134 -164 166 -70 32 -199 31 -267 -2 -63 -32 -124
+            -93 -156 -156 l-24 -50 -5 -1490 c-4 -1209 -8 -1498 -19 -1530 -84 -252 -316 -403
+            -563 -367 -186 27 -334 144 -411 325 l-22 52 -5 1495 c-5 1421 -6 1497 -23 1542 -26
+            67 -97 141 -165 175 -49 24 -69 28 -142 28 -70 0 -94 -5 -135 -25 -64 -31 -124 -92
+            -156 -155 l-24 -50 -5 -1495 -5 -1495 -24 -60 c-52 -130 -144 -234 -256 -289 -275
+            -134 -590 -9 -707 282 l-23 57 -5 1490 c-6 1704 4 1542 -99 1646 -158 157 -403 123
+            -510 -71 l-36 -65 -5 -1495 -5 -1495 -22 -59 c-29 -75 -57 -120 -113 -180 -59 -63
+            -114 -101 -197 -133 -94 -36 -237 -38 -334 -5 -165 57 -290 190 -334 357 -13 52 -15
+            254 -15 1652 l0 1593 -515 0 -515 0 0 95 0 95 608 -2 607 -3 5 -1700z"
+                    fill="#372462"
+            />
+        </g>
+    </svg>
+
+</div>
+
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../architecture.html">Architecture &amp; Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../architecture.html#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../architecture.html#entity-definitions">Entity definitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#form-formulier-protocol-checklist">Form (formulier / protocol /checklist)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#report-inspectierapport-rapportage">Report (inspectierapport / rapportage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#regulations-brl-ntr-nta-nen-iso">Regulations (BRL, NTR, NTA, NEN, ISO)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#installation-company-installatiebedrijf-installateur">Installation company (Installatiebedrijf, Installateur)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#installer-monteur-inspecteur-installateur">Installer (Monteur, Inspecteur, Installateur)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#object-building-gebouw-bouwwerk-pand-werkadres">Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#client-opdrachtgever">Client (Opdrachtgever)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#installation-system-installatie-systeem">Installation (System, Installatie, Systeem)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#installation-parts-installatie-onderdeel-sub-systeem">Installation Parts (Installatie-onderdeel, Sub-systeem)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#product-data-stored-in-2ba">Product data (stored in 2BA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#current-state">Current State</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../architecture.html#classification-systems">Classification systems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#nl-sfb">NL/SFB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#id1">ETIM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../forms.html">Forms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../forms.html#form-structure">Form structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forms.html#form-technology">Form technology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forms.html#code-examples">Code Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#a-yes-no-question-using-a-radio-widget">A yes/no question using a Radio widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#textarea">Textarea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#textfield">Textfield</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#photo">Photo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#repeating-entries-photo-textfield">Repeating entries (Photo &amp; Textfield)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../naming-conventions.html">Naming standards and conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../access-management.html">Access Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../access-management.html#requesting-an-api-key">Requesting an API Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access-management.html#authenticating-users">Authenticating Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access-management.html#requesting-data-from-the-api">Requesting Data from the API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access-management.html#authentication-parameters">Authentication parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../available-services/index.html">Available services and products</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../available-services/index.html#access-and-account-requirements">Access and Account Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../available-services/index.html#licensing-requirements">Licensing Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Authentication</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">User Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#basic-concept-of-the-login-process">Basic Concept of the Login Process:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-1-register-your-application-with-techniek-nederland">Step 1: Register Your Application with Techniek Nederland</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-2-configure-your-application">Step 2: Configure Your Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3-authorize-your-application-to-act-on-the-users-behalf">Step 3: Authorize your application to act on the users behalf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-4-obtaining-an-access-token">Step 4: Obtaining an access token</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_data_retrieval.html">User Data Retrieval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="service_invocation.html">Service invocation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../describe_installation.html">Describe an installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_products.html">Get product information using FGO Plus API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get_products.html#search-for-a-product">Search for a product</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_products.html#filter-fields">Filter fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../get_forms.html">Get forms for an installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get_forms.html#get-a-list-of-relevant-forms">Get a list of relevant forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_forms.html#get-the-form-itself">Get the form itself</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Practical guide to Techniek Nederland Forms</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Tutorials</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Authentication</a></li>
+      <li class="breadcrumb-item active">User Authentication</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/tutorials/authentication/user_authentication.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="user-authentication">
+<h1>User Authentication<a class="headerlink" href="#user-authentication" title="Permalink to this headline">¶</a></h1>
+<p>Learn how to guide users through the login process, enabling them to access Techniek Nederland’s web services.
+Detailed instructions will be provided on utilizing the OAuth protocol to authenticate users via the Techniek Nederland IDP.</p>
+<section id="basic-concept-of-the-login-process">
+<h2>Basic Concept of the Login Process:<a class="headerlink" href="#basic-concept-of-the-login-process" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>User opens your Application and needs to log in.</p></li>
+<li><p>Your Application redirects the User to the Identity Provider (IDP), providing information to the IDP about your application, the actions you want to perform on behalf of the user, and where the IDP should redirect the user within your application after successful login.</p></li>
+<li><p>The User logs in to the IDP using their credentials.</p></li>
+<li><p>The IDP informs the User about the actions your Application wants to perform on their behalf and requests their permission.</p></li>
+<li><p>The IDP redirects the User back to the specified address of your Application, along with a unique code that can be used to perform actions on behalf of this user.</p></li>
+<li><p>The following sections will provide further details on this process, including example HTTP requests. We recommend utilizing existing OAuth implementations to handle the authentication flow, which would eliminate the need for manually constructing raw HTTP requests.</p></li>
+</ol>
+</section>
+<section id="step-1-register-your-application-with-techniek-nederland">
+<h2>Step 1: Register Your Application with Techniek Nederland<a class="headerlink" href="#step-1-register-your-application-with-techniek-nederland" title="Permalink to this headline">¶</a></h2>
+<p>To use the IDP, your application needs to have identification credentials registered with Techniek Nederland.
+In this tutorial, we assume your application is unable to securely store secrets. Examples include web browser-based
+applications (JavaScript applications) or applications installed on the user’s computer. Since these applications
+are visible to the user, they cannot securely store secrets. Therefore, we will only use a client_id in combination
+with PKCE (Proof Key for Code Exchange), rather than a client_id and client_secret.</p>
+<p>To register your application, please send an email to <a class="reference external" href="mailto:p&#46;zwakhals&#37;&#52;&#48;technieknederland&#46;nl">Peter Zwakhals</a> with the following information:</p>
+<ul class="simple">
+<li><p>Application name</p></li>
+<li><p>Why your going to use the IDP</p></li>
+<li><p>The <cite>redirect_url</cite> - the address(es) to which the user should be redirected after a successful login attempt</p></li>
+</ul>
+<p>When making the request, ensure that you provide the complete URL, not just the domain. For example,
+‘<a class="reference external" href="https://myapplication.com/oauth-callback/">https://myapplication.com/oauth-callback/</a>’. Also, consider providing any development addresses you would like to
+include, such as ‘<a class="reference external" href="http://localhost:8000/oauth-callback/">http://localhost:8000/oauth-callback/</a>’ and ‘<a class="reference external" href="https://www.getpostman.com/oauth2/callback">https://www.getpostman.com/oauth2/callback</a>’.</p>
+</section>
+<section id="step-2-configure-your-application">
+<h2>Step 2: Configure Your Application<a class="headerlink" href="#step-2-configure-your-application" title="Permalink to this headline">¶</a></h2>
+<p>In this step, we will describe the information you receive from Techniek Nederland and demonstrate
+how to test it using Postman.</p>
+<p>After registering your application with Techniek Nederland, you will receive a <cite>client_id</cite>. This is
+a unique identifier that allows the IDP to identify your application. The <cite>client_id</cite>
+should be included in your application’s code and in your requests to the IDP.
+It can be seen by the user and is therefore considered public.</p>
+<p>You will need the following information:</p>
+<dl class="field-list simple">
+<dt class="field-odd">authorization_endpoint</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://inlog.tnl.nu/o/authorize/">https://inlog.tnl.nu/o/authorize/</a></p>
+</dd>
+<dt class="field-even">token_endpoint</dt>
+<dd class="field-even"><p><a class="reference external" href="https://inlog.tnl.nu/o/token/">https://inlog.tnl.nu/o/token/</a></p>
+</dd>
+<dt class="field-odd">userinfo_endpoint</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://inlog.tnl.nu/o/userinfo/">https://inlog.tnl.nu/o/userinfo/</a></p>
+</dd>
+<dt class="field-even">openid-configuration</dt>
+<dd class="field-even"><p><a class="reference external" href="https://inlog.tnl.nu/o/.well-known/openid-configuration/">https://inlog.tnl.nu/o/.well-known/openid-configuration/</a></p>
+</dd>
+<dt class="field-odd">client_id</dt>
+<dd class="field-odd"><p>To be requested <a class="reference external" href="mailto:p&#46;zwakhals&#37;&#52;&#48;technieknederland&#46;nl">p<span>&#46;</span>zwakhals<span>&#64;</span>technieknederland<span>&#46;</span>nl</a></p>
+</dd>
+<dt class="field-even">client_secet</dt>
+<dd class="field-even"><p><em>Not applicable for client applications</em></p>
+</dd>
+<dt class="field-odd">grant_type</dt>
+<dd class="field-odd"><p>Authorization code (make sure to use PKCE)</p>
+</dd>
+<dt class="field-even">scopes</dt>
+<dd class="field-even"><p>openid, profile, FGO, FGOWS</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The meaning of these terms is beyond the scope of this documentation. We kindly refer
+to the documentation of the OAuth library you choose, or alternatively, resources such as
+Auth0, which provide clear explanations of these terms.</p>
+</div>
+<p>With this information, you can now configure your application. In this tutorial, we will describe
+how you can configure Postman.</p>
+<ol class="arabic simple">
+<li><p>Open Postman.</p></li>
+<li><p>Choose ‘New’ &gt; ‘Workspace’.</p></li>
+<li><p>Name it ‘Techniek Nederland’.</p></li>
+<li><p>Click ‘New’ &gt; ‘Collection’ and name it ‘Identity Service Provider’.</p></li>
+<li><p>Open ‘Identity Service Provider’ in the right menu.</p></li>
+<li><p>You will now see the content, and the ‘Authorization’ tab is active.</p></li>
+<li><p>The ‘Type’ is currently set to “No Auth”. Change it to ‘OAuth2’.</p></li>
+<li><p>Go to ‘Configure new token’ and select ‘edit’ if necessary.</p></li>
+<li><p>Set the Token Name to ‘Techniek Nederland IDP’ (you can choose any name you prefer).</p></li>
+<li><p>Fill in the configuration details (refer to the screenshot as well).</p></li>
+<li><p>Click ‘Get New Access Token’.</p></li>
+</ol>
+<p>Continue to Step 3 for further instructions.</p>
+<img alt="Configuration in Postman" src="../../_images/authentication_postman.png" />
+<p>Please note that the provided screenshot is for reference only, and the actual configuration may differ
+based on your specific OAuth implementation and Postman version.</p>
+</section>
+<section id="step-3-authorize-your-application-to-act-on-the-users-behalf">
+<h2>Step 3: Authorize your application to act on the users behalf<a class="headerlink" href="#step-3-authorize-your-application-to-act-on-the-users-behalf" title="Permalink to this headline">¶</a></h2>
+<p>In the authorization step, you will authorize your application to perform actions on behalf of the user. It’s
+important to note that this step is about authorizing your application, not the user authorizing themselves.
+To authorize, you will redirect the user to the Identity Service Provider (IDP) and request the IDP to grant
+access to specific data and actions (scopes) on behalf of the user. If the user grants permission, your
+application will receive a temporary authorization code (access_code), which will be used in the next step
+to request access.</p>
+<p>Generating the PKCE code is beyond the scope of this tutorial.</p>
+<p>When using a library (or Postman), the user is redirected to the IDP for authorization. If you choose to
+implement the call yourself, it would look like the following (note that this call is not performed in the
+background, you actually redirect the user to this address):</p>
+<dl class="http get">
+<dt class="sig sig-object http" id="get-https---inlog.tnl.nu-o-authorize-">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://inlog.tnl.nu/o/authorize/</span></span><a class="headerlink" href="#get-https---inlog.tnl.nu-o-authorize-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Authorize your application to access resources on behalf of a user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>response_type</strong> – The response type. Set to “code”.</p></li>
+<li><p><strong>client_id</strong> – Your client ID.</p></li>
+<li><p><strong>scope</strong> – The requested scope (eg. “openid, profile, FGO, FGOWS”).</p></li>
+<li><p><strong>redirect_uri</strong> – The redirect URI after successful authorization.</p></li>
+<li><p><strong>code_challenge</strong> – The code challenge generated using PKCE.</p></li>
+<li><p><strong>code_challenge_method</strong> – The code challenge method. Set to “S256”.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/o/authorize/?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;scope=openid%2C%20profile%2C%20FGO%2C%20FGOWS&amp;redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback&amp;code_challenge=zYiwIX3ekeYZUx6nvnHK_DyonQuKv8zvgABNx0I2qGc&amp;code_challenge_method=S256</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">inlog.tnl.nu</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>A web browser will open the login screen of Techniek Nederland’s IDP. Log in with your Techniek Nederland account.
+During the first login, you will be asked to grant permission for your application to log in on your behalf as
+the logged-in user. Once the user grants permission, they will be redirected to the address specified in the
+redirect_uri parameter. This request will include the code parameter, which you will use in step 4 to retrieve
+the access token.</p>
+<dl class="http get">
+<dt class="sig sig-object http" id="get-https---www.getpostman.com-oauth2-callback">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://www.getpostman.com/oauth2/callback</span></span><a class="headerlink" href="#get-https---www.getpostman.com-oauth2-callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>The redirect URI of your own application. For demonstration purposes we use Postman, but in your application
+this will definetly be something else.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> – The authorization code received from the authorization server which you need in the next step</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/oauth2/callback?code=ABCDEFGabcdefg0123456789</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">www.getpostman.com</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="step-4-obtaining-an-access-token">
+<h2>Step 4: Obtaining an access token<a class="headerlink" href="#step-4-obtaining-an-access-token" title="Permalink to this headline">¶</a></h2>
+<p>With the temporary authorization code from setp 3, you can now request an <cite>access token</cite> and related information.
+The access token is ultimately the means by which you can retrieve data on behalf of the user. For example, you can
+use it to request information about the user from the IDP or access other web services that the user has
+granted you permission to.</p>
+<p>It’s important to note that the access code is also temporary. For security reasons, the access token expires
+after a certain period of time. This is crucial because the access token is shared with external entities, such as
+other web services. That’s why you also receive a <cite>refresh token</cite>. You should only share this token with the IDP and
+only share it once, when requesting a new set of access tokens, refresh tokens, etc. The refresh token can only be
+used once, and after that, you will receive a new one. Finally, you also receive an <cite>id token</cite> (when using the
+openid scope). This token contains encoded user information, but how to decode it is beyond the scope of this tutorial
+to cover its details.</p>
+<p>How the code_verifier was generated is beyond the scope of this tutorial.</p>
+<p>In step 2 your hit the ‘Get New Access Token’ in Postman. Step 3 and step 4 are performed automatically
+after the user gives permission. You will now see the ‘token details’ provided by the IDP. If you want to make
+the http call manually, you can use the following HTTP request:</p>
+<dl class="http post">
+<dt class="sig sig-object http" id="post-https---inlog.tnl.nu-o-token-">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">https://inlog.tnl.nu/o/token/</span></span><a class="headerlink" href="#post-https---inlog.tnl.nu-o-token-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Request access token</p>
+<dl class="field-list simple">
+<dt class="field-odd">Request Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a></span> – application/x-www-form-urlencoded</p></li>
+</ul>
+</dd>
+<dt class="field-even">Query Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>grant_type</strong> – The grant type. Set to “authorization_code”.</p></li>
+<li><p><strong>code</strong> – The authorization code received in the previous step.</p></li>
+<li><p><strong>code_verifier</strong> – The code verifier (for PKCE).</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/o/token/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">inlog.tnl.nu</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/x-www-form-urlencoded</span>
+
+grant_type=authorization_code&amp;code=ABCDEFGabcdefg0123456789&amp;redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback&amp;code_verifier=Pd9Sju1dCBVoegn-eViAME-jctqBFcAsOiJaULxopbY&amp;client_id=ABCDEFGabcdefg0123456789ABCDEFGabcdefg0123456789
+</pre></div>
+</div>
+<p><strong>Example response</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;access_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABCDEFGabcdefg0123456789&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;expires_in&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">36000</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;token_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;scope&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openid profile&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;refresh_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABCDEFGabcdefg0123456789&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJ0...---&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>Your application is now authorized to make requests on behalf of the user. You’ve reach the end of this tutorial and
+can now continue to the <cite>User Data Retrieval</cite> tutorial where we will explain how to use your token to obtain
+user info.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Authentication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="user_data_retrieval.html" class="btn btn-neutral float-right" title="User Data Retrieval" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+            &#169; Copyright 2021 - 2022 <a href="https://www.technieknederland.nl/home">Techniek Nederland</a> &amp; <a href="https://fluxility.com">Fluxility</a>
+        </p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ 
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+        'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-TSKJ7PB');</script>
+<!-- End Google Tag Manager -->
+
+
+</body>
+</html>

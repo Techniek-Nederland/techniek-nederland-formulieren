@@ -59,7 +59,7 @@ Connecting to identity service provider:
 :client_id:                 To be requested p.zwakhals@technieknederland.nl
 :client_secet:              *Not applicable for client applications*
 :grant_type:                Authorization code (make sure to use PKCE)
-:scopes:                    openid, profile, FGO, FGOWS, FORMS, FORMSWS
+:scopes:                    openid, profile, FGO, FGOWS
 
 
 
