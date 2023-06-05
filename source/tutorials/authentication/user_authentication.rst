@@ -69,7 +69,7 @@ how you can configure Postman.
 #. Choose 'New' > 'Workspace'.
 #. Name it 'Techniek Nederland'.
 #. Click 'New' > 'Collection' and name it 'Identity Service Provider'.
-#. Open 'Identity Service Provider' in the right menu.
+#. Open 'Identity Service Provider' in the left side menu.
 #. You will now see the content, and the 'Authorization' tab is active.
 #. The 'Type' is currently set to "No Auth". Change it to 'OAuth2'.
 #. Go to 'Configure new token' and select 'edit' if necessary.
