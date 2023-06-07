@@ -16,17 +16,17 @@ to p.zwakhals@technieknederland.nl to request access. Please state your name, or
 
 Authenticating Users
 =====================
-Once you have an API key for the IDP, your application needs to authenticate it user before you can access the API resources
-on behalf of them. OAuth provides a secure way to authenticate users through an identity service provider (IDP).
+Once you have an API key for the IDP, your application needs to permission from your user before you can access the API
+resources on behalf of them. OAuth provides a secure way to authenticate users through an Identity Service Provider (IDP),
+using the `Authorization Code Flow  <https://datatracker.ietf.org/doc/html/rfc6749#section-4.1>`_.
 
 Below are the steps for authenticating a user. Some technical details have been left out for these are usually
-described in documentation of your own OAuth library. Please see the tutorial section for more detailed examples on
-authentication.
+described in documentation of your own OAuth library.
 
-    1.  **Redirect Users to `https://inlog.tnl.nl/o/authenticate/`** When a user wants to access the API, your
-        application should redirect them to the authentication page. This page typically requires the user to
+    1.  **Redirect Users to Techniek Nederland IDP (`https://inlog.tnl.nl/`)** When a user wants to access the API through
+        your application, the user must authorize your application in the IDP. This page typically requires the user to
         enter their credentials.
-    2.  **User Authorization** After successful authentication, the IDP will present the user with a consent screen.
+    2.  **Authorization** After successful authentication, the IDP will present the user with a consent screen.
         This screen explains the permissions (actually scopes) your application is requesting, such as accessing
         specific forms or data on behalf of the user. The user must grant your application permission to access
         these resources. By default you will want to request the *profile* and *openid* scope, supplemented with
@@ -35,8 +35,12 @@ authentication.
     3.  **Obtaining Authorization Code**: Once the user grants permission, the IDP will redirect the user back
         to your application, providing an `authorization code` as a parameter in the redirect URL.
     4.  **Exchanging Authorization Code for Access Token** Your application must securely exchange the
-        `authorization code` with the IDP through https://inlog.tnl.nl/o/token/ to obtain an access token.
+        `authorization code` with the IDP to obtain an access token.
         This access token represents the user's authorization to access the API on their behalf.
+
+If you want more info on the OAuth flow, please have a look at our tutorial on
+:ref:`tutorials/authentication/user_authentication:User Authentication`.
+
 
 Requesting Data from the API
 ============================

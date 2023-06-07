@@ -219,17 +219,17 @@ to <a class="reference external" href="mailto:p&#46;zwakhals&#37;&#52;&#48;techn
 </section>
 <section id="authenticating-users">
 <h2>Authenticating Users<a class="headerlink" href="#authenticating-users" title="Permalink to this headline">¶</a></h2>
-<p>Once you have an API key for the IDP, your application needs to authenticate it user before you can access the API resources
-on behalf of them. OAuth provides a secure way to authenticate users through an identity service provider (IDP).</p>
+<p>Once you have an API key for the IDP, your application needs to permission from your user before you can access the API
+resources on behalf of them. OAuth provides a secure way to authenticate users through an Identity Service Provider (IDP),
+using the <a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc6749#section-4.1">Authorization Code Flow</a>.</p>
 <p>Below are the steps for authenticating a user. Some technical details have been left out for these are usually
-described in documentation of your own OAuth library. Please see the tutorial section for more detailed examples on
-authentication.</p>
+described in documentation of your own OAuth library.</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p><strong>Redirect Users to `https://inlog.tnl.nl/o/authenticate/`</strong> When a user wants to access the API, your
-application should redirect them to the authentication page. This page typically requires the user to
+<li><p><strong>Redirect Users to Techniek Nederland IDP (`https://inlog.tnl.nl/`)</strong> When a user wants to access the API through
+your application, the user must authorize your application in the IDP. This page typically requires the user to
 enter their credentials.</p></li>
-<li><p><strong>User Authorization</strong> After successful authentication, the IDP will present the user with a consent screen.
+<li><p><strong>Authorization</strong> After successful authentication, the IDP will present the user with a consent screen.
 This screen explains the permissions (actually scopes) your application is requesting, such as accessing
 specific forms or data on behalf of the user. The user must grant your application permission to access
 these resources. By default you will want to request the <em>profile</em> and <em>openid</em> scope, supplemented with
@@ -238,10 +238,12 @@ for more detailed info on the scopes.</p></li>
 <li><p><strong>Obtaining Authorization Code</strong>: Once the user grants permission, the IDP will redirect the user back
 to your application, providing an <cite>authorization code</cite> as a parameter in the redirect URL.</p></li>
 <li><p><strong>Exchanging Authorization Code for Access Token</strong> Your application must securely exchange the
-<cite>authorization code</cite> with the IDP through <a class="reference external" href="https://inlog.tnl.nl/o/token/">https://inlog.tnl.nl/o/token/</a> to obtain an access token.
+<cite>authorization code</cite> with the IDP to obtain an access token.
 This access token represents the user’s authorization to access the API on their behalf.</p></li>
 </ol>
 </div></blockquote>
+<p>If you want more info on the OAuth flow, please have a look at our tutorial on
+<a class="reference internal" href="tutorials/authentication/user_authentication.html#user-authentication"><span class="std std-ref">User Authentication</span></a>.</p>
 </section>
 <section id="requesting-data-from-the-api">
 <h2>Requesting Data from the API<a class="headerlink" href="#requesting-data-from-the-api" title="Permalink to this headline">¶</a></h2>
