@@ -16,7 +16,7 @@ to p.zwakhals@technieknederland.nl to request access. Please state your name, or
 
 Authenticating Users
 =====================
-Once you have an API key for the IDP, your application needs to permission from your user before you can access the API
+Once you have an API key for the IDP, your application needs permission from your user before you can access the API
 resources on behalf of them. OAuth provides a secure way to authenticate users through an Identity Service Provider (IDP),
 using the `Authorization Code Flow  <https://datatracker.ietf.org/doc/html/rfc6749#section-4.1>`_.
 
