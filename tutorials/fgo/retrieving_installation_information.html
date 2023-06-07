@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retrieving Installation Information &mdash; Practical guide to Techniek Nederland Forms 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-httpexample.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://techniek-nederland.github.io/techniek-nederland-formulieren/tutorials/fgo/retrieving_installation_information.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-httpexample.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Maintenance Checklists" href="maintenance_checklists.html" />
+    <link rel="prev" title="FGO Webservice" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+ 
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TSKJ7PB"
+            height="0" width="0" style="display:none;visibility:hidden"
+    ></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+<div class="tn-sub-title">
+    <span>
+        <span>
+            Techniek Nederland
+        </span>
+        Forms
+    </span>
+
+    <svg
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 438"
+            preserveAspectRatio="xMidYMid meet"
+
+    >
+        <rect width="100%" height="100%" fill="#FFFFFF" />
+        <g transform="translate(0.000000,438.000000) scale(0.100000,-0.100000)" stroke="none">
+            <path
+                    d="M0 2190 l0 -2190 3600 0 3600 0 0 2190 0 2190 -3600 0 -3600 0 0 -2190z m1230 205
+            l5 -1700 23 -43 c35 -66 88 -119 150 -149 49 -24 69 -28 142 -28 70 0 94 4 135 25 70
+            34 139 108 164 175 21 55 21 63 21 1503 0 1203 3 1458 14 1513 56 262 307 439 570 401
+            204 -29 381 -188 425 -382 7 -30 11 -527 11 -1481 0 -916 4 -1455 10 -1489 21 -109 90
+            -198 188 -243 70 -32 199 -31 267 2 63 32 124 93 156 156 l24 50 5 1490 c6 1616 2
+            1510 62 1629 94 186 313 298 520 268 196 -28 349 -158 422 -357 8 -21 12 -475 16
+            -1520 6 -1704 -4 -1542 99 -1646 161 -161 420 -119 521 86 l25 50 5 1495 5 1495 22
+            59 c29 75 57 120 113 180 59 63 114 101 197 133 94 36 237 38 334 5 164 -56 283 -183
+            333 -351 14 -49 16 -217 16 -1633 l0 -1578 480 0 480 0 0 -95 0 -95 -570 0 -570 0 -2
+            1668 -3 1667 -29 62 c-33 72 -95 134 -164 166 -70 32 -199 31 -267 -2 -63 -32 -124
+            -93 -156 -156 l-24 -50 -5 -1490 c-4 -1209 -8 -1498 -19 -1530 -84 -252 -316 -403
+            -563 -367 -186 27 -334 144 -411 325 l-22 52 -5 1495 c-5 1421 -6 1497 -23 1542 -26
+            67 -97 141 -165 175 -49 24 -69 28 -142 28 -70 0 -94 -5 -135 -25 -64 -31 -124 -92
+            -156 -155 l-24 -50 -5 -1495 -5 -1495 -24 -60 c-52 -130 -144 -234 -256 -289 -275
+            -134 -590 -9 -707 282 l-23 57 -5 1490 c-6 1704 4 1542 -99 1646 -158 157 -403 123
+            -510 -71 l-36 -65 -5 -1495 -5 -1495 -22 -59 c-29 -75 -57 -120 -113 -180 -59 -63
+            -114 -101 -197 -133 -94 -36 -237 -38 -334 -5 -165 57 -290 190 -334 357 -13 52 -15
+            254 -15 1652 l0 1593 -515 0 -515 0 0 95 0 95 608 -2 607 -3 5 -1700z"
+                    fill="#372462"
+            />
+        </g>
+    </svg>
+
+</div>
+
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../architecture.html">Architecture &amp; Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../architecture.html#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../architecture.html#entity-definitions">Entity definitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#form-formulier-protocol-checklist">Form (formulier / protocol /checklist)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#report-inspectierapport-rapportage">Report (inspectierapport / rapportage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#regulations-brl-ntr-nta-nen-iso">Regulations (BRL, NTR, NTA, NEN, ISO)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#installation-company-installatiebedrijf-installateur">Installation company (Installatiebedrijf, Installateur)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#installer-monteur-inspecteur-installateur">Installer (Monteur, Inspecteur, Installateur)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#object-building-gebouw-bouwwerk-pand-werkadres">Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#client-opdrachtgever">Client (Opdrachtgever)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#installation-system-installatie-systeem">Installation (System, Installatie, Systeem)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#installation-parts-installatie-onderdeel-sub-systeem">Installation Parts (Installatie-onderdeel, Sub-systeem)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#product-data-stored-in-2ba">Product data (stored in 2BA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#current-state">Current State</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../architecture.html#classification-systems">Classification systems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#nl-sfb">NL/SFB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../architecture.html#id1">ETIM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../forms.html">Forms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../forms.html#form-structure">Form structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forms.html#form-technology">Form technology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forms.html#code-examples">Code Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#a-yes-no-question-using-a-radio-widget">A yes/no question using a Radio widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#textarea">Textarea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#textfield">Textfield</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#photo">Photo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../forms.html#repeating-entries-photo-textfield">Repeating entries (Photo &amp; Textfield)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../naming-conventions.html">Naming standards and conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../access-management.html">Access Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../access-management.html#requesting-an-api-key">Requesting an API Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access-management.html#authenticating-users">Authenticating Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access-management.html#requesting-data-from-the-api">Requesting Data from the API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access-management.html#authentication-parameters">Authentication parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../available-services/index.html">Available services and products</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../available-services/index.html#access-and-account-requirements">Access and Account Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../available-services/index.html#licensing-requirements">Licensing Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../authentication/index.html">Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../authentication/user_authentication.html">User Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../authentication/user_authentication.html#basic-concept-of-the-login-process">Basic Concept of the Login Process:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authentication/user_authentication.html#step-1-register-your-application-with-techniek-nederland">Step 1: Register Your Application with Techniek Nederland</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authentication/user_authentication.html#step-2-configure-your-application">Step 2: Configure Your Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authentication/user_authentication.html#step-3-authorize-your-application-to-act-on-the-users-behalf">Step 3: Authorize your application to act on the users behalf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authentication/user_authentication.html#step-4-obtaining-an-access-token">Step 4: Obtaining an access token</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../authentication/user_data_retrieval.html">User Data Retrieval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../authentication/service_invocation.html">Service invocation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">FGO Webservice</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Retrieving Installation Information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#querying-products">Querying Products</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#retrieving-available-filters-and-their-options">Retrieving available filters and their options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#apply-the-filters-to-product-query">Apply the filters to product query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#retrieve-full-product">Retrieve full product</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="maintenance_checklists.html">Maintenance Checklists</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../describe_installation.html">Describe an installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get_products.html">Get product information using FGO Plus API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get_products.html#search-for-a-product">Search for a product</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_products.html#filter-fields">Filter fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../get_forms.html">Get forms for an installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get_forms.html#get-a-list-of-relevant-forms">Get a list of relevant forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get_forms.html#get-the-form-itself">Get the form itself</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Practical guide to Techniek Nederland Forms</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Tutorials</a></li>
+          <li class="breadcrumb-item"><a href="index.html">FGO Webservice</a></li>
+      <li class="breadcrumb-item active">Retrieving Installation Information</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/tutorials/fgo/retrieving_installation_information.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="retrieving-installation-information">
+<h1>Retrieving Installation Information<a class="headerlink" href="#retrieving-installation-information" title="Permalink to this headline">¶</a></h1>
+<p>This guide will walk you through the process of accessing various details, including the name, serial number,
+power rating, safety instructions, and any additional remarks related to the installations and its maintenance.
+This tutorial aims to provide a comprehensive understanding of how to retrieve product information using
+the FGO webservice. It covers the following key topics:</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#querying-products" id="id1">Querying Products</a></p></li>
+<li><p><a class="reference internal" href="#retrieving-available-filters-and-their-options" id="id2">Retrieving available filters and their options</a></p></li>
+<li><p><a class="reference internal" href="#apply-the-filters-to-product-query" id="id3">Apply the filters to product query</a></p></li>
+<li><p><a class="reference internal" href="#retrieve-full-product" id="id4">Retrieve full product</a></p></li>
+</ul>
+</div>
+<p>Before diving into the tutorial, ensure that you have the necessary credentials and access to the FGO webservice.
+Familiarize yourself with the authentication process, as mentioned in the
+documentation page on <a class="reference internal" href="../authentication/index.html#authentication"><span class="std std-ref">Authentication</span></a>.</p>
+<p>It is also helpful to have a basic understanding of web services and how they function. This will enable you to follow
+along with the tutorial more effectively. For an example of how to configure Postman, see
+<a class="reference internal" href="../authentication/user_data_retrieval.html#user-data-retrieval"><span class="std std-ref">User Data Retrieval</span></a></p>
+<p>And last but not least: have a look at the Swagger documentation available at <a class="reference external" href="https://api.fgoplus.nl/swagger/">https://api.fgoplus.nl/swagger/</a>.</p>
+<section id="querying-products">
+<h2>Querying Products<a class="headerlink" href="#querying-products" title="Permalink to this headline">¶</a></h2>
+<p>The first step in retrieving product information from the FGO webservice is to search the catalog using specific
+product names or properties (Type, Brand, model etc).</p>
+<p>Please ensure that you include the mandatory parameters in your requests to effectively search and retrieve the desired product information.
+Some of the query parameters have been omitted in this tutorial, check the <a class="reference external" href="https://api.fgoplus.nl/swagger/index.html">Swagger</a> for
+an extensive list.</p>
+<dl class="http get">
+<dt class="sig sig-object http" id="get-https---api.fgoplus.nl-api-v1-Fgo-Product-Search">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://api.fgoplus.nl/api/v1/Fgo/Product/Search</span></span><a class="headerlink" href="#get-https---api.fgoplus.nl-api-v1-Fgo-Product-Search" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Request Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-5.3.2">Accept</a></span> – Response to accept, eg. application/json</p></li>
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – Access token provided by IDP</p></li>
+</ul>
+</dd>
+<dt class="field-even">Query Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SearchString</strong> – <em>(Required)</em> Represents the search term or keyword you want to use to filter the products. For a complete list without any filtering, use the value *</p></li>
+<li><p><strong>Size</strong> – <em>(Required)</em> The number of results you want to retrieve per page</p></li>
+<li><p><strong>From</strong> – The offset from which the results should begin. It is used for navigating through the paginated results.</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Example request</strong></p>
+<p>We are searching for products with the term “boiler,” requesting 10 results per page, and starting from the first result (offset 0).</p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Product/Search?SearchString=boiler&amp;Size=10&amp;From=0</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">api.fgoplus.nl</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Bearer &lt;INSERT ACCESS TOKEN&gt;</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;publish&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">38610</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;shortDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Documentation Boiler&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;manufacturerGln&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123456789&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;manufacturerName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fluxility&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;productCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12345678&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;gtin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;987654321&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fluxility&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;X-class&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FLX-100&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CV-toestellen&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;etimClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EC010231&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Boiler Direct Gestookt&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;94E&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Uitlopend&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;changeDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-06-07T12:00:00.000+00:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;startDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1989-03-06T00:00:00+00:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;isDeleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;isDummy&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;hasImage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;recordCreateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1989-03-06T00:00:00+00:00&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;took&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>The response is a JSON object with a property ‘total’. The property ‘took’ is the time it took and can be ignored. The
+property <cite>items</cite> is an array of search results. We list the most relevant properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">shortDescription</dt>
+<dd class="field-odd"><p>The human readable (en bekend in martk) name of the product</p>
+</dd>
+<dt class="field-even">manufacturerName</dt>
+<dd class="field-even"><p>The Manufacturer</p>
+</dd>
+<dt class="field-odd">brand</dt>
+<dd class="field-odd"><p>The Brand</p>
+</dd>
+<dt class="field-even">model</dt>
+<dd class="field-even"><p>The Model</p>
+</dd>
+<dt class="field-odd">version</dt>
+<dd class="field-odd"><p>The Version</p>
+</dd>
+<dt class="field-even">id</dt>
+<dd class="field-even"><p>Identifier; ID within the FGO Database</p>
+</dd>
+<dt class="field-odd">productCode</dt>
+<dd class="field-odd"><p>Identifier; ID within the Manufacturers own systems</p>
+</dd>
+<dt class="field-even">manufacturerGln</dt>
+<dd class="field-even"><p>Identifier of the manufacturer. Combination of <cite>manufacturerGln</cite> and <cite>productCode</cite> is unique</p>
+</dd>
+<dt class="field-odd">gtin</dt>
+<dd class="field-odd"><p>Identifier; <a class="reference external" href="https://www.gs1.org/standards/id-keys/gtin">Global Trade Item Number</a></p>
+</dd>
+<dt class="field-even">etimClass</dt>
+<dd class="field-even"><p>The classification of the product using <a class="reference external" href="https://www.etim-international.com/">ETIM</a></p>
+</dd>
+</dl>
+</section>
+<section id="retrieving-available-filters-and-their-options">
+<h2>Retrieving available filters and their options<a class="headerlink" href="#retrieving-available-filters-and-their-options" title="Permalink to this headline">¶</a></h2>
+<p>In addition to free-text searching, the FGO webservice also provides the capability to filter results based
+on specific properties. This feature, known as faceted search, allows you to refine your search results further
+based on various criteria. Before you can filter the product search, we have to retrieve the list of
+available options.</p>
+<dl class="http get">
+<dt class="sig sig-object http" id="get-https---api.fgoplus.nl-api-v1-Fgo-Product-Filters">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://api.fgoplus.nl/api/v1/Fgo/Product/Filters</span></span><a class="headerlink" href="#get-https---api.fgoplus.nl-api-v1-Fgo-Product-Filters" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Request Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-5.3.2">Accept</a></span> – Response to accept, eg. application/json</p></li>
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – Access token provided by IDP</p></li>
+</ul>
+</dd>
+<dt class="field-even">Query Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SearchString</strong> – <em>(Required)</em> Represents the search term or keyword you want to use to filter the products. For a complete list without any filtering, use the value *</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Example request</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Product/Filters?SearchString=*</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">api.fgoplus.nl</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Bearer &lt;INSERT ACCESS TOKEN&gt;</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Brand&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;portCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Some brand&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">122</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Some other brand&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">132</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Category&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;portCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CV-toestellen&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3841</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Warmtepompen&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3121</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zon-PV&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">524</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>The response is a list of available filters. In the case <cite>Brand</cite> and <cite>Category</cite>. For each of these filters the Top 20
+options are listed including the number of results in case this option is applied. Should you require all options,
+then you should use the FiltersForField-endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">code</dt>
+<dd class="field-odd"><p>The name of the filter</p>
+</dd>
+<dt class="field-even">values.[].code</dt>
+<dd class="field-even"><p>The name of the filter option</p>
+</dd>
+<dt class="field-odd">values.[].count</dt>
+<dd class="field-odd"><p>The number of search replies in case this filter option is applied</p>
+</dd>
+</dl>
+</section>
+<section id="apply-the-filters-to-product-query">
+<h2>Apply the filters to product query<a class="headerlink" href="#apply-the-filters-to-product-query" title="Permalink to this headline">¶</a></h2>
+<p>After retrieving the filters, you can proceed with querying products and incorporating filter options.
+The filters are constructed using an array of filter objects, following the format described below:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="nx">Filters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Code</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">Values</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nx">Code</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="p">}</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>In the above structure, the Code at the root-level represents the name of the filter obtained from the /Filters/
+endpoint. The Values field is an array of objects, each containing a single property called Code, which represents
+the name of the FilterOption obtained from the /filters/ endpoint. This array determines the selected filter options.</p>
+<p>To convert the above object into a GET query, use the following format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Filters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Code</span><span class="o">=</span><span class="n">string</span><span class="o">&amp;</span><span class="n">Filters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Code</span><span class="o">=</span><span class="n">SomeCode</span>
+</pre></div>
+</div>
+<p>Let’s consider a real-life example. Suppose you only want to query elements from the ‘CV-Toestellen’ and ‘Warmtepompen’
+categories. In that case, your filter object would be constructed as follows:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="nx">Filters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nx">Code</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Category&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">Values</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">Code</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;CV-toestellen&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">Code</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Warmtepompen&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">];</span>
+<span class="p">}];</span>
+</pre></div>
+</div>
+<p>This translates into the following GET query:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Filters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Code</span><span class="o">=</span><span class="n">Category</span><span class="o">&amp;</span><span class="n">Filters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Code</span><span class="o">=</span><span class="n">CV</span><span class="o">-</span><span class="n">toestellen</span><span class="o">&amp;</span><span class="n">Filters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Values</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">Code</span><span class="o">=</span><span class="n">Warmtepompen</span>
+</pre></div>
+</div>
+<dl class="http get">
+<dt class="sig sig-object http" id="get-https---api.fgoplus.nl-api-v1-Fgo-Product-Search?Filters[0].Code=Category&amp;Filters[0].Values[0].Code=CV-toestellen&amp;Filters[0].Values[1].Code=Warmtepompen">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://api.fgoplus.nl/api/v1/Fgo/Product/Search?Filters[0].Code=Category&amp;Filters[0].Values[0].Code=CV-toestellen&amp;Filters[0].Values[1].Code=Warmtepompen</span></span><a class="headerlink" href="#get-https---api.fgoplus.nl-api-v1-Fgo-Product-Search?Filters[0].Code=Category&Filters[0].Values[0].Code=CV-toestellen&Filters[0].Values[1].Code=Warmtepompen" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Request Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-5.3.2">Accept</a></span> – Response to accept, eg. application/json</p></li>
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – Access token provided by IDP</p></li>
+</ul>
+</dd>
+<dt class="field-even">Query Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SearchString</strong> – <em>(Required)</em> Represents the search term or keyword you want to use to filter the products. For a complete list without any filtering, use the value *</p></li>
+<li><p><strong>Filters</strong> – The filter string as described above</p></li>
+<li><p><strong>Size</strong> – <em>(Required)</em> The number of results you want to retrieve per page</p></li>
+<li><p><strong>From</strong> – The offset from which the results should begin. It is used for navigating through the paginated results.</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Example request</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Product/Search?SearchString=*&amp;Size=10&amp;Filters[0].Code=Category&amp;Filters[0].Values[0].Code=CV-toestellen&amp;Filters[0].Values[1].Code=Warmtepompen</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">api.fgoplus.nl</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Bearer &lt;INSERT ACCESS TOKEN&gt;</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;publish&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">38610</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;shortDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Documentation Boiler&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;manufacturerGln&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123456789&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;manufacturerName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fluxility&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;productCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12345678&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;gtin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;987654321&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fluxility&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;X-class&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FLX-100&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CV-toestellen&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;etimClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EC010231&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Boiler Direct Gestookt&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;94E&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Uitlopend&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;changeDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-06-07T12:00:00.000+00:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;startDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1989-03-06T00:00:00+00:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;isDeleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;isDummy&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;hasImage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;recordCreateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1989-03-06T00:00:00+00:00&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;took&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="retrieve-full-product">
+<h2>Retrieve full product<a class="headerlink" href="#retrieve-full-product" title="Permalink to this headline">¶</a></h2>
+<p>The search results only provide a limited amount of information about products. To obtain more detailed information,
+you need to query the specific product using either the FGO product ID (referred to as the <cite>id</cite> field in the search
+results) or a combination of the manufacturer’s GLN code and the manufacturer’s product code (referred to as the
+<cite>manufacturerGln</cite> and <cite>productId</cite> fields in the search results). Both methods will yield the same response.</p>
+<dl class="http get">
+<dt class="sig sig-object http" id="get-https---api.fgoplus.nl-api-v1-Fgo-Product-productId">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://api.fgoplus.nl/api/v1/Fgo/Product/{productId}</span></span><a class="headerlink" href="#get-https---api.fgoplus.nl-api-v1-Fgo-Product-productId" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Request Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-5.3.2">Accept</a></span> – Response to accept, eg. application/json</p></li>
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – Access token provided by IDP</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Example request using only FGO ID</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Product/1234</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">api.fgoplus.nl</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Bearer &lt;INSERT ACCESS TOKEN&gt;</span>
+</pre></div>
+</div>
+<p><strong>Example request using only tuple of Manufacturer GLN and product id</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Product/{manufacturerGln}/{productId}</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">api.fgoplus.nl</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Bearer &lt;INSERT ACCESS TOKEN&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>The response contains comprehensive information about the requested product. In this tutorial, we will cover a few
+specific items</p>
+<dl class="field-list simple">
+<dt class="field-odd">features</dt>
+<dd class="field-odd"><p>This is a list of features based on ETIM feature codes
+:code:          The ETIM feature code.
+:description:   The human-readable value of this ETIM feature
+:logicalValue:  Present if feature is a boolean field
+:numericValue:  Present if feature is a numeric value</p>
+</dd>
+<dt class="field-even">attachments</dt>
+<dd class="field-even"><p>A list of documents attached to this product
+:location:      The URI to download the document/image (not URL encoded!).
+:title:         The title of the document.</p>
+</dd>
+<dt class="field-odd">checklist</dt>
+<dd class="field-odd"><p>A list of available checklists for this product</p>
+</dd>
+<dt class="field-even">faultCodes</dt>
+<dd class="field-even"><p>Known fault codes associated this device</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="FGO Webservice" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="maintenance_checklists.html" class="btn btn-neutral float-right" title="Maintenance Checklists" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+            &#169; Copyright 2021 - 2022 <a href="https://www.technieknederland.nl/home">Techniek Nederland</a> &amp; <a href="https://fluxility.com">Fluxility</a>
+        </p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ 
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+        'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-TSKJ7PB');</script>
+<!-- End Google Tag Manager -->
+
+
+</body>
+</html>
