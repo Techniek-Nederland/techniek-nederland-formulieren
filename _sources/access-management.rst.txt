@@ -23,7 +23,7 @@ using the `Authorization Code Flow  <https://datatracker.ietf.org/doc/html/rfc67
 Below are the steps for authenticating a user. Some technical details have been left out for these are usually
 described in documentation of your own OAuth library.
 
-    1.  **Redirect Users to Techniek Nederland IDP (`https://inlog.tnl.nl/`)** When a user wants to access the API through
+    1.  **Redirect Users to Techniek Nederland IDP (`https://inlog.tnl.nu/`)** When a user wants to access the API through
         your application, the user must authorize your application in the IDP. This page typically requires the user to
         enter their credentials.
     2.  **Authorization** After successful authentication, the IDP will present the user with a consent screen.
