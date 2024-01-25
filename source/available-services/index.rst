@@ -52,7 +52,7 @@ The following table shows what services and licenses are required:
     *   - Formulieren app
         - Web application
         - Membership, FGO
-        - None
+        - technieknederland:membership, FGO
 
 
 
