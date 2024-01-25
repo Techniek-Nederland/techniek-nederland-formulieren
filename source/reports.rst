@@ -67,7 +67,7 @@ empowers users to create tailored forms that align precisely with their needs. B
         Accept: application/pdf; charset=utf-8
 
         {
-            "form_json":{
+            "form_json": {
                 "form": {
                     "display": "form",
                     "components": [
@@ -93,7 +93,7 @@ empowers users to create tailored forms that align precisely with their needs. B
                         }
                     ]
                 }
-            }
+            },
             "data": {
                 "client": {
                     "contact_person": "Pete Peterson"
@@ -101,7 +101,7 @@ empowers users to create tailored forms that align precisely with their needs. B
                 "report_info": {
                     "report_visit_date": "2024-01-02"
                 },
-                "A-01": "ja
+                "A-01": "ja"
             },
             "add_default_fields": false
         }
