@@ -137,6 +137,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../reports.html">Reports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../naming-conventions.html">Naming standards and conventions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../access-management.html">Access Management</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../access-management.html#requesting-an-api-key">Requesting an API Key</a></li>
@@ -216,8 +217,8 @@
 <section id="get-a-list-of-relevant-forms">
 <h2>Get a list of relevant forms<a class="headerlink" href="#get-a-list-of-relevant-forms" title="Permalink to this headline">¶</a></h2>
 <dl class="http get">
-<dt class="sig sig-object http" id="get-https---api.fgoplus.nl-api-v1-Fgo-Forms-All">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://api.fgoplus.nl/api/v1/Fgo/Forms/All</span></span><a class="headerlink" href="#get-https---api.fgoplus.nl-api-v1-Fgo-Forms-All" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object http" id="get-https---api.fgoplus.nl-api-v1-Fgo-Forms-Latest">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://api.fgoplus.nl/api/v1/Fgo/Forms/Latest</span></span><a class="headerlink" href="#get-https---api.fgoplus.nl-api-v1-Fgo-Forms-Latest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of forms relevant for you installation</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Forms/All?classCode=EC010232</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -245,7 +246,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Request Headers</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – OAtuh token to authenticate</p></li>
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – OAuth token to authenticate</p></li>
 </ul>
 </dd>
 <dt class="field-even">Query Parameters</dt>
@@ -400,7 +401,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Request Headers</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – OAtuh token to authenticate</p></li>
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – OAuth token to authenticate</p></li>
 </ul>
 </dd>
 </dl>

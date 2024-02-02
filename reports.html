@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search &mdash; Practical guide to Techniek Nederland Forms 1.0.0 documentation</title>
+  <title>Reports &mdash; Practical guide to Techniek Nederland Forms 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/sphinxcontrib-httpexample.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="canonical" href="https://techniek-nederland.github.io/techniek-nederland-formulieren/search.html" />
-    
+    <link rel="canonical" href="https://techniek-nederland.github.io/techniek-nederland-formulieren/reports.html" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -20,10 +20,10 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinxcontrib-httpexample.js"></script>
     <script src="_static/js/theme.js"></script>
-    <script src="_static/searchtools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Naming standards and conventions" href="naming-conventions.html" />
+    <link rel="prev" title="Forms" href="forms.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -50,7 +50,7 @@
               <img src="_static/logo.svg" class="logo" alt="Logo"/>
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -101,7 +101,7 @@
 
 
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture &amp; Models</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html#architecture">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html#entity-definitions">Entity definitions</a><ul>
@@ -138,7 +138,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="reports.html">Reports</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="naming-conventions.html">Naming standards and conventions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="access-management.html">Access Management</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="access-management.html#requesting-an-api-key">Requesting an API Key</a></li>
@@ -201,8 +201,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Search</li>
+      <li class="breadcrumb-item active">Reports</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="_sources/reports.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -210,22 +211,131 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search functionality.
-    </p>
-  </div>
-  </noscript>
+  <section id="reports">
+<h1>Reports<a class="headerlink" href="#reports" title="Permalink to this headline">¶</a></h1>
+<p>The Techniek Nederland service facilitates the generation of reports through the provided API. To initiate the report
+generation process, use the same authentication token employed for form requests and make a call to the
+/api/v1/third-party-reports/generate_report_template/ endpoint. Similar to form requests, specify the <cite>form_code</cite>
+to identify the desired report template.</p>
+<p>Additionally, utilize the <cite>data</cite> field to supply the necessary information to be entered into the form. If the data
+field is omitted, the result will be an empty form, available for completion as a digital PDF. An optional feature is
+the <cite>add_defaults_fields</cite>-parameter, which allows users to control the inclusion of default fields such as
+‘contact person’ details and ‘installation’ information. Toggle this option by setting it to false if you prefer
+to exclude these default fields from the generated report.</p>
+<p>For a comprehensive understanding of available parameters and endpoint functionalities, refer to the
+Swagger documentation. It provides a detailed definition and specification of the API, guiding users through the
+process of generating reports seamlessly.</p>
+<p>Example call:</p>
+<dl class="http post">
+<dt class="sig sig-object http" id="post-https---formulierenappbeheer.technieknederland.nl-api-v1-third-party-reports-generate_report_template-">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">https://formulierenappbeheer.technieknederland.nl/api/v1/third-party-reports/generate_report_template/</span></span><a class="headerlink" href="#post-https---formulierenappbeheer.technieknederland.nl-api-v1-third-party-reports-generate_report_template-" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Request Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – Access token provided by IDP</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Example request</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Product/Search?SearchString=boiler&amp;Size=10&amp;From=0</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">api.fgoplus.nl</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Bearer &lt;INSERT ACCESS TOKEN&gt;</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/pdf; charset=utf-8</span>
 
-  
-  <div id="search-results">
-  
-  </div>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;form_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FGO00003&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;client&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;contact_person&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pete Peterson&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;report_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;report_visit_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-01-02&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;add_default_fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>For users with additional permissions, the Techniek Nederland service offers the flexibility to generate custom forms
+by providing their own <cite>form_json</cite> through the API. In this scenario, the traditional <cite>form_code</cite> is omitted,
+allowing users to define the structure and content of the form according to their specific requirements. This feature
+empowers users to create tailored forms that align precisely with their needs. Below is an example illustrating the process:</p>
+<dl class="http post">
+<dt class="sig sig-object http" id="post-https---formulierenappbeheer.technieknederland.nl-api-v1-third-party-reports-generate_report_template-">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">https://formulierenappbeheer.technieknederland.nl/api/v1/third-party-reports/generate_report_template/</span></span><a class="headerlink" href="#post-https---formulierenappbeheer.technieknederland.nl-api-v1-third-party-reports-generate_report_template-" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Request Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – Access token provided by IDP</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Example request</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Product/Search?SearchString=boiler&amp;Size=10&amp;From=0</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">api.fgoplus.nl</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Bearer &lt;INSERT ACCESS TOKEN&gt;</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/pdf; charset=utf-8</span>
+
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;form_json&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;form&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;form&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;components&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A-01&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A-01 Watercircuit&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;tooltip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Controleer de druk in het watercircuit&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;radio&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ja&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ja&quot;</span>
+<span class="w">                        </span><span class="p">},</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nee&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nee&quot;</span>
+<span class="w">                        </span><span class="p">},</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nvt&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;n.v.t.&quot;</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;client&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;contact_person&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pete Peterson&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;report_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;report_visit_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-01-02&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;A-01&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ja&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;add_default_fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>In this example, the <cite>form_json</cite> parameter allows users to define custom fields and sections within the form.
+The <cite>add_defaults_fields</cite> option remains available for users who wish to include default fields like
+contact person details, installation information, etc. Adjust the value to <cite>false</cite> if these defaults should be omitted.</p>
+<p>Refer to the Swagger documentation for a comprehensive guide on utilizing this functionality.</p>
+</section>
+
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="forms.html" class="btn btn-neutral float-left" title="Forms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="naming-conventions.html" class="btn btn-neutral float-right" title="Naming standards and conventions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
@@ -249,12 +359,6 @@
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-  <script>
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script id="searchindexloader"></script>
-  
  
 <!-- Google Tag Manager -->
 <script>(function (w, d, s, l, i) {
@@ -271,7 +375,6 @@
     f.parentNode.insertBefore(j, f);
 })(window, document, 'script', 'dataLayer', 'GTM-TSKJ7PB');</script>
 <!-- End Google Tag Manager -->
-
 
 
 </body>

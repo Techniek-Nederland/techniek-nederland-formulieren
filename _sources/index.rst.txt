@@ -38,6 +38,7 @@ is about the Form structures and technology. The third is the actual tuturial wi
 .. toctree::
    architecture
    forms
+   reports
    naming-conventions
    access-management
    available-services/index

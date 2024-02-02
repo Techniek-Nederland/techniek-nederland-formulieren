@@ -6,7 +6,7 @@ Once you've determined the ETIM Product Class for you installation, you can quer
 Get a list of relevant forms
 ++++++++++++++++++++++++++++
 
-.. http:get:: https://api.fgoplus.nl/api/v1/Fgo/Forms/All
+.. http:get:: https://api.fgoplus.nl/api/v1/Fgo/Forms/Latest
 
    Returns a list of forms relevant for you installation
 
@@ -38,7 +38,7 @@ Get a list of relevant forms
         }
       ]
 
-   :reqheader Authorization: OAtuh token to authenticate
+   :reqheader Authorization: OAuth token to authenticate
    :query string classCode: The ETIM Class to filter forms for
 
 
@@ -188,5 +188,5 @@ Get the form itself
             "publisherLink": "https://www.technieknederland.nl"
         }
 
-   :reqheader Authorization: OAtuh token to authenticate
+   :reqheader Authorization: OAuth token to authenticate
 
