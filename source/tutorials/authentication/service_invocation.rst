@@ -48,4 +48,5 @@ Below you find an example of the HTTP call.
         }
 
 The response is outside of scope for this tutorial. Please see the other tutorials on requesting the webservices
-or take a look at the Swagger documentation of the FGO Webservice (https://api.fgoplus.nl/swagger/index.html)
+or take a look at the Swagger documentation of the FGO Webservice (https://api.fgoplus.nl/swagger/index.html). For
+the forms API, which is used to retrieve all forms other than checklists, please refer to https://formsapi.technieknederland.nl/swagger/index.html.

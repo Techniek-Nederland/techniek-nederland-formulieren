@@ -2,11 +2,12 @@ Get forms for an installation
 -------------------------------------
 
 Once you've determined the ETIM Product Class for you installation, you can query the Forms API for relevant forms.
+For the documentation on the forms API, please see https://formsapi.technieknederland.nl/swagger/index.html.
 
 Get a list of relevant forms
 ++++++++++++++++++++++++++++
 
-.. http:get:: https://api.fgoplus.nl/api/v1/Fgo/Forms/Latest
+.. http:get:: https://formsapi.technieknederland.nl/api/v1/Forms/Latest
 
    Returns a list of forms relevant for you installation
 
@@ -14,8 +15,8 @@ Get a list of relevant forms
 
    .. sourcecode:: http
 
-      GET /api/v1/Fgo/Forms/All?classCode=EC010232 HTTP/1.1
-      Host: api.fgoplus.nl
+      GET /api/v1/Forms/All?classCode=EC010232 HTTP/1.1
+      Host: formsapi.technieknederland.nl
       Accept: application/json
       Authorization: OAuth token to authenticate
 
@@ -45,7 +46,7 @@ Get a list of relevant forms
 Get the form itself
 ++++++++++++++++++++++++++++
 
-.. http:get:: https://api.fgoplus.nl/api/v1/Fgo/Form/[code]/[version]/
+.. http:get:: https://formsapi.technieknederland.nl/api/v1/Form/[code]/[version]/
 
    Returns the requested form
 
@@ -53,8 +54,8 @@ Get the form itself
 
    .. sourcecode:: http
 
-      GET /api/v1/Fgo/Forms/Form/FGO00002/2/ HTTP/1.1
-      Host: api.fgoplus.nl
+      GET /api/v1/Form/FGO00002/2/ HTTP/1.1
+      Host: formsapi.technieknederland.nl
       Accept: application/json
       Authorization: OAuth token to authenticate
 
