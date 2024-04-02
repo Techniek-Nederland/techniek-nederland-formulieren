@@ -4,7 +4,7 @@ Retrieving Installation Information
 This guide will walk you through the process of accessing various details, including the name, serial number,
 power rating, safety instructions, and any additional remarks related to the installations and its maintenance.
 This tutorial aims to provide a comprehensive understanding of how to retrieve product information using
-the FGO webservice. It covers the following key topics:
+the FGO Plus webservice. It covers the following key topics:
 
 .. contents::
    :depth: 2
@@ -12,7 +12,7 @@ the FGO webservice. It covers the following key topics:
    :backlinks: none
 
 
-Before diving into the tutorial, ensure that you have the necessary credentials and access to the FGO webservice.
+Before diving into the tutorial, ensure that you have the necessary credentials and access to the FGO Plus webservice.
 Familiarize yourself with the authentication process, as mentioned in the
 documentation page on :ref:`tutorials/authentication/index:authentication`.
 
@@ -25,7 +25,7 @@ And last but not least: have a look at the Swagger documentation available at ht
 Querying Products
 =================
 
-The first step in retrieving product information from the FGO webservice is to search the catalog using specific
+The first step in retrieving product information from the FGO Plus webservice is to search the catalog using specific
 product names or properties (Type, Brand, model etc).
 
 
@@ -113,7 +113,7 @@ property `items` is an array of search results. We list the most relevant proper
 
 Retrieving available filters and their options
 ==============================================
-In addition to free-text searching, the FGO webservice also provides the capability to filter results based
+In addition to free-text searching, the FGO Plus webservice also provides the capability to filter results based
 on specific properties. This feature, known as faceted search, allows you to refine your search results further
 based on various criteria. Before you can filter the product search, we have to retrieve the list of
 available options.

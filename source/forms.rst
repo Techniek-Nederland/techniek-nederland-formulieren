@@ -42,7 +42,7 @@ Form technology
 
 The Form API makes use of `Schema JSON <https://json-schema.org>`_ for
 all definitions of data and also forms. This allows for each company to transform
-the document into a format that is usable by there application.
+the document into a format that is usable by their application.
 
 When defining the components, the naming conventions as used
 by `FormIO <https://github.com/formio/formio.js/wiki/Components-JSON-Schema>`_. will be used. This means that

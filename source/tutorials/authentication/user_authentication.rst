@@ -88,7 +88,7 @@ based on your specific OAuth implementation and Postman version.
 
 
 
-Step 3: Authorize your application to act on the users behalf
+Step 3: Authorize your application to act on the user's behalf
 ===============================================================
 
 In the authorization step, you will authorize your application to perform actions on behalf of the user. It's
