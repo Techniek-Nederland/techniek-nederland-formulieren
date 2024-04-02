@@ -3,8 +3,8 @@ Available services and products
 
 Techniek Nederland Forms offers the following services:
 
-    1.  **FGO Plus** -- A service for accessing product information and forms related to FGO Plus.
-    2.  **FGO Plus Webservice** -- A web service that allows integration with FGO Plus forms and functionalities.
+    1.  **FGO Plus** -- A service for accessing product information and checklist forms related to FGO Plus.
+    2.  **FGO Plus Webservice** -- A web service that allows integration with FGO Plus checklist forms and functionalities.
     3.  **FormulierenApp** -- An application for accessing and utilizing forms provided by Techniek Nederland.
     4.  **Forms Webservice** -- A web service for integrating Techniek Nederland forms into external applications.
     5.  **Melding onveilige situatie** -- A service specifically designed for reporting unsafe situations.

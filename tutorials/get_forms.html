@@ -157,7 +157,7 @@
 <li class="toctree-l4"><a class="reference internal" href="authentication/user_authentication.html#basic-concept-of-the-login-process">Basic Concept of the Login Process:</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication/user_authentication.html#step-1-register-your-application-with-techniek-nederland">Step 1: Register Your Application with Techniek Nederland</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication/user_authentication.html#step-2-configure-your-application">Step 2: Configure Your Application</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication/user_authentication.html#step-3-authorize-your-application-to-act-on-the-users-behalf">Step 3: Authorize your application to act on the users behalf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="authentication/user_authentication.html#step-3-authorize-your-application-to-act-on-the-user-s-behalf">Step 3: Authorize your application to act on the user’s behalf</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication/user_authentication.html#step-4-obtaining-an-access-token">Step 4: Obtaining an access token</a></li>
 </ul>
 </li>
@@ -213,16 +213,17 @@
              
   <section id="get-forms-for-an-installation">
 <h1>Get forms for an installation<a class="headerlink" href="#get-forms-for-an-installation" title="Permalink to this headline">¶</a></h1>
-<p>Once you’ve determined the ETIM Product Class for you installation, you can query the Forms API for relevant forms.</p>
+<p>Once you’ve determined the ETIM Product Class for you installation, you can query the Forms API for relevant forms.
+For the documentation on the forms API, please see <a class="reference external" href="https://formsapi.technieknederland.nl/swagger/index.html">https://formsapi.technieknederland.nl/swagger/index.html</a>.</p>
 <section id="get-a-list-of-relevant-forms">
 <h2>Get a list of relevant forms<a class="headerlink" href="#get-a-list-of-relevant-forms" title="Permalink to this headline">¶</a></h2>
 <dl class="http get">
-<dt class="sig sig-object http" id="get-https---api.fgoplus.nl-api-v1-Fgo-Forms-Latest">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://api.fgoplus.nl/api/v1/Fgo/Forms/Latest</span></span><a class="headerlink" href="#get-https---api.fgoplus.nl-api-v1-Fgo-Forms-Latest" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object http" id="get-https---formsapi.technieknederland.nl-api-v1-Forms-Latest">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://formsapi.technieknederland.nl/api/v1/Forms/Latest</span></span><a class="headerlink" href="#get-https---formsapi.technieknederland.nl-api-v1-Forms-Latest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of forms relevant for you installation</p>
 <p><strong>Example request</strong>:</p>
-<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Forms/All?classCode=EC010232</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Host</span><span class="o">:</span> <span class="l">api.fgoplus.nl</span>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Forms/All?classCode=EC010232</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">formsapi.technieknederland.nl</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Authorization</span><span class="o">:</span> <span class="l">OAuth token to authenticate</span>
 </pre></div>
@@ -261,12 +262,12 @@
 <section id="get-the-form-itself">
 <h2>Get the form itself<a class="headerlink" href="#get-the-form-itself" title="Permalink to this headline">¶</a></h2>
 <dl class="http get">
-<dt class="sig sig-object http" id="get-https---api.fgoplus.nl-api-v1-Fgo-Form-[code]-[version]-">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://api.fgoplus.nl/api/v1/Fgo/Form/[code]/[version]/</span></span><a class="headerlink" href="#get-https---api.fgoplus.nl-api-v1-Fgo-Form-[code]-[version]-" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object http" id="get-https---formsapi.technieknederland.nl-api-v1-Form-[code]-[version]-">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">https://formsapi.technieknederland.nl/api/v1/Form/[code]/[version]/</span></span><a class="headerlink" href="#get-https---formsapi.technieknederland.nl-api-v1-Form-[code]-[version]-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the requested form</p>
 <p><strong>Example request</strong>:</p>
-<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Forms/Form/FGO00002/2/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Host</span><span class="o">:</span> <span class="l">api.fgoplus.nl</span>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Form/FGO00002/2/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">formsapi.technieknederland.nl</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Authorization</span><span class="o">:</span> <span class="l">OAuth token to authenticate</span>
 </pre></div>

@@ -158,7 +158,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../authentication/user_authentication.html#basic-concept-of-the-login-process">Basic Concept of the Login Process:</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication/user_authentication.html#step-1-register-your-application-with-techniek-nederland">Step 1: Register Your Application with Techniek Nederland</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication/user_authentication.html#step-2-configure-your-application">Step 2: Configure Your Application</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../authentication/user_authentication.html#step-3-authorize-your-application-to-act-on-the-users-behalf">Step 3: Authorize your application to act on the users behalf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authentication/user_authentication.html#step-3-authorize-your-application-to-act-on-the-user-s-behalf">Step 3: Authorize your application to act on the user’s behalf</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication/user_authentication.html#step-4-obtaining-an-access-token">Step 4: Obtaining an access token</a></li>
 </ul>
 </li>
@@ -218,7 +218,7 @@
 <p>This guide will walk you through the process of accessing various details, including the name, serial number,
 power rating, safety instructions, and any additional remarks related to the installations and its maintenance.
 This tutorial aims to provide a comprehensive understanding of how to retrieve product information using
-the FGO webservice. It covers the following key topics:</p>
+the FGO Plus webservice. It covers the following key topics:</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#querying-products" id="id1">Querying Products</a></p></li>
@@ -227,7 +227,7 @@ the FGO webservice. It covers the following key topics:</p>
 <li><p><a class="reference internal" href="#retrieve-full-product" id="id4">Retrieve full product</a></p></li>
 </ul>
 </div>
-<p>Before diving into the tutorial, ensure that you have the necessary credentials and access to the FGO webservice.
+<p>Before diving into the tutorial, ensure that you have the necessary credentials and access to the FGO Plus webservice.
 Familiarize yourself with the authentication process, as mentioned in the
 documentation page on <a class="reference internal" href="../authentication/index.html#authentication"><span class="std std-ref">Authentication</span></a>.</p>
 <p>It is also helpful to have a basic understanding of web services and how they function. This will enable you to follow
@@ -236,7 +236,7 @@ along with the tutorial more effectively. For an example of how to configure Pos
 <p>And last but not least: have a look at the Swagger documentation available at <a class="reference external" href="https://api.fgoplus.nl/swagger/">https://api.fgoplus.nl/swagger/</a>.</p>
 <section id="querying-products">
 <h2>Querying Products<a class="headerlink" href="#querying-products" title="Permalink to this headline">¶</a></h2>
-<p>The first step in retrieving product information from the FGO webservice is to search the catalog using specific
+<p>The first step in retrieving product information from the FGO Plus webservice is to search the catalog using specific
 product names or properties (Type, Brand, model etc).</p>
 <p>Please ensure that you include the mandatory parameters in your requests to effectively search and retrieve the desired product information.
 Some of the query parameters have been omitted in this tutorial, check the <a class="reference external" href="https://api.fgoplus.nl/swagger/index.html">Swagger</a> for
@@ -345,7 +345,7 @@ property <cite>items</cite> is an array of search results. We list the most rele
 </section>
 <section id="retrieving-available-filters-and-their-options">
 <h2>Retrieving available filters and their options<a class="headerlink" href="#retrieving-available-filters-and-their-options" title="Permalink to this headline">¶</a></h2>
-<p>In addition to free-text searching, the FGO webservice also provides the capability to filter results based
+<p>In addition to free-text searching, the FGO Plus webservice also provides the capability to filter results based
 on specific properties. This feature, known as faceted search, allows you to refine your search results further
 based on various criteria. Before you can filter the product search, we have to retrieve the list of
 available options.</p>
