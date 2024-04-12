@@ -41,18 +41,23 @@ The following table shows what services and licenses are required:
 
     *   - FGO+
         - Web application
-        - FGO+
-        - FGO
+        - FGOPlus, FGOWebs
+        - FGOPlus, FGOWebs
 
     *   - FGO+ Webservice
         - Webservice API
-        - FGO+ Web Service
-        - FGOWS
+        - FGOWebs
+        - FGOWebs
 
     *   - Formulieren app
         - Web application
-        - Membership, FGO
-        - technieknederland:membership, FGO
+        - FGOForm, FGOPlus, FGOWebs
+        - FGOForm, FGOPlus, FGOWebs
+
+    *   - Forms Webservice
+        - Webservice API
+        - FGOForm, FGOPlus, FGOWebs
+        - FGOForm, FGOPlus, FGOWebs
 
 
 
