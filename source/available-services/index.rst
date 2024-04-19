@@ -15,16 +15,16 @@ Access and Account Requirements
 Access to the Techniek Nederland Forms services is limited to members of Techniek Nederland. To utilize any
 of the services mentioned above, you need to have an active account with Techniek Nederland.
 
-If you are a member, but do not have an account, please visit the
-`Techniek Nederland webshop <https://www.technieknederland.nl/webshop>`_
-to create one. Once you have successfully created an account, you can proceed to access the services.
+If you are a Techniek Nederland member, but do not have an account, please visit the
+`Techniek Nederland website <https://www.technieknederland.nl/contact/inloggen>`_.
+Once you have successfully obtained an account, you can proceed to access the services.
 
 Licensing Requirements
 --------------------------------
 
 While most services provided by Techniek Nederland Forms are available to all members with a Techniek
 Nederland account, some services require an additional license for full functionality.
-These licenses can be obtained from the Techniek Nederland Webshop.
+These licenses can be obtained from the `Techniek Nederland webshop <https://www.technieknederland.nl/webshop/>`_.
 
 To determine which services require a license, please refer to the specific documentation for each
 service or contact the Techniek Nederland support team for further assistance.
