@@ -1,8 +1,9 @@
-Get forms for an installation
+Forms API
 -------------------------------------
 
-Once you've determined the ETIM Product Class for you installation, you can query the Forms API for relevant forms.
-For the documentation on the forms API, please see https://formsapi.technieknederland.nl/swagger/index.html.
+The forms API can be used to query forms managed by Techniek Nederland. The API can for example be used to retrieve
+a list of all forms, to retrieve a specific form or to retrieve all relevant forms for an installation given an
+ETIM product class. For the documentation on the forms API, please see https://formsapi.technieknederland.nl/swagger/index.html.
 
 Get a list of relevant forms
 ++++++++++++++++++++++++++++

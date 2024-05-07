@@ -39,22 +39,22 @@ The following table shows what services and licenses are required:
         - Required license
         - Required scopes
 
-    *   - FGO+
+    *   - `FGO+ <https://www.fgoplus.nl/>`_
         - Web application
         - FGOPlus, FGOWebs
         - FGOPlus, FGOWebs
 
-    *   - FGO+ Webservice
+    *   - `FGO+ Webservice <https://api.fgoplus.nl/swagger/index.html>`_
         - Webservice API
         - FGOWebs
         - FGOWebs
 
-    *   - Formulieren app
+    *   - `Formulieren app <https://formulierenapp.fgoplus.nl/>`_
         - Web application
         - FGOForm, FGOPlus, FGOWebs
         - FGOForm, FGOPlus, FGOWebs
 
-    *   - Forms Webservice
+    *   - `Forms Webservice <https://formsapi.technieknederland.nl/swagger/index.html>`_
         - Webservice API
         - FGOForm, FGOPlus, FGOWebs
         - FGOForm, FGOPlus, FGOWebs
