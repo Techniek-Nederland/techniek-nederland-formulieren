@@ -36,7 +36,7 @@ The following table shows what services are required together with the correspon
 
     *   - Service or product
         - Type
-        - Required scopes
+        - Required scopes (at least one of)
 
     *   - `FGO+ <https://www.fgoplus.nl/>`_
         - Web application
