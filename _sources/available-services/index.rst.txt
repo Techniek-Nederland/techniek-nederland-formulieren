@@ -29,34 +29,29 @@ These licenses can be obtained from the `Techniek Nederland webshop <https://www
 To determine which services require a license, please refer to the specific documentation for each
 service or contact the Techniek Nederland support team for further assistance.
 
-The following table shows what services and licenses are required:
+The following table shows what services are required together with the corresponding scopes:
 
 .. list-table:: Services and products
     :header-rows: 1
 
     *   - Service or product
         - Type
-        - Required license
         - Required scopes
 
     *   - `FGO+ <https://www.fgoplus.nl/>`_
         - Web application
         - FGOPlus, FGOWebs
-        - FGOPlus, FGOWebs
 
     *   - `FGO+ Webservice <https://api.fgoplus.nl/swagger/index.html>`_
         - Webservice API
-        - FGOWebs
         - FGOWebs
 
     *   - `Formulieren app <https://formulierenapp.fgoplus.nl/>`_
         - Web application
         - FGOForm, FGOPlus, FGOWebs
-        - FGOForm, FGOPlus, FGOWebs
 
     *   - `Forms Webservice <https://formsapi.technieknederland.nl/swagger/index.html>`_
         - Webservice API
-        - FGOForm, FGOPlus, FGOWebs
         - FGOForm, FGOPlus, FGOWebs
 
 
