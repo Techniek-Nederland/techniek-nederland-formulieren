@@ -40,19 +40,19 @@ The following table shows what services are required together with the correspon
 
     *   - `FGO+ <https://www.fgoplus.nl/>`_
         - Web application
-        - FGOPlus, FGOWebs
+        - FGOPlus, FGOWebs (formerly known as FGOWS)
 
     *   - `FGO+ Webservice <https://api.fgoplus.nl/swagger/index.html>`_
         - Webservice API
-        - FGOWebs
+        - FGOWebs (formerly known as FGOWS)
 
     *   - `Formulieren app <https://formulierenapp.fgoplus.nl/>`_
         - Web application
-        - FGOForm, FGOPlus, FGOWebs
+        - TNForm (formerly known as FGOForm), FGOPlus, FGOWebs (formerly known as FGOWS)
 
     *   - `Forms Webservice <https://formsapi.technieknederland.nl/swagger/index.html>`_
         - Webservice API
-        - FGOForm, FGOPlus, FGOWebs
+        - TNForm (formerly known as FGOForm), FGOPlus, FGOWebs (formerly known as FGOWS)
 
 
 
