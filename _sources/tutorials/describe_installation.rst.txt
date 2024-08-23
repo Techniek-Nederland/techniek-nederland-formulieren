@@ -15,7 +15,7 @@ Basic model for an Installation
     .. attribute:: building_id
 
         A reference to the Object/Building in which this system is installed. It's up to you if you choose
-        to use a BAG ID or something of your own. In the (near) future it might be relevant to save extra information
+        to use a Kadaster ID (VBO) or something of your own. In the (near) future it might be relevant to save extra information
         in your database, regarding for instance the year of build for the Object in which the installation has been
         installed. For now, the building is not used for filtering yet.
 
