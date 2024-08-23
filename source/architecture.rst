@@ -68,9 +68,10 @@ can be the only person working at the Installation Company.
 Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)
 #####################################################
 Most of the times an Object will be a building, but it could also be for instance a meadow (solar panels).
-Objects in the Netherlands are registered by the Kadaster and kept in a database called BAG.
-Each Object (and sub-object) is documented with a unique BAG ID. See
-https://www.kadaster.nl/zakelijk/producten/adressen-en-gebouwen/bag-api-individuele-bevragingen.
+Objects in the Netherlands are registered by the Kadaster.
+Each Object (and sub-object) is documented with a unique Kadaster ID (VBO). See
+https://www.kadaster.nl/zakelijk/producten/adressen-en-gebouwen/bag-api-individuele-bevragingen and
+https://catalogus.kadaster.nl/bag/nl/page/Verblijfsobject.
 
 .. _Entity Client:
 
