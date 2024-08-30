@@ -69,7 +69,7 @@ Object (Building, Gebouw, Bouwwerk, Pand, Werkadres)
 #####################################################
 Most of the times an Object will be a building, but it could also be for instance a meadow (solar panels).
 Objects in the Netherlands are registered by the Kadaster.
-Each Object (and sub-object) is documented with a unique Kadaster ID (VBO). See
+Each Object (and sub-object) is documented with a unique Kadaster ID (VBO), also known as BAG ID. See
 https://www.kadaster.nl/zakelijk/producten/adressen-en-gebouwen/bag-api-individuele-bevragingen and
 https://catalogus.kadaster.nl/bag/nl/page/Verblijfsobject.
 
