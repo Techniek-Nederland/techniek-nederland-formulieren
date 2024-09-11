@@ -18,7 +18,7 @@ process of generating reports seamlessly.
 
 Example call:
 
-.. http:post:: https://formulierenappbeheer.technieknederland.nl/api/v1/third-party-reports/generate_report_template/
+.. http:post:: https://beheer.formulierenapp.technieknederland.nl/api/v1/third-party-reports/generate_report_template/
 
     :reqheader Authorization: Access token provided by IDP
 
@@ -52,7 +52,7 @@ by providing their own `form_json` through the API. In this scenario, the tradit
 allowing users to define the structure and content of the form according to their specific requirements. This feature
 empowers users to create tailored forms that align precisely with their needs. Below is an example illustrating the process:
 
-.. http:post:: https://formulierenappbeheer.technieknederland.nl/api/v1/third-party-reports/generate_report_template/
+.. http:post:: https://beheer.formulierenapp.technieknederland.nl/api/v1/third-party-reports/generate_report_template/
 
     :reqheader Authorization: Access token provided by IDP
 
