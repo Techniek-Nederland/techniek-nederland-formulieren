@@ -11,7 +11,7 @@ Requesting an API Key
 
 To begin, you'll need to request an API key at Techniek Nederland. The API key acts as a unique identifier for your
 client application and allows you to make authenticated requests to the Identity Service API (IDP). Please send an email
-to p.zwakhals@technieknederland.nl to request access. Please state your name, organisation, goal and provide us with the
+to b.molmans@TechniekNederland.nl to request access. Please state your name, organisation, goal and provide us with the
 `redirect_url` (or multiple) for you application.
 
 Authenticating Users
