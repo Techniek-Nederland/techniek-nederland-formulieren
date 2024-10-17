@@ -11,7 +11,7 @@ Provider (IDP) of Techniek Nederland, which can be accessed at https://inlog.tnl
 refer to this IDP using the OAuth protocol.
 
 Third-party software needs a `client_id` and `client_secret` to use the Identity Service Provider. These credentials
-can be requested from Peter Zwakhals by sending an email to p.zwakhals@technieknederland.nl.
+can be requested from Bart Molmans by sending an email to b.molmans@technieknederland.nl.
 
 The following tutorials provide detailed instructions for enabling third-party software to allow users to log in
 and access Techniek Nederland's web services on their behalf. Additionally, the tutorials explain how to retrieve
