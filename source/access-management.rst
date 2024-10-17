@@ -60,7 +60,7 @@ Connecting to identity service provider:
 :token_endpoint:            https://inlog.tnl.nu/o/token/
 :userinfo_endpoint:         https://inlog.tnl.nu/o/userinfo/
 :openid-configuration:      https://inlog.tnl.nu/o/.well-known/openid-configuration/
-:client_id:                 To be requested p.zwakhals@technieknederland.nl
+:client_id:                 To be requested b.molmans@TechniekNederland.nl
 :client_secet:              *Not applicable for client applications*
 :grant_type:                Authorization code (make sure to use PKCE)
 :scopes:                    openid, profile, FGO, FGOWS
