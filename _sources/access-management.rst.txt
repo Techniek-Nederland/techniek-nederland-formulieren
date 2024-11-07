@@ -11,7 +11,7 @@ Requesting an API Key
 
 To begin, you'll need to request an API key at Techniek Nederland. The API key acts as a unique identifier for your
 client application and allows you to make authenticated requests to the Identity Service API (IDP). Please send an email
-to b.molmans@TechniekNederland.nl to request access. Please state your name, organisation, goal and provide us with the
+to r.vanderlinden@TechniekNederland.nl to request access. Please state your name, organisation, goal and provide us with the
 `redirect_url` (or multiple) for you application.
 
 Authenticating Users
@@ -60,7 +60,7 @@ Connecting to identity service provider:
 :token_endpoint:            https://inlog.tnl.nu/o/token/
 :userinfo_endpoint:         https://inlog.tnl.nu/o/userinfo/
 :openid-configuration:      https://inlog.tnl.nu/o/.well-known/openid-configuration/
-:client_id:                 To be requested b.molmans@TechniekNederland.nl
+:client_id:                 To be requested r.vanderlinden@TechniekNederland.nl
 :client_secet:              *Not applicable for client applications*
 :grant_type:                Authorization code (make sure to use PKCE)
 :scopes:                    openid, profile, FGO, FGOWS

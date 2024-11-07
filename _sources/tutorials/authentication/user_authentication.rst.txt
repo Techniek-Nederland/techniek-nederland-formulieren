@@ -24,7 +24,7 @@ applications (JavaScript applications) or applications installed on the user's c
 are visible to the user, they cannot securely store secrets. Therefore, we will only use a client_id in combination
 with PKCE (Proof Key for Code Exchange), rather than a client_id and client_secret.
 
-To register your application, please send an email to `Bart Molmans <b.molmans@TechniekNederland.nl>`_ with the following information:
+To register your application, please send an email to `Remco van der Linden <r.vanderlinden@TechniekNederland.nl>`_ with the following information:
 
 * Application name
 * Why your going to use the IDP
@@ -51,7 +51,7 @@ You will need the following information:
 :token_endpoint:            https://inlog.tnl.nu/o/token/
 :userinfo_endpoint:         https://inlog.tnl.nu/o/userinfo/
 :openid-configuration:      https://inlog.tnl.nu/o/.well-known/openid-configuration/
-:client_id:                 To be requested b.molmans@technieknederland.nl
+:client_id:                 To be requested r.vanderlinden@TechniekNederland.nl
 :client_secet:              *Not applicable for client applications*
 :grant_type:                Authorization code (make sure to use PKCE)
 :scopes:                    openid, profile, FGO, FGOWS
