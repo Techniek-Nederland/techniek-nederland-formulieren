@@ -26,8 +26,8 @@ Example call:
 
     .. sourcecode:: http
 
-        GET /api/v1/Fgo/Product/Search?SearchString=boiler&Size=10&From=0 HTTP/1.1
-        Host: api.fgoplus.nl
+        POST /api/v1/third-party-reports/generate_report_template/ HTTP/1.1
+        Host: beheer.formulierenapp.technieknederland.nl
         Authorization: Bearer <INSERT ACCESS TOKEN>
         Content-Type: application/json
         Accept: application/pdf; charset=utf-8
@@ -60,8 +60,8 @@ empowers users to create tailored forms that align precisely with their needs. B
 
     .. sourcecode:: http
 
-        GET /api/v1/Fgo/Product/Search?SearchString=boiler&Size=10&From=0 HTTP/1.1
-        Host: api.fgoplus.nl
+        POST /api/v1/third-party-reports/generate_report_template/ HTTP/1.1
+        Host: beheer.formulierenapp.technieknederland.nl
         Authorization: Bearer <INSERT ACCESS TOKEN>
         Content-Type: application/json
         Accept: application/pdf; charset=utf-8

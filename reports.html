@@ -237,8 +237,8 @@ process of generating reports seamlessly.</p>
 </dd>
 </dl>
 <p><strong>Example request</strong></p>
-<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Product/Search?SearchString=boiler&amp;Size=10&amp;From=0</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Host</span><span class="o">:</span> <span class="l">api.fgoplus.nl</span>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1/third-party-reports/generate_report_template/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">beheer.formulierenapp.technieknederland.nl</span>
 <span class="na">Authorization</span><span class="o">:</span> <span class="l">Bearer &lt;INSERT ACCESS TOKEN&gt;</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">application/pdf; charset=utf-8</span>
@@ -274,8 +274,8 @@ empowers users to create tailored forms that align precisely with their needs. B
 </dd>
 </dl>
 <p><strong>Example request</strong></p>
-<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/Fgo/Product/Search?SearchString=boiler&amp;Size=10&amp;From=0</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Host</span><span class="o">:</span> <span class="l">api.fgoplus.nl</span>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1/third-party-reports/generate_report_template/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">beheer.formulierenapp.technieknederland.nl</span>
 <span class="na">Authorization</span><span class="o">:</span> <span class="l">Bearer &lt;INSERT ACCESS TOKEN&gt;</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 <span class="na">Accept</span><span class="o">:</span> <span class="l">application/pdf; charset=utf-8</span>
