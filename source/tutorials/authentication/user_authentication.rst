@@ -173,6 +173,7 @@ the http call manually, you can use the following HTTP request:
     :form grant_type: The grant type. Set to "authorization_code".
     :form code: The authorization code received in the previous step.
     :form redirect_uri: The originating redirect URI
+    :form code_verifier: PKCE code verifier
     :form client_id: The client id.
 
     .. sourcecode:: http
