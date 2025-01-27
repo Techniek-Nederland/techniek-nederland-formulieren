@@ -170,10 +170,10 @@ the http call manually, you can use the following HTTP request:
 
     :reqheader Content-Type: application/x-www-form-urlencoded
 
-    :queryparam grant_type: The grant type. Set to "authorization_code".
-    :queryparam code: The authorization code received in the previous step.
-    :queryparam code_verifier: The code verifier (for PKCE).
-
+    :form grant_type: The grant type. Set to "authorization_code".
+    :form code: The authorization code received in the previous step.
+    :form redirect_uri: The originating redirect URI
+    :form client_id: The client id.
 
     .. sourcecode:: http
 
