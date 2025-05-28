@@ -8,4 +8,4 @@ A first attempt has been made to produce a list of standard terms to use through
 ways to name something (eg. 'Naam', 'Voornaam + Achternaam', 'Volledige naam'). The draft version of this
 document can be downloaded
 `Form Fields Naming Convensions (XLSX) <_static/files/techniek-nederland-form-fields-naming-convention-v5.xlsx>`_. This
-document is currently maintained by `Remco van der Linen @ Techniek Nederland <mailto:r.vanderlinden@TechniekNederland.nl>`_.
+document is currently maintained by `Remco van der Linen @ Techniek Nederland <mailto:ict@technieknederland.nl>`_.
