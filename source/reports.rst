@@ -112,3 +112,63 @@ The `add_defaults_fields` option remains available for users who wish to include
 contact person details, installation information, etc. Adjust the value to `false` if these defaults should be omitted.
 
 Refer to the Swagger documentation for a comprehensive guide on utilizing this functionality.
+
+
+Empty fillable form
+-------------------
+
+It's possible to create an empty form which the user can fill in (directly in the PDF itself).
+
+.. http:post:: https://beheer.formulierenapp.technieknederland.nl/api/v1/third-party-reports/generate_report_template/
+
+    :reqheader Authorization: Access token provided by IDP
+
+    **Example request**
+
+    .. sourcecode:: http
+
+        POST /api/v1/third-party-reports/generate_report_template/ HTTP/1.1
+        Host: beheer.formulierenapp.technieknederland.nl
+        Authorization: Bearer <INSERT ACCESS TOKEN>
+        Content-Type: application/json
+        Accept: application/pdf; charset=utf-8
+
+        {
+            "form_json": {
+                "title": "Example",
+                "version": 1,
+                "publishedAt": "2025-06-18T14:30:00Z",
+                "formCode": "XMPL001",
+                "form": {
+                    "display": "form",
+                    "components": [
+                        {
+                            "key": "A-01",
+                            "label": "A-01 Watercircuit",
+                            "tooltip": "Controleer de druk in het watercircuit",
+                            "type": "radio",
+                            "values": [
+                                {
+                                    "label": "Ja",
+                                    "value": "ja"
+                                },
+                                {
+                                    "label": "Nee",
+                                    "value": "nee"
+                                },
+                                {
+                                    "label": "Nvt",
+                                    "value": "n.v.t."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "data": {
+                "ignore": {
+                  "formType": "FORM_EMPTY"
+                }
+            },
+            "add_default_fields": false
+        }
