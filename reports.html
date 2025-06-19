@@ -138,7 +138,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Reports</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reports</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#empty-fillable-form">Empty fillable form</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="naming-conventions.html">Naming standards and conventions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="access-management.html">Access Management</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="access-management.html#requesting-an-api-key">Requesting an API Key</a></li>
@@ -327,6 +330,70 @@ empowers users to create tailored forms that align precisely with their needs. B
 The <cite>add_defaults_fields</cite> option remains available for users who wish to include default fields like
 contact person details, installation information, etc. Adjust the value to <cite>false</cite> if these defaults should be omitted.</p>
 <p>Refer to the Swagger documentation for a comprehensive guide on utilizing this functionality.</p>
+<section id="empty-fillable-form">
+<h2>Empty fillable form<a class="headerlink" href="#empty-fillable-form" title="Permalink to this headline">¶</a></h2>
+<p>It’s possible to create an empty form which the user can fill in (directly in the PDF itself).</p>
+<dl class="http post">
+<dt class="sig sig-object http" id="post-https---beheer.formulierenapp.technieknederland.nl-api-v1-third-party-reports-generate_report_template-">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">https://beheer.formulierenapp.technieknederland.nl/api/v1/third-party-reports/generate_report_template/</span></span><a class="headerlink" href="#post-https---beheer.formulierenapp.technieknederland.nl-api-v1-third-party-reports-generate_report_template-" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Request Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span><a class="reference external" href="https://tools.ietf.org/html/rfc7235#section-4.2">Authorization</a></span> – Access token provided by IDP</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Example request</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1/third-party-reports/generate_report_template/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">beheer.formulierenapp.technieknederland.nl</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Bearer &lt;INSERT ACCESS TOKEN&gt;</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/pdf; charset=utf-8</span>
+
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;form_json&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Example&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;publishedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-18T14:30:00Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;formCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;XMPL001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;form&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;form&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;components&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A-01&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A-01 Watercircuit&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;tooltip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Controleer de druk in het watercircuit&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;radio&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ja&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ja&quot;</span>
+<span class="w">                        </span><span class="p">},</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nee&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nee&quot;</span>
+<span class="w">                        </span><span class="p">},</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nvt&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;n.v.t.&quot;</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;ignore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;formType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FORM_EMPTY&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;add_default_fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
 </section>
 
 
