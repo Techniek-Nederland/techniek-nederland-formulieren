@@ -1,25 +1,47 @@
 name: Pages
+
 on:
   push:
     branches:
-    - master
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-    - uses: actions/setup-python@v2
-      with:
-        python-version: '3.12'
-    - uses: actions/checkout@master
-      with:
-        fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
-    - name: Build and Commit
-      uses: sphinx-notes/pages@v2
-      with:
-        documentation_path: ./source/
-        requirements_path: ./requirements.txt
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: gh-pages
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Build documentation
+        run: sphinx-build -b html source _build/html
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _build/html
+
+      - id: deployment
+        uses: actions/deploy-pages@v5
